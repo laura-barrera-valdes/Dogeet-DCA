@@ -50,34 +50,36 @@ class ProfileCard extends HTMLElement {
                 <img src= "${this.profileimage}">
             </article>
             <article class="right">
-                <h3 class="name">${this.name}</h3>
-                    <section class= "info">
-                        <section class="pairs1">
-                            <article class="icontext1">
-                                <img src= "./assets/icon/profile/gender.png">
-                                <p>${this.gender}</p>
-                            </article>
-                            <article class="icontext2">
-                                <img src= "./assets/icon/profile/breed.png">
-                                <p>${this.breed}</p>
-                            </article>
-                        </section>
-
-                        <section class="pairs2">
-                            <article class="icontext3">
-                                <img src= "./assets/icon/profile/age.png">
-                                <p>${this.age}</p>
-                            </article>
-                            <article class="icontext4">
-                                <img src= "./assets/icon/profile/activity.png">
-                                <p>${this.activity}</p>
-                            </article>
-                        </section>
-                            <article class="icontext5">
-                                    <img src= "./assets/icon/profile/location.png">
-                                    <p>${this.location}</p>
-                            </article>
+                <section class= "nametitle">
+                    <h3 class="name">${this.name}</h3>
+                </section>
+                <section class= "info">
+                    <section class="pairs1">
+                        <article class="icontext1">
+                            <img src= "./assets/icon/profile/gender.png">
+                            <p>${this.gender}</p>
+                        </article>
+                        <article class="icontext2">
+                            <img src= "./assets/icon/profile/breed.png">
+                            <p>${this.breed}</p>
+                        </article>
                     </section>
+
+                    <section class="pairs2">
+                        <article class="icontext3">
+                            <img src= "./assets/icon/profile/age.png">
+                            <p>${this.age}</p>
+                        </article>
+                        <article class="icontext4">
+                            <img src= "./assets/icon/profile/activity.png">
+                            <p>${this.activity}</p>
+                        </article>
+                    </section>
+                        <article class="icontext5">
+                            <img src= "./assets/icon/profile/location.png">
+                            <p>${this.location}</p>
+                        </article>
+                </section>
             </article>
         </section>
         `;
