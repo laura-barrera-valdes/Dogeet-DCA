@@ -36,7 +36,7 @@ class ProfileCard extends HTMLElement {
         //     this.age = newValue ? Number(newValue) : undefined;
         //     break;
         //     default:
-        //     this[propName] = newValue;
+        this[propName] = newValue;
         //     break;
         // }
         this.render();

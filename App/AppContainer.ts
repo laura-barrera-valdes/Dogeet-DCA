@@ -1,4 +1,4 @@
-import * as components from "./components/import.js";
+import "./components/import.js";
 import dataProfile from "./data.js";
 import ProfileCard, { profileAttribute } from "./components/Profile/Profile.js";
 
@@ -10,17 +10,17 @@ class AppContainer extends HTMLElement{
         this.attachShadow({mode: "open"});
 
         dataProfile.forEach((user) => {
-            const ProfileCard = this.ownerDocument.createElement(
+            const profileContainer = this.ownerDocument.createElement(
                 "profile-card"
             ) as ProfileCard;
-            ProfileCard.setAttribute(profileAttribute.profileimage, user.profileimage);
-            ProfileCard.setAttribute(profileAttribute.name, user.name);
-            ProfileCard.setAttribute(profileAttribute.gender, user.gender);
-            ProfileCard.setAttribute(profileAttribute.breed, user.breed);
-            ProfileCard.setAttribute(profileAttribute.age, user.age);
-            ProfileCard.setAttribute(profileAttribute.activity, user.activity);
-            ProfileCard.setAttribute(profileAttribute.location, user.location);
-            this.profiles.push(ProfileCard);    
+            profileContainer.setAttribute(profileAttribute.profileimage, user.profileimage);
+            profileContainer.setAttribute(profileAttribute.name, user.name);
+            profileContainer.setAttribute(profileAttribute.gender, user.gender);
+            profileContainer.setAttribute(profileAttribute.breed, user.breed);
+            profileContainer.setAttribute(profileAttribute.age, user.age);
+            profileContainer.setAttribute(profileAttribute.activity, user.activity);
+            profileContainer.setAttribute(profileAttribute.location, user.location);
+            this.profiles.push(profileContainer);    
             
         });
     }

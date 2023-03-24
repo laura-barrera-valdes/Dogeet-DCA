@@ -54,7 +54,7 @@ class ProfileCard extends HTMLElement{
     //     break;
         
     //     default:
-    //     this[propName] = newValue;
+   this[propName] = newValue;
     //     break;
     // }
 

@@ -1,1 +1,1 @@
-export { default as profileCard } from "./Profile/Profile.js";
+import "./Profile/Profile.js";
