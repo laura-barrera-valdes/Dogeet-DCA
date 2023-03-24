@@ -1,7 +1,7 @@
 const dataProfile = [
     {
         id: 1,
-        profileimage: "./assets/teckel.png",
+        profileimage: "./assets/image/profile/Pepito.png",
         name: "Pepito",
         gender: "male",
         breed: "teckel",
@@ -11,7 +11,7 @@ const dataProfile = [
     },
     {
         id: 2,
-        profileimage: "./public/assets/teckel.png",
+        profileimage: "./assets/image/profile/Almendra.png",
         name: "Almendra",
         gender: "female",
         breed: "Husky",
@@ -21,7 +21,7 @@ const dataProfile = [
     },
     {
         id: 3,
-        profileimage: "./assets/teckel.png",
+        profileimage: "./assets/image/profile/Josefo.png",
         name: "Josefo",
         gender: "male",
         breed: "Pug",

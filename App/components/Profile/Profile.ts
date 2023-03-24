@@ -66,35 +66,39 @@ render(){
         this.shadowRoot.innerHTML = `
         <link rel= "stylesheet" href="./App/components/Profile/Profile.css">
         <section class="fullcard">
-            <img src= "${this.profileimage}">
-            <h3 class="name">${this.name}</h3>
-                <section class= "info">
-                    <section class="pairs1">
-                        <article class="icontext1">
-                            <img src= "./assets">
-                            <p>${this.gender}</p>
-                        </article>
-                        <article class="icontext2">
-                            <img src= "./assets">
-                            <p>${this.breed}</p>
-                        </article>
-                    </section>
-
-                    <section class="pairs2">
-                        <article class="icontext3">
-                            <img src= "./assets">
-                            <p>${this.age}</p>
-                        </article>
-                        <article class="icontext4">
-                            <img src= "./assets">
-                            <p>${this.activity}</p>
-                        </article>
-                    </section>
-                        <article class="icontext5">
+            <article class="left">
+                <img src= "${this.profileimage}">
+            </article>
+            <article class="right">
+                <h3 class="name">${this.name}</h3>
+                    <section class= "info">
+                        <section class="pairs1">
+                            <article class="icontext1">
                                 <img src= "./assets">
-                                <p>${this.location}</p>
-                        </article>
-                </section>
+                                <p>${this.gender}</p>
+                            </article>
+                            <article class="icontext2">
+                                <img src= "./assets">
+                                <p>${this.breed}</p>
+                            </article>
+                        </section>
+
+                        <section class="pairs2">
+                            <article class="icontext3">
+                                <img src= "./assets">
+                                <p>${this.age}</p>
+                            </article>
+                            <article class="icontext4">
+                                <img src= "./assets">
+                                <p>${this.activity}</p>
+                            </article>
+                        </section>
+                            <article class="icontext5">
+                                    <img src= "./assets">
+                                    <p>${this.location}</p>
+                            </article>
+                    </section>
+            </article>
         </section>
         `;
     }

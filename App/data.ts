@@ -12,7 +12,7 @@ interface DataShape{
 const dataProfile: DataShape[] = [
     {
         id: 1,
-        profileimage: "./assets/teckel.png",
+        profileimage: "./assets/image/profile/Pepito.png",
         name: "Pepito",
         gender: "male",
         breed: "teckel",
@@ -22,7 +22,7 @@ const dataProfile: DataShape[] = [
     },
     {
         id: 2,
-        profileimage: "./public/assets/teckel.png",
+        profileimage: "./assets/image/profile/Almendra.png",
         name: "Almendra",
         gender: "female",
         breed: "Husky",
@@ -32,7 +32,7 @@ const dataProfile: DataShape[] = [
     },
     {
         id: 3,
-        profileimage: "./assets/teckel.png",
+        profileimage: "./assets/image/profile/Josefo.png",
         name: "Josefo",
         gender: "male",
         breed: "Pug",
