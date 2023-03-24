@@ -1,12 +1,14 @@
 import "./components/import.js";
-import { dataProfile, dataCommunity } from "./data.js";
+import { dataProfile, dataCommunity, dataChatlist } from "./data.js";
 import { profileAttribute } from "./components/Profile/Profile.js";
 import { communityAttribute } from "./components/community/community.js";
+import { chatlistAttribute } from "./components/chatlist/chatlist.js";
 class AppContainer extends HTMLElement {
     constructor() {
         super();
         this.profiles = [];
         this.friends = [];
+        this.chats = [];
         this.attachShadow({ mode: "open" });
         dataProfile.forEach((user) => {
             const profileContainer = this.ownerDocument.createElement("profile-card");
@@ -26,6 +28,14 @@ class AppContainer extends HTMLElement {
             communityContainer.setAttribute(communityAttribute.communitybreed, friend.commmunitybreed);
             this.friends.push(communityContainer);
         });
+        dataChatlist.forEach((chat) => {
+            const chatlistContainer = this.ownerDocument.createElement("chat-list");
+            chatlistContainer.setAttribute(chatlistAttribute.chatlistimage, chat.chatlistimage);
+            chatlistContainer.setAttribute(chatlistAttribute.chatlistname, chat.chatlistname);
+            chatlistContainer.setAttribute(chatlistAttribute.chatlisttext, chat.chatlisttext);
+            chatlistContainer.setAttribute(chatlistAttribute.chatlistwhen, chat.chatlistwhen);
+            this.chats.push(chatlistContainer);
+        });
     }
     connectedCallback() {
         this.render();
@@ -40,6 +50,10 @@ class AppContainer extends HTMLElement {
             this.friends.forEach((friend) => {
                 var _a;
                 (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(friend);
+            });
+            this.chats.forEach((chat) => {
+                var _a;
+                (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(chat);
             });
         }
     }

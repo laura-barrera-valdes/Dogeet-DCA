@@ -47,3 +47,29 @@ export const dataCommunity = [
         commmunitybreed: "Chihuahua",
     },
 ];
+export const dataChatlist = [
+    {
+        chatlistimage: "./assets/image/chat_img/Luna.png",
+        chatlistname: "Luna",
+        chatlisttext: "Yes, of course",
+        chatlistwhen: "Today",
+    },
+    {
+        chatlistimage: "./assets/image/chat_img/Tobbby.png",
+        chatlistname: "Tobby",
+        chatlisttext: "I'd like to...",
+        chatlistwhen: "Yesterday",
+    },
+    {
+        chatlistimage: "./assets/image/chat_img/Lorenzo.png",
+        chatlistname: "Lorenzo",
+        chatlisttext: "See you!",
+        chatlistwhen: "Yesterday",
+    },
+    {
+        chatlistimage: "./assets/image/chat_img/Sofia.png",
+        chatlistname: "Sofia",
+        chatlisttext: "She loves to play",
+        chatlistwhen: "Friday",
+    },
+];
