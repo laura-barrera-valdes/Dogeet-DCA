@@ -45,9 +45,10 @@ class ProfileCard extends HTMLElement {
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = `
         <link rel= "stylesheet" href="./App/components/Profile/Profile.css">
-        <section class="fullcard">
         <img class="accept" src="./assets/icon/profile/accept_profile.png">
         <img class="delete" src="./assets/icon/profile/delete_profile.png">
+        <section class="fullcard">
+        
             <article class="left">
                 <img src= "${this.profileimage}">
             </article>
