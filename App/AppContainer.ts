@@ -1,11 +1,13 @@
 import "./components/import.js";
-import {dataProfile, dataCommunity} from "./data.js";
+import {dataProfile, dataCommunity, dataChatlist} from "./data.js";
 import ProfileCard, { profileAttribute } from "./components/Profile/Profile.js";
 import CommunityCard, { communityAttribute } from "./components/community/community.js";
+import chatlistCard, { chatlistAttribute } from "./components/chatlist/chatlist.js";
 
 class AppContainer extends HTMLElement{
     profiles: ProfileCard[] = [];
     friends: CommunityCard[] = [];
+    chats: chatlistCard [] = [];
 
     constructor(){
         super();
@@ -35,6 +37,17 @@ class AppContainer extends HTMLElement{
             communityContainer.setAttribute(communityAttribute.communitybreed, friend.commmunitybreed);
             this.friends.push(communityContainer);
         });
+
+        dataChatlist.forEach((chat) => {
+            const chatlistContainer = this.ownerDocument.createElement(
+                "chat-list"
+            ) as chatlistCard;
+            chatlistContainer.setAttribute(chatlistAttribute.chatlistimage, chat.chatlistimage);
+            chatlistContainer.setAttribute(chatlistAttribute.chatlistname, chat.chatlistname);
+            chatlistContainer.setAttribute(chatlistAttribute.chatlisttext, chat.chatlisttext);
+            chatlistContainer.setAttribute(chatlistAttribute.chatlistwhen, chat.chatlistwhen);
+            this.chats.push(chatlistContainer);
+        });
     }
 
     connectedCallback(){
@@ -52,6 +65,11 @@ class AppContainer extends HTMLElement{
 
             this.friends.forEach((friend) => {
                 this.shadowRoot?.appendChild(friend);
+                
+            });
+
+            this.chats.forEach((chat) => {
+                this.shadowRoot?.appendChild(chat);
                 
             });
         }

@@ -44,7 +44,6 @@ render(){
     if (this.shadowRoot){
         this.shadowRoot.innerHTML = `
         <link rel= "stylesheet" href="./App/components/community/community.css">
-        <h2 class="coomunityTitle">Community</h2>
         <section class="communityCard">
             <img src="${this.communityimage}">
             <h4 class="communityname">${this.communityname}</h4>
