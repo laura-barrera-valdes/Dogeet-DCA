@@ -1,9 +1,11 @@
 import "./components/import.js";
-import dataProfile from "./data.js";
+import {dataProfile, dataCommunity} from "./data.js";
 import ProfileCard, { profileAttribute } from "./components/Profile/Profile.js";
+import CommunityCard, { communityAttribute } from "./components/community/community.js";
 
 class AppContainer extends HTMLElement{
     profiles: ProfileCard[] = [];
+    friends: CommunityCard[] = [];
 
     constructor(){
         super();
@@ -23,6 +25,16 @@ class AppContainer extends HTMLElement{
             this.profiles.push(profileContainer);    
             
         });
+
+        dataCommunity.forEach((friend) => {
+            const communityContainer = this.ownerDocument.createElement(
+                "my-community"
+            ) as CommunityCard;
+            communityContainer.setAttribute(communityAttribute.communityimage, friend.communityimage);
+            communityContainer.setAttribute(communityAttribute.communityname, friend.communityname);
+            communityContainer.setAttribute(communityAttribute.communitybreed, friend.commmunitybreed);
+            this.friends.push(communityContainer);
+        });
     }
 
     connectedCallback(){
@@ -35,6 +47,12 @@ class AppContainer extends HTMLElement{
 
             this.profiles.forEach((profile) => {
                 this.shadowRoot?.appendChild(profile);
+                
+            });
+
+            this.friends.forEach((friend) => {
+                this.shadowRoot?.appendChild(friend);
+                
             });
         }
     }

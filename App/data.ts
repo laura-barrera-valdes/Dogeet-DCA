@@ -9,7 +9,9 @@ interface DataShape{
     location: string;
 }
 
-const dataProfile: DataShape[] = [
+
+
+export const dataProfile: DataShape[] = [
     {
         id: 1,
         profileimage: "./assets/image/profile/Pepito.png",
@@ -43,4 +45,30 @@ const dataProfile: DataShape[] = [
 
 ]
 
-export default dataProfile;
+interface community{
+    communityimage: string;
+    communityname: string;
+    commmunitybreed: string;
+}
+
+export const dataCommunity: community[] = [
+    {
+    communityimage: "./assets/image/my_community/Bluey.png",
+    communityname: "Bluey",
+    commmunitybreed: "German Shepherd",
+},
+
+{
+    communityimage: "./assets/image/my_community/Bruno.png",
+    communityname: "Bruno",
+    commmunitybreed: "Husky",
+},
+
+{
+    communityimage: "./assets/image/my_community/Kathia.png",
+    communityname: "Kathia",
+    commmunitybreed: "Chihuahua",
+},
+
+] 
+

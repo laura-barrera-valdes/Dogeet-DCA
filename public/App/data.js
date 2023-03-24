@@ -1,4 +1,4 @@
-const dataProfile = [
+export const dataProfile = [
     {
         id: 1,
         profileimage: "./assets/image/profile/Pepito.png",
@@ -30,4 +30,20 @@ const dataProfile = [
         location: "Cali, Colombia"
     },
 ];
-export default dataProfile;
+export const dataCommunity = [
+    {
+        communityimage: "./assets/image/my_community/Bluey.png",
+        communityname: "Bluey",
+        commmunitybreed: "German Shepherd",
+    },
+    {
+        communityimage: "./assets/image/my_community/Bruno.png",
+        communityname: "Bruno",
+        commmunitybreed: "Husky",
+    },
+    {
+        communityimage: "./assets/image/my_community/Kathia.png",
+        communityname: "Kathia",
+        commmunitybreed: "Chihuahua",
+    },
+];
