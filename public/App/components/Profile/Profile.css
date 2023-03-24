@@ -19,3 +19,32 @@ font-family: 'Montserrat', sans-serif;
 .left{
     width: 213px;    
 }
+
+.pairs1{
+    display: flex;
+    flex-direction: column;
+}
+
+.icontext1{
+    display: flex;
+    flex-direction: row;
+}
+
+.icontext2{
+    display: flex;
+    flex-direction: row;
+}
+
+.icontext3{
+    display: flex;
+    flex-direction: row;
+}
+.icontext4{
+    display: flex;
+    flex-direction: row;
+}
+
+.icontext5{
+    display: flex;
+    flex-direction: row;
+}
