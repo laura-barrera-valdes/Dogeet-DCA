@@ -1,0 +1,15 @@
+/* display: flex;
+flex-direction: row;
+justify-content: space-between; */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.fullcard{
+    display: flex;
+    flex-direction: row;    
+}
+.left{
+    width: 213px;    
+}
