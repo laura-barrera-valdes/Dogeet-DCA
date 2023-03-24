@@ -73,3 +73,16 @@ export const dataChatlist = [
         chatlistwhen: "Friday",
     },
 ];
+export const dataMyprofile = [
+    {
+        mybackground: "./assets/image/my_profile/background.png",
+        myprofileimage: "./assets/image/my_profile/Kathia.png",
+        myname: "Kathia",
+        mygender: "Female",
+        myage: "2 years",
+        mydescription: "Hi! i’m Kathia, i’m a coquer spaniel little dog and i’m looking for another dog friend to play in afternoons",
+        mybreed: "Coquer Spaniel",
+        myactivity: "Play with ball",
+        mylocation: "Cali, Colombia - Pampalinda",
+    },
+];

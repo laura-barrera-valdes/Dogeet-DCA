@@ -1,14 +1,16 @@
 import "./components/import.js";
-import { dataProfile, dataCommunity, dataChatlist } from "./data.js";
+import { dataProfile, dataCommunity, dataChatlist, dataMyprofile } from "./data.js";
 import { profileAttribute } from "./components/Profile/Profile.js";
 import { communityAttribute } from "./components/community/community.js";
 import { chatlistAttribute } from "./components/chatlist/chatlist.js";
+import { myprofileAttribute } from "./components/MyProfile/MyProfile.js";
 class AppContainer extends HTMLElement {
     constructor() {
         super();
         this.profiles = [];
         this.friends = [];
         this.chats = [];
+        this.myprofiles = [];
         this.attachShadow({ mode: "open" });
         dataProfile.forEach((user) => {
             const profileContainer = this.ownerDocument.createElement("profile-card");
@@ -36,6 +38,19 @@ class AppContainer extends HTMLElement {
             chatlistContainer.setAttribute(chatlistAttribute.chatlistwhen, chat.chatlistwhen);
             this.chats.push(chatlistContainer);
         });
+        dataMyprofile.forEach((me) => {
+            const myprofileContainer = this.ownerDocument.createElement("myprofile-card");
+            myprofileContainer.setAttribute(myprofileAttribute.mybackground, me.mybackground);
+            myprofileContainer.setAttribute(myprofileAttribute.myprofileimage, me.myprofileimage);
+            myprofileContainer.setAttribute(myprofileAttribute.myname, me.myname);
+            myprofileContainer.setAttribute(myprofileAttribute.mygender, me.mygender);
+            myprofileContainer.setAttribute(myprofileAttribute.mybreed, me.mybreed);
+            myprofileContainer.setAttribute(myprofileAttribute.myage, me.myage);
+            myprofileContainer.setAttribute(myprofileAttribute.mydescription, me.mydescription);
+            myprofileContainer.setAttribute(myprofileAttribute.myactivity, me.myactivity);
+            myprofileContainer.setAttribute(myprofileAttribute.mylocation, me.mylocation);
+            this.myprofiles.push(myprofileContainer);
+        });
     }
     connectedCallback() {
         this.render();
@@ -54,6 +69,10 @@ class AppContainer extends HTMLElement {
             this.chats.forEach((chat) => {
                 var _a;
                 (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(chat);
+            });
+            this.myprofiles.forEach((me) => {
+                var _a;
+                (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(me);
             });
         }
     }
