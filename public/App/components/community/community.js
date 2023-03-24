@@ -34,7 +34,7 @@ class CommunityCard extends HTMLElement {
             <h4 class="communityname">${this.communityname}</h4>
             <p class="communitybreed">${this.communitybreed}</p>
             <button class="communitybtn">2</button>
-        </section>Z
+        </section>
         `;
         }
     }
