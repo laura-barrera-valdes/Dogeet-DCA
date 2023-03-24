@@ -1,0 +1,19 @@
+{
+  "name": "dogeet-dca",
+  "version": "1.0.0",
+  "description": "Dogeet is a responsive app for desktop and phone aimed at allowing dogs and their owners to meet based on their proximity.",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc --watch",
+    "serve": "serve"
+    
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^14.2.0",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.2"
+  }
+}
