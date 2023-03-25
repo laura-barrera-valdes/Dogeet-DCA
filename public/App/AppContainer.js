@@ -1,9 +1,10 @@
 import "./components/import.js";
-import { dataProfile, dataCommunity, dataChatlist, dataMyprofile } from "./data.js";
+import { dataProfile, dataCommunity, dataChatlist, dataMyprofile, dataNavbar } from "./data.js";
 import { profileAttribute } from "./components/Profile/Profile.js";
 import { communityAttribute } from "./components/community/community.js";
 import { chatlistAttribute } from "./components/chatlist/chatlist.js";
 import { myprofileAttribute } from "./components/MyProfile/MyProfile.js";
+import { navbarAttribute } from "./components/navbar/navbar.js";
 class AppContainer extends HTMLElement {
     constructor() {
         super();
@@ -11,6 +12,7 @@ class AppContainer extends HTMLElement {
         this.friends = [];
         this.chats = [];
         this.myprofiles = [];
+        this.navbars = [];
         this.attachShadow({ mode: "open" });
         dataProfile.forEach((user) => {
             const profileContainer = this.ownerDocument.createElement("profile-card");
@@ -51,6 +53,17 @@ class AppContainer extends HTMLElement {
             myprofileContainer.setAttribute(myprofileAttribute.mylocation, me.mylocation);
             this.myprofiles.push(myprofileContainer);
         });
+        dataNavbar.forEach((nav) => {
+            const navbarContainer = this.ownerDocument.createElement("nav-bar");
+            navbarContainer.setAttribute(navbarAttribute.navbarlogo, nav.navbarlogo);
+            navbarContainer.setAttribute(navbarAttribute.navbarhome, nav.navbarhome);
+            navbarContainer.setAttribute(navbarAttribute.navbarcommunity, nav.navbarcommunity);
+            navbarContainer.setAttribute(navbarAttribute.navbarchat, nav.navbarchat);
+            navbarContainer.setAttribute(navbarAttribute.navbarnotifications, nav.navbarnotifications);
+            navbarContainer.setAttribute(navbarAttribute.navbarnameprofile, nav.navbarnameprofile);
+            navbarContainer.setAttribute(navbarAttribute.navbarprofile, nav.navbarprofile);
+            this.navbars.push(navbarContainer);
+        });
     }
     connectedCallback() {
         this.render();
@@ -73,6 +86,10 @@ class AppContainer extends HTMLElement {
             this.myprofiles.forEach((me) => {
                 var _a;
                 (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(me);
+            });
+            this.navbars.forEach((nav) => {
+                var _a;
+                (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(nav);
             });
         }
     }

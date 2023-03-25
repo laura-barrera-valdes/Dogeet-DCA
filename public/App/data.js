@@ -86,3 +86,14 @@ export const dataMyprofile = [
         mylocation: "Cali, Colombia - Pampalinda",
     },
 ];
+export const dataNavbar = [
+    {
+        navbarlogo: "./assets/logo/Dogeet.png",
+        navbarhome: "./assets/icon/nav/on/home_on.png",
+        navbarcommunity: "./assets/icon/nav/off/my_community_off.png",
+        navbarchat: "./assets/icon/nav/off/chats_off.png",
+        navbarnotifications: "./assets/icon/nav/bell.png",
+        navbarnameprofile: "Kathia",
+        navbarprofile: "./assets/image/my_profile/Kathia.png",
+    }
+];

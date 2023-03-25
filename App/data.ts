@@ -136,5 +136,26 @@ export const dataMyprofile: MyProfile[] = [
     
 ]
 
+interface Navbar{
+    navbarlogo : string;
+    navbarhome : string;
+    navbarcommunity : string;
+    navbarchat : string;
+    navbarnotifications : string;
+    navbarnameprofile : string;
+    navbarprofile : string;
+}
+
+export const dataNavbar: Navbar [] = [
+    { 
+        navbarlogo : "./assets/logo/Dogeet.png",
+        navbarhome : "./assets/icon/nav/on/home_on.png",
+        navbarcommunity : "./assets/icon/nav/off/my_community_off.png",
+        navbarchat : "./assets/icon/nav/off/chats_off.png",
+        navbarnotifications : "./assets/icon/nav/bell.png",
+        navbarnameprofile : "Kathia",
+        navbarprofile : "./assets/image/my_profile/Kathia.png",
+    }
+]
  
 

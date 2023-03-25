@@ -1,15 +1,18 @@
 import "./components/import.js";
-import {dataProfile, dataCommunity, dataChatlist, dataMyprofile} from "./data.js";
+import {dataProfile, dataCommunity, dataChatlist, dataMyprofile, dataNavbar} from "./data.js";
 import ProfileCard, { profileAttribute } from "./components/Profile/Profile.js";
 import CommunityCard, { communityAttribute } from "./components/community/community.js";
 import chatlistCard, { chatlistAttribute } from "./components/chatlist/chatlist.js";
 import MyprofileCard, { myprofileAttribute } from "./components/MyProfile/MyProfile.js";
+import NavbarCard, {navbarAttribute} from "./components/navbar/navbar.js";
+
 
 class AppContainer extends HTMLElement{
     profiles: ProfileCard[] = [];
     friends: CommunityCard[] = [];
     chats: chatlistCard [] = [];
     myprofiles: MyprofileCard[] = [];
+    navbars: NavbarCard [] = [];
 
     constructor(){
         super();
@@ -67,6 +70,20 @@ class AppContainer extends HTMLElement{
             this.myprofiles.push(myprofileContainer);    
             
         });
+
+        dataNavbar.forEach((nav) => {
+            const navbarContainer = this.ownerDocument.createElement(
+                "nav-bar"
+            ) as NavbarCard;
+            navbarContainer.setAttribute(navbarAttribute.navbarlogo, nav.navbarlogo);
+            navbarContainer.setAttribute(navbarAttribute.navbarhome, nav.navbarhome);
+            navbarContainer.setAttribute(navbarAttribute.navbarcommunity, nav.navbarcommunity);
+            navbarContainer.setAttribute(navbarAttribute.navbarchat, nav.navbarchat);
+            navbarContainer.setAttribute(navbarAttribute.navbarnotifications, nav.navbarnotifications);
+            navbarContainer.setAttribute(navbarAttribute.navbarnameprofile, nav.navbarnameprofile);
+            navbarContainer.setAttribute(navbarAttribute.navbarprofile, nav.navbarprofile);
+            this.navbars.push(navbarContainer);
+        });
     }
 
     connectedCallback(){
@@ -94,6 +111,11 @@ class AppContainer extends HTMLElement{
 
             this.myprofiles.forEach((me) => {
                 this.shadowRoot?.appendChild(me);
+                
+            });
+
+            this.navbars.forEach((nav) => {
+                this.shadowRoot?.appendChild(nav);
                 
             });
         }
