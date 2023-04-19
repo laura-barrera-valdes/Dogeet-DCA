@@ -6,7 +6,7 @@ import CommunityCard, { communityAttribute } from "../components/Community/Commu
 import chatlistCard, { chatlistAttribute } from "../components/Chatlist/Chatlist";
 import MyprofileCard, { myprofileAttribute } from "../components/MyProfile/MyProfile";
 import NavbarCard, {navbarAttribute} from "../components/Navbar/Navbar";
-console.log(styles);
+import { loadCss } from '../utils/styles';
 
 class Dashboard extends HTMLElement{
     profiles: ProfileCard[] = [];
@@ -93,14 +93,16 @@ class Dashboard extends HTMLElement{
 
     render(){
         if (this.shadowRoot){
-            this.shadowRoot.innerHTML = `
-            <style>${styles}</style>
-            `;
-
+            this.shadowRoot.innerHTML = ``;
+            loadCss(this,styles);
+            const section = this.ownerDocument.createElement('section');
+            section.className = 'myProfiles';
+            
             this.profiles.forEach((profile) => {
-                this.shadowRoot?.appendChild(profile);
-                
+                section.appendChild(profile);
             });
+
+            this.shadowRoot?.appendChild(section);
 
             this.friends.forEach((friend) => {
                 this.shadowRoot?.appendChild(friend);

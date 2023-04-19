@@ -1,3 +1,6 @@
+import { loadCss } from "../../utils/styles";
+import styles from './Profile.css';
+
 export enum profileAttribute {
     "profileimage" = "profileimage",
     "name" = "name",
@@ -104,6 +107,7 @@ render(){
             </article>
         </section>
         `;
+        loadCss(this,styles);
     }
 }
 

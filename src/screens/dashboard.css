@@ -1,17 +1,11 @@
-/* display: flex;
-flex-direction: row;
-justify-content: space-between; 
-font-family: 'Montserrat', sans-serif;
-*/
-
-
 * {
-   margin: 0px;
-   padding: 0px;
-   font-family: 'Montserrat', sans-serif;/*esta es la tipogrfia de css que corrio el navegador*/
+  margin: 0px;
+  padding: 0px;
+  font-family: "Montserrat", sans-serif; /*esta es la tipogrfia de css que corrio el navegador*/
 }
 
-
-.accept {
-   width: 1200px;
+.myProfiles {
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
 }
