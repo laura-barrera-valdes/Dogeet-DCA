@@ -4,9 +4,13 @@ justify-content: space-between;
 font-family: 'Montserrat', sans-serif;
 */
 
-
 * {
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Montserrat", sans-serif;
+}
+
+h2 {
+  font-size: 25px;
+  color: #7401f8; /* base */
 }

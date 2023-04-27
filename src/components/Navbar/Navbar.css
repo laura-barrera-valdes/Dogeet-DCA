@@ -19,9 +19,9 @@ color: #ADF90C; /* verde */
 }
 
 .navbarfixed {
-    position: fixed;/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make it fill the full width !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-    z-index: 9999; /* above all else */
-    width: 100%;
+  position: fixed; /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make it fill the full width !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+  z-index: 9999; /* above all else */
+  width: 100%;
 }
 
 .navbar {
@@ -30,11 +30,12 @@ color: #ADF90C; /* verde */
   align-items: center;
   background-color: #7401f8; /* base */
   padding-inline: 26px;
-  height: 109px;
+  height: 70px;
 }
 
 .logoDogeet {
   padding-top: 14px;
+  height: 40px;
 }
 
 .menu {
@@ -42,7 +43,7 @@ color: #ADF90C; /* verde */
   align-items: center;
   justify-content: space-between;
   width: 361px;
-  height: 53px;
+  height: 44px;
   background-color: #ffc404; /* secundario */
   padding-inline: 53px;
   border-radius: 5px;
@@ -56,17 +57,19 @@ color: #ADF90C; /* verde */
 .navprofile {
   display: flex;
   align-items: center;
-  justify-content:end;
+  justify-content: end;
   width: 254px;
 }
 
-.iconnavnotif{
-    margin-right: 7px;
+.iconnavnotif {
+  width: 44px;
+  height: 44px;
+  margin-right: 7px;
 }
 
-.navimgprofile{
-    width: 44px;
-    height: 44px;
-    border-radius: 100%;
-    margin-left: 7px;
+.navimgprofile {
+  width: 44px;
+  height: 44px;
+  border-radius: 100%;
+  margin-left: 7px;
 }
