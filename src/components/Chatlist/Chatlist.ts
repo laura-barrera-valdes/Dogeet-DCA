@@ -47,11 +47,17 @@ class chatlistCard extends HTMLElement {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
         <section class="chatlistCard">
-            <h2>Chats</h2>
-            <img class="imgprofchat" class="chatlistimg" src="${this.chatlistimage}">
-            <p class="chatlistname">${this.chatlistname}</p>
-            <p class="chatlisttext">${this.chatlisttext}</p>
-            <p class="chatlistwhen">${this.chatlistwhen}</p>
+            <h2 class="title">Chats</h2>
+            <article class="left">
+                <img class="imgprofchat" class="chatlistimg" src="${this.chatlistimage}">
+            </article>
+            <article class="center">
+                <p class="chatlistname">${this.chatlistname}</p>
+                <p class="chatlisttext">${this.chatlisttext}</p>
+            </article>
+            <article class="right">
+                <p class="chatlistwhen">${this.chatlistwhen}</p>
+            </article>
         </section>
         `;
       loadCss(this, styles);

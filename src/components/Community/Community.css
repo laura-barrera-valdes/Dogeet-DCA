@@ -10,7 +10,7 @@ font-family: 'Montserrat', sans-serif;
   font-family: "Montserrat", sans-serif;
 }
 
-h2 {
+.title {
   font-size: 24px;
   color: #7401f8; /* base */
 }
