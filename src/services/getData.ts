@@ -40,7 +40,7 @@ export const dataProfile: DataShape[] = [
     },
     {
         id: 4,
-        profileimage: "./assets/image/profile/Josefo.png",
+        profileimage: "./assets/image/profile/Rocky.png",
         name: "Rocky",
         gender: "Male",
         birthdate: "26/03/2020",
