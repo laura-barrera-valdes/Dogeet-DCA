@@ -1,62 +1,60 @@
-export enum navbarAttribute {
-    "navbarlogo" = "navbarlogo",
-    "navbarhome" = "navbarhome",
-    "navbarcommunity" = "navbarcommunity",
-    "navbarchat" = "navbarchat",
-    "navbarnotifications" = "navbarnotifications",
-    "navbarnameprofile" = "navbarnameprofile",
-    "navbarprofile" = "navbarprofile",
+import { loadCss } from "../../utils/styles";
+import styles from "./Navbar.css";
 
-    
+export enum navbarAttribute {
+  "navbarlogo" = "navbarlogo",
+  "navbarhome" = "navbarhome",
+  "navbarcommunity" = "navbarcommunity",
+  "navbarchat" = "navbarchat",
+  "navbarnotifications" = "navbarnotifications",
+  "navbarnameprofile" = "navbarnameprofile",
+  "navbarprofile" = "navbarprofile",
 }
 
-class NavbarCard extends HTMLElement{
-    navbarlogo? : string;
-    navbarhome? : string;
-    navbarcommunity? : string;
-    navbarchat? : string;
-    navbarnotifications? : string;
-    navbarnameprofile? : string;
-    navbarprofile? :string;
-    
+class NavbarCard extends HTMLElement {
+  navbarlogo?: string;
+  navbarhome?: string;
+  navbarcommunity?: string;
+  navbarchat?: string;
+  navbarnotifications?: string;
+  navbarnameprofile?: string;
+  navbarprofile?: string;
 
-    static get observedAttributes(){
-        const navattrs: Record<navbarAttribute, null> = {
-            navbarlogo : null,
-            navbarhome : null,
-            navbarcommunity : null,
-            navbarchat : null,
-            navbarnotifications : null,
-            navbarnameprofile : null,
-            navbarprofile : null,
-        };
-        return Object.keys(navattrs);
-    }
+  static get observedAttributes() {
+    const navattrs: Record<navbarAttribute, null> = {
+      navbarlogo: null,
+      navbarhome: null,
+      navbarcommunity: null,
+      navbarchat: null,
+      navbarnotifications: null,
+      navbarnameprofile: null,
+      navbarprofile: null,
+    };
+    return Object.keys(navattrs);
+  }
 
-    constructor(){
-        super();
-        this.attachShadow({mode: "open"});
-    }
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
 
-    connectedCallback(){
-        this.render();
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    attributeChangedCallback(
-        propName: navbarAttribute,
-        _: string | undefined,
-        newValue: string | undefined
-){
-    
-   this[propName] = newValue;
-   
+  attributeChangedCallback(
+    propName: navbarAttribute,
+    _: string | undefined,
+    newValue: string | undefined
+  ) {
+    this[propName] = newValue;
 
     this.render();
-}
+  }
 
-render(){
-    if (this.shadowRoot){
-        this.shadowRoot.innerHTML = `
+  render() {
+    if (this.shadowRoot) {
+      this.shadowRoot.innerHTML = `
         <section class="communityCard">
             <img class="logoDogeet" src="${this.navbarlogo}">
                 <section class="menu">
@@ -71,9 +69,9 @@ render(){
                 </section>
         </section>
         `;
+      loadCss(this, styles);
     }
-}
-
+  }
 }
 
 customElements.define("nav-bar", NavbarCard);
