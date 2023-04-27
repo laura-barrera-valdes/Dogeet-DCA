@@ -1,71 +1,76 @@
 import { loadCss } from "../../utils/styles";
-import styles from './Profile.css';
+import styles from "./Profile.css";
 
 export enum profileAttribute {
-    "profileimage" = "profileimage",
-    "name" = "name",
-    "icon" = "icon",
-    "gender" = "gender",
-    "birthdate" = "birthdate",
-    "lookingfor" = "lookingfor",
-    "city" = "city"
+  "profileimage" = "profileimage",
+  "name" = "name",
+  "icon" = "icon",
+  "gender" = "gender",
+  "birthdate" = "birthdate",
+  "lookingfor" = "lookingfor",
+  "city" = "city",
 }
 
-class ProfileCard extends HTMLElement{
-    profileimage?: string;
-    name?: string;
-    icon?: string;
-    gender?: string;
-    birthdate?: string;
-    lookingfor?: string;
-    city?: string;
-    
+class ProfileCard extends HTMLElement {
+  profileimage?: string;
+  name?: string;
+  icon?: string;
+  gender?: string;
+  birthdate?: string;
+  lookingfor?: string;
+  city?: string;
 
-    static get observedAttributes(){
-        const attrs: Record<profileAttribute, null> = {
-            profileimage: null,
-            name: null,
-            icon: null,
-            gender: null,
-            birthdate: null,
-            lookingfor: null,
-            city: null,
-        };
-        return Object.keys(attrs);
-    }
+  static get observedAttributes() {
+    const attrs: Record<profileAttribute, null> = {
+      profileimage: null,
+      name: null,
+      icon: null,
+      gender: null,
+      birthdate: null,
+      lookingfor: null,
+      city: null,
+    };
+    return Object.keys(attrs);
+  }
 
-    constructor(){
-        super();
-        this.attachShadow({mode: "open"});
-    }
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
 
-    connectedCallback(){
-        this.render();
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    attributeChangedCallback(
-        propName: profileAttribute,
-        _: string | undefined,
-        newValue: string | undefined
-){
+  attributeChangedCallback(
+    propName: profileAttribute,
+    _: string | undefined,
+    newValue: string | undefined
+  ) {
     // switch (propName) {
     //     case profileAttribute.age:
     //     this.age = newValue ? Number(newValue) : undefined;
     //     break;
-        
+
     //     default:
-   this[propName] = newValue;
+    this[propName] = newValue;
     //     break;
     // }
 
     this.render();
-}
+  }
 
-render(){
-    if (this.shadowRoot){
-        this.shadowRoot.innerHTML = `
-        <img class="accept" src="./assets/icon/profile/accept_profile.png">
-        <img class="delete" src="./assets/icon/profile/delete_profile.png">
+  render() {
+    if (this.shadowRoot) {
+      this.shadowRoot.innerHTML = `
+        <div class="buttonsmatch">
+            <button class="deletebutton">
+            <img class="accept" src="./assets/icon/profile/delete_profile.png">
+            </button>
+            <button class="acceptbutton">
+            <img class="accept" src="./assets/icon/profile/accept_profile.png">
+            </button>
+        </div>
         <section class="fullcard">
         
             <article class="left">
@@ -77,33 +82,32 @@ render(){
                 </section>
                 <section class= "info">
                     <section class="pairs1">
-                        <article class="icontext1">
+                        <article class="icontext icontext1">
                             <img class="iconprof" src= "./assets/icon/profile/gender.png">
-                            <p>${this.gender}</p>
+                            <p class="infotext">${this.gender}</p>
+                        </article>
+                        <article class="icontext icontext2">
+                            <img class="iconprof" src= "./assets/icon/profile/age.png">
+                            <p class="infotext">${this.birthdate}</p>
                         </article>
                     </section>
                     <section class="pairs2">
-                        <article class="icontext3">
-                            <img class="iconprof" src= "./assets/icon/profile/age.png">
-                            <p>${this.birthdate}</p>
-                        </article>
-                        <article class="icontext4">
+                        <article class="icontext icontext3">
                             <img class="iconprof" src= "./assets/icon/profile/activity.png">
-                            <p>${this.lookingfor}</p>
+                            <p class="infotext">${this.lookingfor}</p>
+                        </article>
+                        <article class="icontext icontext4">
+                        <img class="iconprof" src= "./assets/icon/profile/location.png">
+                        <p class="infotext">${this.city}</p>
                         </article>
                     </section>
-                        <article class="icontext5">
-                            <img class="iconprof" src= "./assets/icon/profile/location.png">
-                            <p>${this.city}</p>
-                        </article>
                 </section>
             </article>
         </section>
         `;
-        loadCss(this,styles);
+      loadCss(this, styles);
     }
-}
-
+  }
 }
 
 customElements.define("profile-card", ProfileCard);
