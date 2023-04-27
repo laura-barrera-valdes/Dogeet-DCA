@@ -11,28 +11,38 @@ color: #FF2020; /* rojo */
 /*
 color: #ADF90C; /* verde */
 
-
 * {
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Montserrat", sans-serif;
 }
 
-.communityCard{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #7401F8; /* base */
-    padding-inline: 26px;
+.communityCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #7401f8; /* base */
+  padding-inline: 26px;
 }
 
-.menu{
-    display: flex;
-    justify-content: space-between;
-    width: 361px;
-    height: 53px;
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 361px;
+  height: 53px;
+  background-color: #ffc404; /* secundario */
+  padding-inline-start: 53px;
+  padding-inline-end: 53px;
+  border-radius: 5px;
 }
-.navprofile{
-    display: flex;
-    flex-direction: row;
+
+.iconnav {
+  width: 27px;
+  height: 27px;
+}
+
+.navprofile {
+  display: flex;
+  flex-direction: row;
 }

@@ -57,15 +57,15 @@ class NavbarCard extends HTMLElement {
       this.shadowRoot.innerHTML = `
         <section class="communityCard">
             <section class="logo">
-                <img class="logoDogeet" src="${this.navbarlogo}">
+                <a href="#!" class="brand-logo botonlogo"><img class="logoDogeet" src="${this.navbarlogo}"></a>
             </section>
             <section class="menu">
-                <img class="iconnav" src="${this.navbarhome}">
-                <img class="iconnav" src="${this.navbarcommunity}">
-                <img class="iconnav" src="${this.navbarchat}">
+                <a href="#!" class="brand-logo botonlogo"><img class="iconnav" src="${this.navbarhome}"></a>
+                <a href="#!" class="brand-logo botonlogo"><img class="iconnav" src="${this.navbarcommunity}"></a>
+                <a href="#!" class="brand-logo botonlogo"><img class="iconnav" src="${this.navbarchat}"></a>
             </section>
             <section class="navprofile">
-                <img src="${this.navbarnotifications}">
+                <a href="#!" class="brand-logo botonlogo"><img class="iconnav" src="${this.navbarnotifications}"></a>
                 <p>${this.navbarnameprofile}</p>
                 <img src="${this.navbarprofile}">
             </section>
