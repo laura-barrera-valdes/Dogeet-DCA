@@ -28,7 +28,17 @@ font-family: 'Montserrat', sans-serif;
   box-shadow: 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
 }
 
-p {
+.chatlisttext {
+  color: #949494; /* text gray */
+  font-size: 14px;
+}
+
+.chatlistwhen {
   color: #fb6a01; /* terciario */
   font-size: 14px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
 }
