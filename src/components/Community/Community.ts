@@ -45,16 +45,18 @@ class CommunityCard extends HTMLElement {
       this.shadowRoot.innerHTML = `
         <section class="communityCard">
             <h2 class="title" >My community</h2>
-            <article class="left">
-                <img class="imgprofcommunity" src="${this.communityimage}">
-            </article>
-            <article class="center">
-                <p class="communityname">${this.communityname}</p>
-                <p class="communitybreed">${this.communitybreed}</p>
-            </article>
-            <article class="right">
-                <button class="communitybtn">2</button>
-            </article>
+            <section class="row">
+                <article class="left">
+                    <img class="imgprofcommunity" src="${this.communityimage}">
+                </article>
+                <article class="center">
+                    <p class="communityname">${this.communityname}</p>
+                    <p class="communitybreed">${this.communitybreed}</p>
+                </article>
+                <article class="right">
+                    <button class="communitybtn">2</button>
+                </article>
+            </section>
             
             
         </section>

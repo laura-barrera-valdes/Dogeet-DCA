@@ -32,3 +32,8 @@ p {
   object-fit: cover; /* fill in the space with the image */
   box-shadow: 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
 }
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
