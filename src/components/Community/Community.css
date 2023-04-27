@@ -11,18 +11,18 @@ font-family: 'Montserrat', sans-serif;
 }
 
 h2 {
-  font-size: 25px;
+  font-size: 24px;
   color: #7401f8; /* base */
 }
 
-h4 {
+.communityname {
   color: #7401f8; /* base */
-  font-size: 20px;
+  font-size: 18px;
 }
 
-p{
-    color: #FB6A01; /* terciario */
-    font-size: 15px;
+p {
+  color: #fb6a01; /* terciario */
+  font-size: 14px;
 }
 
 .imgprofcommunity {

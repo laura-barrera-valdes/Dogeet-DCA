@@ -46,7 +46,7 @@ class CommunityCard extends HTMLElement {
         <section class="communityCard">
             <h2>My community</h2>
             <img class="imgprofcommunity" src="${this.communityimage}">
-            <h4 class="communityname">${this.communityname}</h4>
+            <p class="communityname">${this.communityname}</p>
             <p class="communitybreed">${this.communitybreed}</p>
             <button class="communitybtn">2</button>
         </section>
