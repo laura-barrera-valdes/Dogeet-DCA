@@ -6,11 +6,10 @@ export enum myprofileAttribute {
   "myprofileimage" = "myprofileimage",
   "myname" = "myname",
   "mygender" = "mygender",
-  "myage" = "myage",
+  "mybirthdate" = "mybirthdate",
   "mydescription" = "mydescription",
-  "mybreed" = "mybreed",
-  "myactivity" = "myactivity",
-  "mylocation" = "mylocation",
+  "mylookingfor" = "mylookingfor",
+  "mycity" = "mycity",
 }
 
 class MyprofileCard extends HTMLElement {
@@ -18,11 +17,10 @@ class MyprofileCard extends HTMLElement {
   myprofileimage?: string;
   myname?: string;
   mygender?: string;
-  myage?: string;
+  mybirthdate?: string;
   mydescription?: string;
-  mybreed?: string;
-  myactivity?: string;
-  mylocation?: string;
+  mylookingfor?: string;
+  mycity?: string;
 
   static get observedAttributes() {
     const myattrs: Record<myprofileAttribute, null> = {
@@ -30,11 +28,10 @@ class MyprofileCard extends HTMLElement {
       myprofileimage: null,
       myname: null,
       mygender: null,
-      myage: null,
+      mybirthdate: null,
       mydescription: null,
-      mybreed: null,
-      myactivity: null,
-      mylocation: null,
+      mylookingfor: null,
+      mycity: null,
     };
     return Object.keys(myattrs);
   }
@@ -80,19 +77,19 @@ class MyprofileCard extends HTMLElement {
             </article>
 
             <article class="myage">
-                <img class="iconmyprof" src="./assets/icon/my_profile/age.png">
-                <p>${this.myage}</p>
+                <img class="iconmyprof" src="./assets/icon/my_profile/birthdate.png">
+                <p>${this.mybirthdate}</p>
             </article>
         
                 <section class="myinfo">
                     <article class="myactivity">
-                        <img class="iconmyprof" src="./assets/icon/my_profile/activity.png">
-                        <p>${this.myactivity}</p>
+                        <img class="iconmyprof" src="./assets/icon/my_profile/lookingfor.png">
+                        <p>${this.mylookingfor}</p>
                     </article>
 
                     <article class="mylocation">
-                        <img class="iconmyprof" src="./assets/icon/my_profile/location.png">
-                        <p>${this.mylocation}</p>
+                        <img class="iconmyprof" src="./assets/icon/my_profile/city.png">
+                        <p>${this.mycity}</p>
                     </article>
                 </section>
 

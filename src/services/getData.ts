@@ -118,9 +118,8 @@ interface MyProfile{
     myprofileimage: string;
     myname: string;
     mygender: string;
-    myage: string;
+    mybirthdate: string;
     mydescription:string;
-    mybreed: string;
     myactivity: string;
     mylocation: string;
     
@@ -132,11 +131,10 @@ export const dataMyprofile: MyProfile[] = [
     myprofileimage: "./assets/image/my_profile/Kathia.png",
     myname: "Kathia",
     mygender: "Female",
-    myage: "2 years",
+    mybirthdate: "03/11/2020",
     mydescription:"Hi! i’m Kathia, i’m a coquer spaniel little dog and i’m looking for another dog friend to play in afternoons",
-    mybreed: "Coquer Spaniel",
-    myactivity: "Play with ball",
-    mylocation: "Cali, Colombia - Pampalinda",    
+    myactivity: "Play",
+    mylocation: "Cali",    
     },
     
 ]
