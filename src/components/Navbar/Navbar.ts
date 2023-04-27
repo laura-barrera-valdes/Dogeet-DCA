@@ -55,19 +55,21 @@ class NavbarCard extends HTMLElement {
   render() {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
-        <section class="communityCard">
-            <section class="logo">
-                <a href="#!" class="brand-logo botonlogo"><img class="logoDogeet" src="${this.navbarlogo}"></a>
-            </section>
-            <section class="menu">
-                <a href="#!" class="brand-logo botonlogo"><img class="iconnav" src="${this.navbarhome}"></a>
-                <a href="#!" class="brand-logo botonlogo"><img class="iconnav" src="${this.navbarcommunity}"></a>
-                <a href="#!" class="brand-logo botonlogo"><img class="iconnav" src="${this.navbarchat}"></a>
-            </section>
-            <section class="navprofile">
-                <a href="#!" class="brand-logo botonlogo"><img class="iconnav" src="${this.navbarnotifications}"></a>
-                <p>${this.navbarnameprofile}</p>
-                <img src="${this.navbarprofile}">
+        <section class="navbarfixed">
+            <section class="navbar">
+                <section class="logo">
+                    <a href="#!" class="brand-logo botonlogo"><img class="logoDogeet" src="${this.navbarlogo}"></a>
+                </section>
+                <section class="menu">
+                    <a href="#!" class="iconnav"><img class="iconnav" src="${this.navbarhome}"></a>
+                    <a href="#!" class="iconnav"><img class="iconnav" src="${this.navbarcommunity}"></a>
+                    <a href="#!" class="iconnav"><img class="iconnav" src="${this.navbarchat}"></a>
+                </section>
+                <section class="navprofile">
+                    <a href="#!" class="brand-logo botonlogo"><img class="iconnav" src="${this.navbarnotifications}"></a>
+                    <p>${this.navbarnameprofile}</p>
+                    <img class="navimgprofile" src="${this.navbarprofile}">
+                </section>
             </section>
         </section>
         `;

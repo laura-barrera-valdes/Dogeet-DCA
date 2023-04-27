@@ -17,12 +17,22 @@ color: #ADF90C; /* verde */
   font-family: "Montserrat", sans-serif;
 }
 
-.communityCard {
+.navbarfixed {
+  position: fixed;
+}
+
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #7401f8; /* base */
   padding-inline: 26px;
+  width: 100%;
+  height: 109px;
+}
+
+.logoDogeet {
+  padding-top: 14px;
 }
 
 .menu {
@@ -32,8 +42,7 @@ color: #ADF90C; /* verde */
   width: 361px;
   height: 53px;
   background-color: #ffc404; /* secundario */
-  padding-inline-start: 53px;
-  padding-inline-end: 53px;
+  padding-inline: 53px;
   border-radius: 5px;
 }
 
@@ -44,5 +53,14 @@ color: #ADF90C; /* verde */
 
 .navprofile {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
   flex-direction: row;
+}
+
+.navimgprofile{
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
 }
