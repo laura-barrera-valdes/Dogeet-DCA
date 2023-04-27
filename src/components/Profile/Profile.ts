@@ -72,7 +72,7 @@ render(){
         <section class="fullcard">
         
             <article class="left">
-                <img src= "${this.profileimage}">
+                <img class="imgprofmatch" src= "${this.profileimage}">
             </article>
             <article class="right">
                 <section class= "nametitle">
@@ -81,26 +81,26 @@ render(){
                 <section class= "info">
                     <section class="pairs1">
                         <article class="icontext1">
-                            <img src= "./assets/icon/profile/gender.png">
+                            <img class="iconprof" src= "./assets/icon/profile/gender.png">
                             <p>${this.gender}</p>
                         </article>
                         <article class="icontext2">
-                            <img src= "./assets/icon/profile/breed.png">
+                            <img class="iconprof" src= "./assets/icon/profile/breed.png">
                             <p>${this.breed}</p>
                         </article>
                     </section>
                     <section class="pairs2">
                         <article class="icontext3">
-                            <img src= "./assets/icon/profile/age.png">
+                            <img class="iconprof" src= "./assets/icon/profile/age.png">
                             <p>${this.age}</p>
                         </article>
                         <article class="icontext4">
-                            <img src= "./assets/icon/profile/activity.png">
+                            <img class="iconprof" src= "./assets/icon/profile/activity.png">
                             <p>${this.activity}</p>
                         </article>
                     </section>
                         <article class="icontext5">
-                            <img src= "./assets/icon/profile/location.png">
+                            <img class="iconprof" src= "./assets/icon/profile/location.png">
                             <p>${this.location}</p>
                         </article>
                 </section>

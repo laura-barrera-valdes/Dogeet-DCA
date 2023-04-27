@@ -44,7 +44,7 @@ render(){
     if (this.shadowRoot){
         this.shadowRoot.innerHTML = `
         <section class="communityCard">
-            <img src="${this.communityimage}">
+            <img class="imgprofcommunity" src="${this.communityimage}">
             <h4 class="communityname">${this.communityname}</h4>
             <p class="communitybreed">${this.communitybreed}</p>
             <button class="communitybtn">2</button>

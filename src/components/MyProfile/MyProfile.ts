@@ -64,12 +64,12 @@ render(){
             <img src="${this.mybackground}">
             <img src="${this.myprofileimage}">
             <article class="mygender">
-                <img src="./assets/icon/my_profile/gender.png">
+                <img class="iconmyprof" src="./assets/icon/my_profile/gender.png">
                  <p>${this.mygender}</p>
             </article>
 
             <article class="myage">
-                <img src="./assets/icon/my_profile/age.png">
+                <img class="iconmyprof" src="./assets/icon/my_profile/age.png">
                 <p>${this.myage}</p>
             </article>
             
@@ -78,17 +78,17 @@ render(){
                     <p class="mydescription">${this.mydescription}</p>
 
                     <article class="mybreed">
-                        <img src="./assets/icon/my_profile/breed.png">
+                        <img class="iconmyprof" src="./assets/icon/my_profile/breed.png">
                         <p>${this.mybreed}</p>
                     </article>
 
                     <article class="myactivity">
-                        <img src="./assets/icon/my_profile/activity.png">
+                        <img class="iconmyprof" src="./assets/icon/my_profile/activity.png">
                         <p>${this.myactivity}</p>
                     </article>
 
                     <article class="mylocation">
-                        <img src="./assets/icon/my_profile/location.png">
+                        <img class="iconmyprof" src="./assets/icon/my_profile/location.png">
                         <p>${this.mylocation}</p>
                     </article>
                 </section>

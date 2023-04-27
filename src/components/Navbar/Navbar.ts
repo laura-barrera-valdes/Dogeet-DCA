@@ -58,11 +58,11 @@ render(){
     if (this.shadowRoot){
         this.shadowRoot.innerHTML = `
         <section class="communityCard">
-            <img src="${this.navbarlogo}">
+            <img class="logoDogeet" src="${this.navbarlogo}">
                 <section class="menu">
-                    <img src="${this.navbarhome}">
-                    <img src="${this.navbarcommunity}">
-                    <img src="${this.navbarchat}">
+                    <img class="iconnav" src="${this.navbarhome}">
+                    <img class="iconnav" src="${this.navbarcommunity}">
+                    <img class="iconnav" src="${this.navbarchat}">
                 </section>
                 <section class="navprofile">
                     <img src="${this.navbarnotifications}">

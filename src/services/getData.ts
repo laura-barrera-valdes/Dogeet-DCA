@@ -19,7 +19,7 @@ export const dataProfile: DataShape[] = [
         gender: "male",
         breed: "teckel",
         age: "2 years",
-        activity: "Love to play in the park",
+        activity: "Play",
         location: "Cali, Colombia"
     },
     {
@@ -29,7 +29,7 @@ export const dataProfile: DataShape[] = [
         gender: "female",
         breed: "Husky",
         age: "4 years",
-        activity: "Loves to chill",
+        activity: "Coffe",
         location: "Cali, Colombia"
     },
     {
@@ -39,7 +39,7 @@ export const dataProfile: DataShape[] = [
         gender: "male",
         breed: "Pug",
         age: "1 years",
-        activity: "Loves to play with water",
+        activity: "Love",
         location: "Cali, Colombia"
     },
 

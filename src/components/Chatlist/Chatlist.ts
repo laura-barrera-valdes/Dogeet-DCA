@@ -47,7 +47,7 @@ render(){
     if (this.shadowRoot){
         this.shadowRoot.innerHTML = `
         <section class="chatlistCard">
-            <img class="chatlistimg" src="${this.chatlistimage}">
+            <img class="imgprofchat" class="chatlistimg" src="${this.chatlistimage}">
             <h4 class="chatlistname">${this.chatlistname}</h4>
             <p class="chatlisttext">${this.chatlisttext}</p>
             <p class="chatlistwhen">${this.chatlistwhen}</p>
