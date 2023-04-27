@@ -56,17 +56,19 @@ class NavbarCard extends HTMLElement {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
         <section class="communityCard">
-            <img class="logoDogeet" src="${this.navbarlogo}">
-                <section class="menu">
-                    <img class="iconnav" src="${this.navbarhome}">
-                    <img class="iconnav" src="${this.navbarcommunity}">
-                    <img class="iconnav" src="${this.navbarchat}">
-                </section>
-                <section class="navprofile">
-                    <img src="${this.navbarnotifications}">
-                    <p>${this.navbarnameprofile}</p>
-                    <img src="${this.navbarprofile}">
-                </section>
+            <section class="logo">
+                <img class="logoDogeet" src="${this.navbarlogo}">
+            </section>
+            <section class="menu">
+                <img class="iconnav" src="${this.navbarhome}">
+                <img class="iconnav" src="${this.navbarcommunity}">
+                <img class="iconnav" src="${this.navbarchat}">
+            </section>
+            <section class="navprofile">
+                <img src="${this.navbarnotifications}">
+                <p>${this.navbarnameprofile}</p>
+                <img src="${this.navbarprofile}">
+            </section>
         </section>
         `;
       loadCss(this, styles);
