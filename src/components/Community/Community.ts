@@ -54,7 +54,7 @@ class CommunityCard extends HTMLElement {
                     <p class="communitybreed">${this.communitybreed}</p>
                 </article>
                 <article class="right">
-                    <button class="communitybtn">2</button>
+                    <p class="communitynum">2</p>
                 </article>
             </section>
             

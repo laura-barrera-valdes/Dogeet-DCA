@@ -20,7 +20,7 @@ font-family: 'Montserrat', sans-serif;
   font-size: 18px;
 }
 
-p {
+.communitybreed {
   color: #fb6a01; /* terciario */
   font-size: 14px;
 }
@@ -36,4 +36,15 @@ p {
 .row{
     display: flex;
     flex-direction: row;
+}
+
+.communitynum{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: #7401f8; /* base */
+    color: white;
+    width: 29px;
+    height: 29px;
 }
