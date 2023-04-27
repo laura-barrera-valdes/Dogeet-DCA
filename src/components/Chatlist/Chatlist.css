@@ -23,6 +23,7 @@ font-family: 'Montserrat', sans-serif;
 .imgprofchat {
   width: 53px;
   height: 53px;
+  margin-right: 17px;
   border-radius: 100%;
   object-fit: cover; /* fill in the space with the image */
   box-shadow: 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
@@ -41,4 +42,12 @@ font-family: 'Montserrat', sans-serif;
 .row{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.betweenleft{
+    display: flex;
+    flex-direction: row;
+    align-items: center ;
 }

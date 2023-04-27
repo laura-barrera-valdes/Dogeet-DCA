@@ -49,16 +49,18 @@ class chatlistCard extends HTMLElement {
         <section class="chatlistCard">
             <h2 class="title">Chats</h2>
             <section class="row">
-                <article class="left">
+                <section class="betweenleft">
+                    <article class="left">
                     <img class="imgprofchat" class="chatlistimg" src="${this.chatlistimage}">
-                </article>
-                <article class="center">
+                    </article>
+                    <article class="center">
                     <p class="chatlistname">${this.chatlistname}</p>
                     <p class="chatlisttext">${this.chatlisttext}</p>
-                </article>
-                    <article class="right">
-                    <p class="chatlistwhen">${this.chatlistwhen}</p>
-                </article>
+                    </article>
+                </section>
+                <article class="right">
+                <p class="chatlistwhen">${this.chatlistwhen}</p>
+                 </article>
             </section>
         </section>
         `;

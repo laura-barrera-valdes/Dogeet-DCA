@@ -46,13 +46,15 @@ class CommunityCard extends HTMLElement {
         <section class="communityCard">
             <h2 class="title" >My community</h2>
             <section class="row">
-                <article class="left">
-                    <img class="imgprofcommunity" src="${this.communityimage}">
-                </article>
-                <article class="center">
-                    <p class="communityname">${this.communityname}</p>
-                    <p class="communitybreed">${this.communitybreed}</p>
-                </article>
+                <section class="betweenleft">
+                    <article class="left">
+                        <img class="imgprofcommunity" src="${this.communityimage}">
+                    </article>
+                    <article class="center">
+                        <p class="communityname">${this.communityname}</p>
+                        <p class="communitybreed">${this.communitybreed}</p>
+                    </article>
+                </section>
                 <article class="right">
                     <p class="communitynum">2</p>
                 </article>
