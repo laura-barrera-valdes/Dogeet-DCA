@@ -65,10 +65,10 @@ class ProfileCard extends HTMLElement {
       this.shadowRoot.innerHTML = `
         <div class="buttonsmatch">
             <button class="deletebutton">
-            <img class="delete" src="./assets/icon/profile/delete_profile.png">
+                <img class="delete" src="./assets/icon/profile/delete_profile.png">
             </button>
             <button class="acceptbutton">
-            <img class="accept" src="./assets/icon/profile/accept_profile.png">
+                <img class="accept" src="./assets/icon/profile/accept_profile.png">
             </button>
         </div>
         <section class="fullcard">

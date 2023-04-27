@@ -15,10 +15,11 @@ color: #ADF90C; /* verde */
   margin: 0px;
   padding: 0px;
   font-family: "Montserrat", sans-serif;
+  color: white;
 }
 
 .navbarfixed {
-  position: fixed;
+    position: fixed;/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 }
 
 .navbar {
@@ -27,7 +28,6 @@ color: #ADF90C; /* verde */
   align-items: center;
   background-color: #7401f8; /* base */
   padding-inline: 26px;
-  width: 100%;
   height: 109px;
 }
 
@@ -54,13 +54,17 @@ color: #ADF90C; /* verde */
 .navprofile {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  display: flex;
-  flex-direction: row;
+  justify-content:end;
+  width: 254px;
+}
+
+.iconnavnotif{
+    margin-right: 7px;
 }
 
 .navimgprofile{
     width: 44px;
     height: 44px;
     border-radius: 100%;
+    margin-left: 7px;
 }

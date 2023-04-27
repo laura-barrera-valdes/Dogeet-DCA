@@ -63,7 +63,7 @@ h3 {
   width: 213px;
 }
 
-.imgprofmatch{
+.imgprofmatch {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   width: 213px;
@@ -94,49 +94,48 @@ h3 {
   width: 626px;
   height: 44px;
   margin-top: 27px;
+  position: relative;
 }
 
 .deletebutton {
   display: flex;
   align-items: center;
   justify-content: center;
-  /*position: absolute;*/
+  position: absolute;
   width: 44px;
   height: 44px;
-  margin-right: 10px;
+  margin-right: 47px;
   border-radius: 100%;
   background-color: #ff2020; /* rojo */
   border-style: none;
   box-shadow: 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
+  transform: translate(50%, -50%);
+  top: 80%;
 }
 
 .deletebutton:hover {
   display: flex;
-  flex-wrap:nowrap;
-  background-color: #AB0303; /* rojo */
-  /*
-  width: 48px;
-  height: 48px;
-  */
+  flex-wrap: nowrap;
+  width: 38px;
+  height: 38px;
 }
 
 .acceptbutton {
   display: flex;
   align-items: center;
   justify-content: center;
-  /*position: absolute;*/
+  position: absolute;
   width: 44px;
   height: 44px;
   border-radius: 100%;
   background-color: #adf90c; /* verde */
   border-style: none;
   box-shadow: 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
+  transform: translate(50%, -50%);
+  top: 80%;
 }
 
 .acceptbutton:hover {
-  background-color: #D1FF6F; /* rojo */
-  /*
-  width: 48px;
-  height: 48px;
-  */
+  width: 38px;
+  height: 38px;
 }

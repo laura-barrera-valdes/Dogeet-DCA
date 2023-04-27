@@ -66,7 +66,7 @@ class NavbarCard extends HTMLElement {
                     <a href="#!" class="iconnav"><img class="iconnav" src="${this.navbarchat}"></a>
                 </section>
                 <section class="navprofile">
-                    <a href="#!" class="brand-logo botonlogo"><img class="iconnav" src="${this.navbarnotifications}"></a>
+                    <a href="#!" class="iconnav iconnavnotif"><img class="iconnav iconnavnotif" src="${this.navbarnotifications}"></a>
                     <p>${this.navbarnameprofile}</p>
                     <img class="navimgprofile" src="${this.navbarprofile}">
                 </section>
