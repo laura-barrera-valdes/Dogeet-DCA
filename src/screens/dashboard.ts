@@ -26,10 +26,9 @@ class Dashboard extends HTMLElement{
             profileContainer.setAttribute(profileAttribute.profileimage, user.profileimage);
             profileContainer.setAttribute(profileAttribute.name, user.name);
             profileContainer.setAttribute(profileAttribute.gender, user.gender);
-            profileContainer.setAttribute(profileAttribute.breed, user.breed);
-            profileContainer.setAttribute(profileAttribute.age, user.age);
-            profileContainer.setAttribute(profileAttribute.activity, user.activity);
-            profileContainer.setAttribute(profileAttribute.location, user.location);
+            profileContainer.setAttribute(profileAttribute.birthdate, user.birthdate);
+            profileContainer.setAttribute(profileAttribute.lookingfor, user.lookingfor);
+            profileContainer.setAttribute(profileAttribute.city, user.city);
             this.profiles.push(profileContainer);    
             
         });

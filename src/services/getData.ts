@@ -3,10 +3,9 @@ interface DataShape{
     profileimage: string;
     name: string;
     gender: string;
-    breed: string;
-    age: string;
-    activity: string;
-    location: string;
+    birthdate: string;
+    lookingfor: string;
+    city: string;
 }
 
 
@@ -16,31 +15,37 @@ export const dataProfile: DataShape[] = [
         id: 1,
         profileimage: "./assets/image/profile/Pepito.png",
         name: "Pepito",
-        gender: "male",
-        breed: "teckel",
-        age: "2 years",
-        activity: "Play",
-        location: "Cali, Colombia"
+        gender: "Male",
+        birthdate: "03/11/2020",
+        lookingfor: "Play",
+        city: "Cali"
     },
     {
         id: 2,
         profileimage: "./assets/image/profile/Almendra.png",
         name: "Almendra",
-        gender: "female",
-        breed: "Husky",
-        age: "4 years",
-        activity: "Coffe",
-        location: "Cali, Colombia"
+        gender: "Female",
+        birthdate: "01/01/2019",
+        lookingfor: "Coffe",
+        city: "Cali"
     },
     {
         id: 3,
         profileimage: "./assets/image/profile/Josefo.png",
         name: "Josefo",
-        gender: "male",
-        breed: "Pug",
-        age: "1 years",
-        activity: "Love",
-        location: "Cali, Colombia"
+        gender: "Male",
+        birthdate: "28/12/2016",
+        lookingfor: "Love",
+        city: "Cali"
+    },
+    {
+        id: 4,
+        profileimage: "./assets/image/profile/Josefo.png",
+        name: "Rocky",
+        gender: "Male",
+        birthdate: "26/03/2020",
+        lookingfor: "Play",
+        city: "Cali"
     },
 
 ]

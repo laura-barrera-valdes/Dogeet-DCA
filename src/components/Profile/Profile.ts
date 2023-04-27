@@ -6,10 +6,9 @@ export enum profileAttribute {
     "name" = "name",
     "icon" = "icon",
     "gender" = "gender",
-    "breed" = "breed",
-    "age" = "age",
-    "activity" = "activity",
-    "location" = "location"
+    "birthdate" = "birthdate",
+    "lookingfor" = "lookingfor",
+    "city" = "city"
 }
 
 class ProfileCard extends HTMLElement{
@@ -17,10 +16,9 @@ class ProfileCard extends HTMLElement{
     name?: string;
     icon?: string;
     gender?: string;
-    breed?: string;
-    age?: string;
-    activity?: string;
-    location?: string;
+    birthdate?: string;
+    lookingfor?: string;
+    city?: string;
     
 
     static get observedAttributes(){
@@ -29,10 +27,9 @@ class ProfileCard extends HTMLElement{
             name: null,
             icon: null,
             gender: null,
-            breed: null,
-            age: null,
-            activity: null,
-            location: null,
+            birthdate: null,
+            lookingfor: null,
+            city: null,
         };
         return Object.keys(attrs);
     }
@@ -84,24 +81,20 @@ render(){
                             <img class="iconprof" src= "./assets/icon/profile/gender.png">
                             <p>${this.gender}</p>
                         </article>
-                        <article class="icontext2">
-                            <img class="iconprof" src= "./assets/icon/profile/breed.png">
-                            <p>${this.breed}</p>
-                        </article>
                     </section>
                     <section class="pairs2">
                         <article class="icontext3">
                             <img class="iconprof" src= "./assets/icon/profile/age.png">
-                            <p>${this.age}</p>
+                            <p>${this.birthdate}</p>
                         </article>
                         <article class="icontext4">
                             <img class="iconprof" src= "./assets/icon/profile/activity.png">
-                            <p>${this.activity}</p>
+                            <p>${this.lookingfor}</p>
                         </article>
                     </section>
                         <article class="icontext5">
                             <img class="iconprof" src= "./assets/icon/profile/location.png">
-                            <p>${this.location}</p>
+                            <p>${this.city}</p>
                         </article>
                 </section>
             </article>

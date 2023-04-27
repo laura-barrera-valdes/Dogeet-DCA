@@ -25,10 +25,14 @@ color: #ADF90C; /* verde */
 
 h3 {
   color: #7401f8; /* base */
+  font-size: 30px;
+  margin-bottom: 15px;
 }
 
 p {
   color: #949494; /* text gray */
+  font-size: 16px;
+  margin-left: 5px;
 }
 
 .fullcard {
@@ -42,6 +46,11 @@ p {
 
 .left {
   width: 213px;
+}
+
+.right{
+  margin-left: 24px;
+  margin-top: 24px;
 }
 
 .pairs1 {
