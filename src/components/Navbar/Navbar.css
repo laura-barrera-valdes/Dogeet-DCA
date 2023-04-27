@@ -30,46 +30,45 @@ color: #ADF90C; /* verde */
   align-items: center;
   background-color: #7401f8; /* base */
   padding-inline: 26px;
-  height: 70px;
+  height: 50px;
 }
 
 .logoDogeet {
-  padding-top: 14px;
-  height: 40px;
+  padding-top: 10px;
+  height: 30px;
 }
 
 .menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 361px;
-  height: 44px;
+  width: 200px;
+  height: 30px;
   background-color: #ffc404; /* secundario */
   padding-inline: 53px;
   border-radius: 5px;
 }
 
 .iconnav {
-  width: 27px;
-  height: 27px;
+  width: 20px;
+  height: 20px;
 }
 
 .navprofile {
   display: flex;
   align-items: center;
   justify-content: end;
-  width: 254px;
 }
 
 .iconnavnotif {
-  width: 44px;
-  height: 44px;
+  width: 30px;
+  height: 30px;
   margin-right: 7px;
 }
 
 .navimgprofile {
-  width: 44px;
-  height: 44px;
+  width: 30px;
+  height: 30px;
   border-radius: 100%;
   margin-left: 7px;
   object-fit: cover; /* fill in the space with the image */
