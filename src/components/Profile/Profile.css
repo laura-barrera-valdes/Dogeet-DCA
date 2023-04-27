@@ -81,21 +81,43 @@ h3 {
   width: 626px;
   height: 44px;
   margin-top: 27px;
-  color: white;
 }
 
 .deletebutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
   width: 44px;
   height: 44px;
+  margin-right: 55px;
   border-radius: 100%;
   background-color: #ff2020; /* rojo */
   border-style: none;
+  box-shadow: 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
+}
+
+.deletebutton:hover {
+  display: flex;
+  flex-wrap:nowrap;
+  width: 48px;
+  height: 48px;
 }
 
 .acceptbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
   width: 44px;
   height: 44px;
   border-radius: 100%;
   background-color: #adf90c; /* verde */
   border-style: none;
+  box-shadow: 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
+}
+
+.acceptbutton:hover {
+  width: 48px;
+  height: 48px;
 }
