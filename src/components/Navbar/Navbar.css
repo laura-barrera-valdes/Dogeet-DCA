@@ -21,9 +21,17 @@ color: #ADF90C; /* verde */
 .communityCard{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: #7401F8; /* base */
+    padding-inline: 26px;
 }
 
+.menu{
+    display: flex;
+    justify-content: space-between;
+    width: 361px;
+    height: 53px;
+}
 .navprofile{
     display: flex;
     flex-direction: row;
