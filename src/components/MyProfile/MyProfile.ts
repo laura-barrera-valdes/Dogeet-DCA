@@ -72,7 +72,7 @@ class MyprofileCard extends HTMLElement {
             <p class="mydescription">${this.mydescription}</p>
           </article>
 
-          <section>
+          <section class="textizq">
             <article class="imgtextrow">
               <img class="iconmyprof" src="./assets/icon/my_profile/gender.png" />
               <p>${this.mygender}</p>
