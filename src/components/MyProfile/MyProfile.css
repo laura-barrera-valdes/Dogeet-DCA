@@ -10,20 +10,43 @@ font-family: 'Montserrat', sans-serif;
   font-family: "Montserrat", sans-serif;
 }
 
+.myproffixed {
+  position: fixed; /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make it fill the full width !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+  z-index: 999; /* above all else */
+  width: 100%;
+  top: 20px;
+}
+
 .myprofilecard {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   box-shadow: 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
   width: 386px;
-  height: 613px;
+  height: 513px;
   border-radius: 10px;
 }
 
 .imgmyprof {
-  width: 117px;
-  height: 117px;
+  width: 90px;
+  height: 90px;
   border-radius: 100%;
   object-fit: cover; /* fill in the space with the image */
   box-shadow: 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
+}
+
+.image {
+  position: relative;
+  top: -20px;
+}
+
+.editprofile {
+  background-color: #7401f8; /* base */
+  width: 100px;
+}
+
+.imgtextrow{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 17px;
 }

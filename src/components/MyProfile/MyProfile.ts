@@ -58,44 +58,43 @@ class MyprofileCard extends HTMLElement {
   render() {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
+      <section class="myproffixed">
         <section class="myprofilecard">
-            <article class="">
-                <img src="${this.mybackground}">
-            </article>
-            <article class="">
-                <img class="imgmyprof" src="${this.myprofileimage}">
-            </article>
-            <article class="">
-                <p class="mydescription">${this.myname}</p>
-                <p class="mydescription">${this.mydescription}</p>
-            </article>
+          <article class="backgroud">
+            <img src="${this.mybackground}" />
+          </article>
+          <article class="image">
+            <img class="imgmyprof" src="${this.myprofileimage}" />
+          </article>
+          <article class="">
+            <p class="mydescription">${this.myname}</p>
+            <p class="mydescription">${this.mydescription}</p>
+          </article>
 
+          <article class="imgtextrow">
+            <img class="iconmyprof" src="./assets/icon/my_profile/gender.png" />
+            <p>${this.mygender}</p>
+          </article>
 
-            <article class="mygender">
-                <img class="iconmyprof" src="./assets/icon/my_profile/gender.png">
-                 <p>${this.mygender}</p>
-            </article>
+          <article class="imgtextrow">
+            <img class="iconmyprof" src="./assets/icon/my_profile/birthdate.png" />
+            <p>${this.mybirthdate}</p>
+          </article>
 
-            <article class="myage">
-                <img class="iconmyprof" src="./assets/icon/my_profile/birthdate.png">
-                <p>${this.mybirthdate}</p>
-            </article>
-        
-                <section class="myinfo">
-                    <article class="myactivity">
-                        <img class="iconmyprof" src="./assets/icon/my_profile/lookingfor.png">
-                        <p>${this.mylookingfor}</p>
-                    </article>
+          <article class="imgtextrow">
+            <img class="iconmyprof" src="./assets/icon/my_profile/lookingfor.png" />
+            <p>${this.mylookingfor}</p>
+          </article>
 
-                    <article class="mylocation">
-                        <img class="iconmyprof" src="./assets/icon/my_profile/city.png">
-                        <p>${this.mycity}</p>
-                    </article>
-                </section>
+          <article class="imgtextrow">
+             <img class="iconmyprof" src="./assets/icon/my_profile/city.png" />
+             <p>${this.mycity}</p>
+          </article>
 
-                <button class="editprofile">Edit Profile</button>
+          <button class="editprofile">Edit Profile</button>
         </section>
-        `;
+      </section>
+      `;
       loadCss(this, styles);
     }
   }
