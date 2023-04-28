@@ -45,8 +45,13 @@ font-family: 'Montserrat', sans-serif;
   width: 100px;
 }
 
-.imgtextrow{
+.imgtextrow {
   display: flex;
   flex-direction: row;
   margin-bottom: 17px;
+  justify-content: baseline;
+}
+
+.iconmyprof {
+  margin-right: 7px;
 }

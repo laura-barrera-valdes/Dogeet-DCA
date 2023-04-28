@@ -68,28 +68,32 @@ class MyprofileCard extends HTMLElement {
           </article>
           <article class="">
             <p class="mydescription">${this.myname}</p>
+            
             <p class="mydescription">${this.mydescription}</p>
           </article>
 
-          <article class="imgtextrow">
-            <img class="iconmyprof" src="./assets/icon/my_profile/gender.png" />
-            <p>${this.mygender}</p>
-          </article>
+          <section>
+            <article class="imgtextrow">
+              <img class="iconmyprof" src="./assets/icon/my_profile/gender.png" />
+              <p>${this.mygender}</p>
+            </article>
 
-          <article class="imgtextrow">
-            <img class="iconmyprof" src="./assets/icon/my_profile/birthdate.png" />
-            <p>${this.mybirthdate}</p>
-          </article>
+            <article class="imgtextrow">
+              <img class="iconmyprof" src="./assets/icon/my_profile/birthdate.png" />
+              <p>${this.mybirthdate}</p>
+            </article>
 
-          <article class="imgtextrow">
-            <img class="iconmyprof" src="./assets/icon/my_profile/lookingfor.png" />
-            <p>${this.mylookingfor}</p>
-          </article>
+            <article class="imgtextrow">
+              <img class="iconmyprof" src="./assets/icon/my_profile/lookingfor.png" />
+              <p>${this.mylookingfor}</p>
+            </article>
 
-          <article class="imgtextrow">
-             <img class="iconmyprof" src="./assets/icon/my_profile/city.png" />
-             <p>${this.mycity}</p>
-          </article>
+            <article class="imgtextrow">
+              <img class="iconmyprof" src="./assets/icon/my_profile/city.png" />
+              <p>${this.mycity}</p>
+            </article>
+          
+          </section>
 
           <button class="editprofile">Edit Profile</button>
         </section>
