@@ -60,8 +60,9 @@ class MyprofileCard extends HTMLElement {
       this.shadowRoot.innerHTML = `
       <section class="myproffixed">
         <section class="myprofilecard">
-          <article class="backgroud">
-            <img src="${this.mybackground}" />
+          <article class="background">
+          <article class="colorimage"></article>
+          <img class="backgroundimg" src="${this.mybackground}" />
           </article>
           <article class="image">
             <img class="imgmyprof" src="${this.myprofileimage}" />
