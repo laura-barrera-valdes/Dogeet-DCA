@@ -66,33 +66,34 @@ class MyprofileCard extends HTMLElement {
           <article class="image">
             <img class="imgmyprof" src="${this.myprofileimage}" />
           </article>
-          <article class="">
-            <p class="mydescription">${this.myname}</p>
+          <section class="paddingsection">
+            <article class="namedescrip">
+              <h3 class="myname">${this.myname}</h3>
+              <p class="mydescription">${this.mydescription}</p>
+            </article>
+
+            <section class="textizq">
+              <article class="imgtextrow">
+                <img class="iconmyprof" src="./assets/icon/my_profile/gender.png" />
+                <p class="infotext">${this.mygender}</p>
+              </article>
+
+              <article class="imgtextrow">
+                <img class="iconmyprof" src="./assets/icon/my_profile/birthdate.png" />
+                <p class="infotext">${this.mybirthdate}</p>
+              </article>
+
+              <article class="imgtextrow">
+                <img class="iconmyprof" src="./assets/icon/my_profile/lookingfor.png" />
+                <p class="infotext">${this.mylookingfor}</p>
+              </article>
+
+              <article class="imgtextrow">
+                <img class="iconmyprof" src="./assets/icon/my_profile/city.png" />
+                <p class="infotext">${this.mycity}</p>
+              </article>
             
-            <p class="mydescription">${this.mydescription}</p>
-          </article>
-
-          <section class="textizq">
-            <article class="imgtextrow">
-              <img class="iconmyprof" src="./assets/icon/my_profile/gender.png" />
-              <p>${this.mygender}</p>
-            </article>
-
-            <article class="imgtextrow">
-              <img class="iconmyprof" src="./assets/icon/my_profile/birthdate.png" />
-              <p>${this.mybirthdate}</p>
-            </article>
-
-            <article class="imgtextrow">
-              <img class="iconmyprof" src="./assets/icon/my_profile/lookingfor.png" />
-              <p>${this.mylookingfor}</p>
-            </article>
-
-            <article class="imgtextrow">
-              <img class="iconmyprof" src="./assets/icon/my_profile/city.png" />
-              <p>${this.mycity}</p>
-            </article>
-          
+            </section>
           </section>
 
           <button class="editprofile">Edit Profile</button>
