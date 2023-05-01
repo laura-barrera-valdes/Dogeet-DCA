@@ -34,26 +34,26 @@ font-family: 'Montserrat', sans-serif;
   margin-right: 17px;
 }
 
-.row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.betweenleft{
-    display: flex;
-    flex-direction: row;
-    align-items: center ;
+.betweenleft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.communitynum{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    background-color: #7401f8; /* base */
-    color: white;
-    width: 29px;
-    height: 29px;
+.communitynum {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: #7401f8; /* base */
+  color: white;
+  width: 29px;
+  height: 29px;
 }

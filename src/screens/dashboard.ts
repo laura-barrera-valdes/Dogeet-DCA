@@ -132,7 +132,10 @@ class Dashboard extends HTMLElement {
       );
       myprofileContainer.setAttribute(myprofileAttribute.myname, me.myname);
       myprofileContainer.setAttribute(myprofileAttribute.mygender, me.mygender);
-      myprofileContainer.setAttribute(myprofileAttribute.mybirthdate, me.mybirthdate);
+      myprofileContainer.setAttribute(
+        myprofileAttribute.mybirthdate,
+        me.mybirthdate
+      );
       myprofileContainer.setAttribute(
         myprofileAttribute.mydescription,
         me.mydescription
@@ -141,10 +144,7 @@ class Dashboard extends HTMLElement {
         myprofileAttribute.mylookingfor,
         me.myactivity
       );
-      myprofileContainer.setAttribute(
-        myprofileAttribute.mycity,
-        me.mylocation
-      );
+      myprofileContainer.setAttribute(myprofileAttribute.mycity, me.mylocation);
       this.myprofiles.push(myprofileContainer);
     });
   }

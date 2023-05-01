@@ -39,15 +39,15 @@ font-family: 'Montserrat', sans-serif;
   font-size: 14px;
 }
 
-.row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.betweenleft{
-    display: flex;
-    flex-direction: row;
-    align-items: center ;
+.betweenleft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
