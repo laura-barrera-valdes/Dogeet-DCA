@@ -1,3 +1,6 @@
+import { loadCss } from "../../utils/styles";
+import styles from "./ShadowContainer.css";
+
 export enum shadowAttribute {
   "Title" = "Title",
 }
@@ -37,6 +40,7 @@ class Myshadow extends HTMLElement {
       this.shadowRoot.innerHTML = `
             <p class"Thitlecontainer">${this.Title}</p>
             `;
+      loadCss(this, styles);
     }
   }
 }
