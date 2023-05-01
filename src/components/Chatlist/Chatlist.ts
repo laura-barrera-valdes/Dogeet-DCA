@@ -8,7 +8,7 @@ export enum chatlistAttribute {
   "chatlistwhen" = "chatlistwhen",
 }
 
-class chatlistCard extends HTMLElement {
+class ChatlistCard extends HTMLElement {
   chatlistimage?: string;
   chatlistname?: string;
   chatlisttext?: string;
@@ -46,7 +46,7 @@ class chatlistCard extends HTMLElement {
   render() {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
-        <section class="chatlistCard">
+        <section class="ChatlistCard">
             <h2 class="title">Chats</h2>
             <section class="row">
                 <section class="betweenleft">
@@ -69,5 +69,5 @@ class chatlistCard extends HTMLElement {
   }
 }
 
-customElements.define("chat-list", chatlistCard);
-export default chatlistCard;
+customElements.define("chat-list", ChatlistCard);
+export default ChatlistCard;

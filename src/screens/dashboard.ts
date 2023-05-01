@@ -12,7 +12,7 @@ import ProfileCard, { profileAttribute } from "../components/Profile/Profile";
 import CommunityCard, {
   communityAttribute,
 } from "../components/Community/Community";
-import chatlistCard, {
+import ChatlistCard, {
   chatlistAttribute,
 } from "../components/Chatlist/Chatlist";
 import MyprofileCard, {
@@ -24,7 +24,7 @@ class Dashboard extends HTMLElement {
   navbars: NavbarCard[] = [];
   profiles: ProfileCard[] = [];
   friends: CommunityCard[] = [];
-  chats: chatlistCard[] = [];
+  chats: ChatlistCard[] = [];
   myprofiles: MyprofileCard[] = [];
 
   constructor() {
@@ -98,7 +98,7 @@ class Dashboard extends HTMLElement {
     dataChatlist.forEach((chat) => {
       const chatlistContainer = this.ownerDocument.createElement(
         "chat-list"
-      ) as chatlistCard;
+      ) as ChatlistCard;
       chatlistContainer.setAttribute(
         chatlistAttribute.chatlistimage,
         chat.chatlistimage
