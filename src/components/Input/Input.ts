@@ -1,3 +1,6 @@
+import { loadCss } from "../../utils/styles";
+import styles from "./Input.css";
+
 export enum inputAttribute {
   "placeholder" = "placeholder",
 }
@@ -36,6 +39,7 @@ class Input extends HTMLElement {
       this.shadowRoot.innerHTML = `
         <input placeholder="${this.placeholder}"></input>
       `;
+      loadCss(this, styles);
     }
   }
 }
