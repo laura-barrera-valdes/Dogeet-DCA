@@ -114,7 +114,7 @@ interface MyProfile {
   mygender: string;
   mybirthdate: string;
   mydescription: string;
-  myactivity: string;
+  mylookingfor: string;
   mylocation: string;
 }
 
@@ -127,7 +127,7 @@ export const dataMyprofile: MyProfile[] = [
     mybirthdate: "03/11/2020",
     mydescription:
       "Hi! i’m Kathia, i’m a coquer spaniel little dog and i’m looking for another dog friend to play in afternoons",
-    myactivity: "Play",
+    mylookingfor: "Play",
     mylocation: "Cali",
   },
 ];

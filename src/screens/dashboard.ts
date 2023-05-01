@@ -9,6 +9,7 @@ import {
 } from "../services/getData";
 import NavbarCard, { navbarAttribute } from "../components/Navbar/Navbar";
 import ProfileCard, { profileAttribute } from "../components/Profile/Profile";
+import Myshadow, { shadowAttribute } from "../components/ShadowContainer/ShadowContainer";
 import CommunityCard, {
   communityAttribute,
 } from "../components/Community/Community";
@@ -142,7 +143,7 @@ class Dashboard extends HTMLElement {
       );
       myprofileContainer.setAttribute(
         myprofileAttribute.mylookingfor,
-        me.myactivity
+        me.mylookingfor
       );
       myprofileContainer.setAttribute(myprofileAttribute.mycity, me.mylocation);
       this.myprofiles.push(myprofileContainer);
