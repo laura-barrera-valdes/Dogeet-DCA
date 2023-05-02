@@ -2,17 +2,17 @@ import styles from "./dashboard.css";
 import "../components/export";
 import {
   dataProfile,
-  dataCommunity,
-  dataChatlist,
   dataMyprofile,
   dataNavbar,
-  dataShadowCont,
 } from "../services/getData";
 import NavbarCard, { navbarAttribute } from "../components/Navbar/Navbar";
 import ProfileCard, { profileAttribute } from "../components/Profile/Profile";
 import MyShadowCont, {
   shadowcontAttribute,
 } from "../components/ShadowContainer/ShadowContainer";
+import MyShadowContChat, {
+  shadowcontchatAttribute,
+} from "../components/ShadowContainerChat/ShadowContainerChat";
 // import CommunityCard, {
 //   communityAttribute,
 // } from "../components/Community/Community";
@@ -31,6 +31,7 @@ class Dashboard extends HTMLElement {
   // chats: ChatlistCard[] = [];
   myprofiles: MyprofileCard[] = [];
   shadowconts: MyShadowCont[] = [];
+  shadowcontchats: MyShadowContChat[] = [];
 
   constructor() {
     super();
@@ -89,6 +90,15 @@ class Dashboard extends HTMLElement {
         'My Community'
       );
       this.shadowconts.push(shadowcontContainer);
+
+      const shadowcontchatContainer = this.ownerDocument.createElement(
+        "shadow-container-chats"
+      ) as MyShadowContChat;
+      shadowcontchatContainer.setAttribute(
+        shadowcontchatAttribute.thetitle,
+        'Chats'
+      );
+      this.shadowcontchats.push(shadowcontchatContainer);
 
     // dataCommunity.forEach((friend) => {
     //   const communityContainer = this.ownerDocument.createElement(
@@ -180,6 +190,10 @@ class Dashboard extends HTMLElement {
       
       this.shadowconts.forEach((shadowcont) => {
         this.shadowRoot?.appendChild(shadowcont);
+      });
+
+      this.shadowcontchats.forEach((shadowcontchat) => {
+        this.shadowRoot?.appendChild(shadowcontchat);
       });
 
       // this.friends.forEach((friend) => {

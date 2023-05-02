@@ -1,8 +1,7 @@
 import { loadCss } from "../../utils/styles";
 import styles from "./ShadowContainer.css";
-import { dataCommunity, dataChatlist } from "../../services/getData";
+import { dataCommunity } from "../../services/getData";
 import CommunityCard, { communityAttribute } from "../Community/Community";
-import ChatlistCard, { chatlistAttribute } from "../Chatlist/Chatlist";
 
 export enum shadowcontAttribute {
   "thetitle" = "thetitle",
@@ -11,7 +10,6 @@ export enum shadowcontAttribute {
 class MyShadowCont extends HTMLElement {
   thetitle: string = "";
   friends: CommunityCard[] = [];
-  chats: ChatlistCard[] = [];
 
   static get observedAttributes() {
     const shadowattrs: Record<shadowcontAttribute, null> = {
@@ -43,29 +41,6 @@ class MyShadowCont extends HTMLElement {
       );
       this.friends.push(communityContainer);
     });
-
-    dataChatlist.forEach((chat) => {
-      const chatlistContainer = this.ownerDocument.createElement(
-        "chat-list"
-      ) as ChatlistCard;
-      chatlistContainer.setAttribute(
-        chatlistAttribute.chatlistimage,
-        chat.chatlistimage
-      );
-      chatlistContainer.setAttribute(
-        chatlistAttribute.chatlistname,
-        chat.chatlistname
-      );
-      chatlistContainer.setAttribute(
-        chatlistAttribute.chatlisttext,
-        chat.chatlisttext
-      );
-      chatlistContainer.setAttribute(
-        chatlistAttribute.chatlistwhen,
-        chat.chatlistwhen
-      );
-      this.chats.push(chatlistContainer);
-    });
   }
 
   connectedCallback() {
@@ -94,8 +69,8 @@ class MyShadowCont extends HTMLElement {
       p.innerText = this.thetitle;
 
       const article = this.ownerDocument.createElement("article");
-      article.className = 'myfriends';
-      
+      article.className = "myfriends";
+
       loadCss(this, styles);
       this.friends.forEach((friend) => {
         article.appendChild(friend);
