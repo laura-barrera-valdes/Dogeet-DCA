@@ -181,19 +181,28 @@ class Dashboard extends HTMLElement {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = ``;
       loadCss(this, styles);
+
       const section = this.ownerDocument.createElement("section");
       section.className = "myProfiles";
+
+      const aside = this.ownerDocument.createElement("aside");
+      aside.className = "asideCommunityChat";
+
+      const main = this.ownerDocument.createElement("main");
+      main.className = "mainHome";
 
       this.navbars.forEach((nav) => {
         this.shadowRoot?.appendChild(nav);
       });
       
+      main.appendChild(aside);
+
       this.shadowconts.forEach((shadowcont) => {
-        this.shadowRoot?.appendChild(shadowcont);
+        aside.appendChild(shadowcont);
       });
 
       this.shadowcontchats.forEach((shadowcontchat) => {
-        this.shadowRoot?.appendChild(shadowcontchat);
+        aside.appendChild(shadowcontchat);
       });
 
       // this.friends.forEach((friend) => {
@@ -208,11 +217,13 @@ class Dashboard extends HTMLElement {
         section.appendChild(profile);
       });
 
-      this.shadowRoot?.appendChild(section);
+      main.appendChild(section);
 
       this.myprofiles.forEach((me) => {
-        this.shadowRoot?.appendChild(me);
+        main.appendChild(me);
       });
+
+      this.shadowRoot.appendChild(main);
     }
   }
 }

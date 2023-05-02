@@ -22,3 +22,7 @@ color: #ADF90C; /* verde */
   flex-direction: column;
   /*background-color: aqua;*/
 }
+
+main{
+  display: flex;
+}

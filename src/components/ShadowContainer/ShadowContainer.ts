@@ -60,6 +60,7 @@ class MyShadowCont extends HTMLElement {
   render() {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = ``;
+      loadCss(this, styles);
 
       const section = this.ownerDocument.createElement("section");
       section.className = "shadowcont";
@@ -71,7 +72,6 @@ class MyShadowCont extends HTMLElement {
       const article = this.ownerDocument.createElement("article");
       article.className = "myfriends";
 
-      loadCss(this, styles);
       this.friends.forEach((friend) => {
         article.appendChild(friend);
       });
