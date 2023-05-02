@@ -1,10 +1,6 @@
 import styles from "./dashboard.css";
 import "../components/export";
-import {
-  dataProfile,
-  dataMyprofile,
-  dataNavbar,
-} from "../services/getData";
+import { dataProfile, dataMyprofile, dataNavbar } from "../services/getData";
 import NavbarCard, { navbarAttribute } from "../components/Navbar/Navbar";
 import ProfileCard, { profileAttribute } from "../components/Profile/Profile";
 import MyShadowCont, {
@@ -82,23 +78,23 @@ class Dashboard extends HTMLElement {
       this.profiles.push(profileContainer);
     });
 
-      const shadowcontContainer = this.ownerDocument.createElement(
-        "shadow-container"
-      ) as MyShadowCont;
-      shadowcontContainer.setAttribute(
-        shadowcontAttribute.thetitle,
-        'My Community'
-      );
-      this.shadowconts.push(shadowcontContainer);
+    const shadowcontContainer = this.ownerDocument.createElement(
+      "shadow-container"
+    ) as MyShadowCont;
+    shadowcontContainer.setAttribute(
+      shadowcontAttribute.thetitle,
+      "My Community"
+    );
+    this.shadowconts.push(shadowcontContainer);
 
-      const shadowcontchatContainer = this.ownerDocument.createElement(
-        "shadow-container-chats"
-      ) as MyShadowContChat;
-      shadowcontchatContainer.setAttribute(
-        shadowcontchatAttribute.thetitle,
-        'Chats'
-      );
-      this.shadowcontchats.push(shadowcontchatContainer);
+    const shadowcontchatContainer = this.ownerDocument.createElement(
+      "shadow-container-chats"
+    ) as MyShadowContChat;
+    shadowcontchatContainer.setAttribute(
+      shadowcontchatAttribute.thetitle,
+      "Chats"
+    );
+    this.shadowcontchats.push(shadowcontchatContainer);
 
     // dataCommunity.forEach((friend) => {
     //   const communityContainer = this.ownerDocument.createElement(
@@ -194,7 +190,7 @@ class Dashboard extends HTMLElement {
       this.navbars.forEach((nav) => {
         this.shadowRoot?.appendChild(nav);
       });
-      
+
       main.appendChild(aside);
 
       this.shadowconts.forEach((shadowcont) => {
