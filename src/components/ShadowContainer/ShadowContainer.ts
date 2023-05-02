@@ -39,7 +39,7 @@ class MyShadowCont extends HTMLElement {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
       <section class="shadowcont">
-      <p class="thetitlee">${this.thetitle}</p>
+        <p class="thetitlee">${this.thetitle}</p>
       </section>
       `;
       loadCss(this, styles);
