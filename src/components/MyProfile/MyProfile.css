@@ -43,7 +43,6 @@ font-family: 'Montserrat', sans-serif;
   background-color: #7401f8;
   filter: blur(1px);
   position: absolute;
-  top: 0px;
 }
 
 .imgmyprof {
@@ -56,7 +55,7 @@ font-family: 'Montserrat', sans-serif;
 
 .image {
   position: absolute;
-  top: 20%;
+  top: 30%;
 }
 
 .myname {
