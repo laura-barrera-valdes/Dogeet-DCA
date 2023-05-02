@@ -44,7 +44,6 @@ class CommunityCard extends HTMLElement {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
         <section class="communityCard">
-            <h2 class="title" >My community</h2>
             <section class="row">
                 <section class="betweenleft">
                     <article class="left">

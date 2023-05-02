@@ -47,7 +47,6 @@ class ChatlistCard extends HTMLElement {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
         <section class="ChatlistCard">
-            <h2 class="title">Chats</h2>
             <section class="row">
                 <section class="betweenleft">
                     <article class="left">

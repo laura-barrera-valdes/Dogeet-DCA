@@ -13,12 +13,12 @@ import ProfileCard, { profileAttribute } from "../components/Profile/Profile";
 import MyShadowCont, {
   shadowcontAttribute,
 } from "../components/ShadowContainer/ShadowContainer";
-import CommunityCard, {
-  communityAttribute,
-} from "../components/Community/Community";
-import ChatlistCard, {
-  chatlistAttribute,
-} from "../components/Chatlist/Chatlist";
+// import CommunityCard, {
+//   communityAttribute,
+// } from "../components/Community/Community";
+// import ChatlistCard, {
+//   chatlistAttribute,
+// } from "../components/Chatlist/Chatlist";
 import MyprofileCard, {
   myprofileAttribute,
 } from "../components/MyProfile/MyProfile";
@@ -27,8 +27,8 @@ import { loadCss } from "../utils/styles";
 class Dashboard extends HTMLElement {
   navbars: NavbarCard[] = [];
   profiles: ProfileCard[] = [];
-  friends: CommunityCard[] = [];
-  chats: ChatlistCard[] = [];
+  // friends: CommunityCard[] = [];
+  // chats: ChatlistCard[] = [];
   myprofiles: MyprofileCard[] = [];
   shadowconts: MyShadowCont[] = [];
 
@@ -81,58 +81,56 @@ class Dashboard extends HTMLElement {
       this.profiles.push(profileContainer);
     });
 
-    dataShadowCont.forEach((shadowcont) => {
       const shadowcontContainer = this.ownerDocument.createElement(
         "shadow-container"
       ) as MyShadowCont;
       shadowcontContainer.setAttribute(
         shadowcontAttribute.thetitle,
-        shadowcont.thetitle
+        'My Community'
       );
       this.shadowconts.push(shadowcontContainer);
-    });
 
-    dataCommunity.forEach((friend) => {
-      const communityContainer = this.ownerDocument.createElement(
-        "my-community"
-      ) as CommunityCard;
-      communityContainer.setAttribute(
-        communityAttribute.communityimage,
-        friend.communityimage
-      );
-      communityContainer.setAttribute(
-        communityAttribute.communityname,
-        friend.communityname
-      );
-      communityContainer.setAttribute(
-        communityAttribute.communitybreed,
-        friend.commmunitybreed
-      );
-      this.friends.push(communityContainer);
-    });
+    // dataCommunity.forEach((friend) => {
+    //   const communityContainer = this.ownerDocument.createElement(
+    //     "my-community"
+    //   ) as CommunityCard;
+    //   communityContainer.setAttribute(
+    //     communityAttribute.communityimage,
+    //     friend.communityimage
+    //   );
+    //   communityContainer.setAttribute(
+    //     communityAttribute.communityname,
+    //     friend.communityname
+    //   );
+    //   communityContainer.setAttribute(
+    //     communityAttribute.communitybreed,
+    //     friend.commmunitybreed
+    //   );
+    //   this.friends.push(communityContainer);
+    // });
 
-    dataChatlist.forEach((chat) => {
-      const chatlistContainer = this.ownerDocument.createElement(
-        "chat-list"
-      ) as ChatlistCard;
-      chatlistContainer.setAttribute(
-        chatlistAttribute.chatlistimage,
-        chat.chatlistimage
-      );
-      chatlistContainer.setAttribute(
-        chatlistAttribute.chatlistname,
-        chat.chatlistname
-      );
-      chatlistContainer.setAttribute(
-        chatlistAttribute.chatlisttext,
-        chat.chatlisttext
-      );
-      chatlistContainer.setAttribute(
-        chatlistAttribute.chatlistwhen,
-        chat.chatlistwhen
-      );
-      this.chats.push(chatlistContainer);
-    });
+    // dataChatlist.forEach((chat) => {
+    //   const chatlistContainer = this.ownerDocument.createElement(
+    //     "chat-list"
+    //   ) as ChatlistCard;
+    //   chatlistContainer.setAttribute(
+    //     chatlistAttribute.chatlistimage,
+    //     chat.chatlistimage
+    //   );
+    //   chatlistContainer.setAttribute(
+    //     chatlistAttribute.chatlistname,
+    //     chat.chatlistname
+    //   );
+    //   chatlistContainer.setAttribute(
+    //     chatlistAttribute.chatlisttext,
+    //     chat.chatlisttext
+    //   );
+    //   chatlistContainer.setAttribute(
+    //     chatlistAttribute.chatlistwhen,
+    //     chat.chatlistwhen
+    //   );
+    //   this.chats.push(chatlistContainer);
+    // });
 
     dataMyprofile.forEach((me) => {
       const myprofileContainer = this.ownerDocument.createElement(
@@ -184,13 +182,13 @@ class Dashboard extends HTMLElement {
         this.shadowRoot?.appendChild(shadowcont);
       });
 
-      this.friends.forEach((friend) => {
-        this.shadowRoot?.appendChild(friend);
-      });
+      // this.friends.forEach((friend) => {
+      //   this.shadowRoot?.appendChild(friend);
+      // });
 
-      this.chats.forEach((chat) => {
-        this.shadowRoot?.appendChild(chat);
-      });
+      // this.chats.forEach((chat) => {
+      //   this.shadowRoot?.appendChild(chat);
+      // });
 
       this.profiles.forEach((profile) => {
         section.appendChild(profile);

@@ -10,11 +10,6 @@ font-family: 'Montserrat', sans-serif;
   font-family: "Montserrat", sans-serif;
 }
 
-.title {
-  font-size: 24px;
-  color: #7401f8; /* base */
-}
-
 .communityname {
   color: #7401f8; /* base */
   font-size: 18px;
@@ -39,6 +34,7 @@ font-family: 'Montserrat', sans-serif;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 5px;
 }
 
 .betweenleft {
