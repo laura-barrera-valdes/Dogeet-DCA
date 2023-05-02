@@ -6,10 +6,13 @@ import {
   dataChatlist,
   dataMyprofile,
   dataNavbar,
+  dataShadowCont,
 } from "../services/getData";
 import NavbarCard, { navbarAttribute } from "../components/Navbar/Navbar";
 import ProfileCard, { profileAttribute } from "../components/Profile/Profile";
-import Myshadow, { shadowAttribute } from "../components/ShadowContainer/ShadowContainer";
+import MyShadowCont, {
+  shadowcontAttribute,
+} from "../components/ShadowContainer/ShadowContainer";
 import CommunityCard, {
   communityAttribute,
 } from "../components/Community/Community";
@@ -27,6 +30,7 @@ class Dashboard extends HTMLElement {
   friends: CommunityCard[] = [];
   chats: ChatlistCard[] = [];
   myprofiles: MyprofileCard[] = [];
+  shadowconts: MyShadowCont[] = [];
 
   constructor() {
     super();
@@ -75,6 +79,17 @@ class Dashboard extends HTMLElement {
       );
       profileContainer.setAttribute(profileAttribute.city, user.city);
       this.profiles.push(profileContainer);
+    });
+
+    dataShadowCont.forEach((shadowcont) => {
+      const shadowcontContainer = this.ownerDocument.createElement(
+        "shadow-container"
+      ) as MyShadowCont;
+      shadowcontContainer.setAttribute(
+        shadowcontAttribute.thetitle,
+        shadowcont.thetitle
+      );
+      this.shadowconts.push(shadowcontContainer);
     });
 
     dataCommunity.forEach((friend) => {

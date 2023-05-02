@@ -1,16 +1,16 @@
 import { loadCss } from "../../utils/styles";
 import styles from "./ShadowContainer.css";
 
-export enum shadowAttribute {
-  "Title" = "Title",
+export enum shadowcontAttribute {
+  "thetitle" = "thetitle",
 }
 
-class Myshadow extends HTMLElement {
-  Title?: string;
+class MyShadowCont extends HTMLElement {
+  thetitle?: string;
 
   static get observedAttributes() {
-    const shadowattrs: Record<shadowAttribute, null> = {
-      Title: null,
+    const shadowattrs: Record<shadowcontAttribute, null> = {
+      thetitle: null,
     };
 
     return Object.keys(shadowattrs);
@@ -26,7 +26,7 @@ class Myshadow extends HTMLElement {
   }
 
   attributeChangedCallback(
-    propName: shadowAttribute,
+    propName: shadowcontAttribute,
     _: string | undefined,
     newValue: string | undefined
   ) {
@@ -38,12 +38,12 @@ class Myshadow extends HTMLElement {
   render() {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
-            <p class"Thitlecontainer">${this.Title}</p>
+            <p class"Thitlecontainer">${this.thetitle}</p>
             `;
       loadCss(this, styles);
     }
   }
 }
 
-customElements.define("shadow-container", Myshadow);
-export default Myshadow;
+customElements.define("shadow-container", MyShadowCont);
+export default MyShadowCont;

@@ -153,3 +153,16 @@ export const dataNavbar: Navbar[] = [
     navbarprofile: "./assets/image/my_profile/Kathia.png",
   },
 ];
+
+interface DataShadow {
+  thetitle: string;
+}
+
+export const dataShadowCont: DataShadow[] = [
+  {
+    thetitle: "My Community",
+  },
+  {
+    thetitle: "Chats",
+  },
+];
