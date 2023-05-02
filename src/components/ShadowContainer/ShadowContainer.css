@@ -11,8 +11,12 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .shadowcont{
+    width: 386px;
     padding-inline: 15px;
     padding-top: 20px;
+    box-shadow: 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
+    border-radius: 10px;
+    margin-bottom: 25px;
 }
 
 .thetitlee {
