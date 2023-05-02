@@ -3,3 +3,22 @@ flex-direction: row;
 justify-content: space-between; 
 font-family: 'Montserrat', sans-serif;
 */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.shadowcont{
+    padding-inline: 15px;
+    padding-top: 20px;
+}
+
+.thetitlee {
+    font-size: 24px;
+    color: #7401f8; /* base */
+    padding-bottom: 20px;
+    border-bottom: 1px solid;
+    border-color: #7401f8; /* base */
+  }

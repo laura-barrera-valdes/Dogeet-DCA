@@ -179,6 +179,10 @@ class Dashboard extends HTMLElement {
       this.navbars.forEach((nav) => {
         this.shadowRoot?.appendChild(nav);
       });
+      
+      this.shadowconts.forEach((shadowcont) => {
+        this.shadowRoot?.appendChild(shadowcont);
+      });
 
       this.friends.forEach((friend) => {
         this.shadowRoot?.appendChild(friend);

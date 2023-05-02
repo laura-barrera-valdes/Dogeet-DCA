@@ -38,8 +38,10 @@ class MyShadowCont extends HTMLElement {
   render() {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
-            <p class"Thitlecontainer">${this.thetitle}</p>
-            `;
+      <section class="shadowcont">
+      <p class="thetitlee">${this.thetitle}</p>
+      </section>
+      `;
       loadCss(this, styles);
     }
   }
