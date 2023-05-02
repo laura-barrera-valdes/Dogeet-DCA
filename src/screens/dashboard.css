@@ -25,4 +25,5 @@ color: #ADF90C; /* verde */
 
 main{
   display: flex;
+  padding-top: 70px;
 }
