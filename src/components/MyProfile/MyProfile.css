@@ -15,7 +15,7 @@ font-family: 'Montserrat', sans-serif;
   flex-direction: column;
   align-items: center;
   box-shadow: 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
-  width: 386px;
+  width: 100%;
   border-radius: 10px;
   top: 200px;
   background-color: white;
@@ -36,14 +36,14 @@ font-family: 'Montserrat', sans-serif;
   opacity: 0.8;
 }
 
-.colorimage {
-  width: 386px;
+/* .colorimage {
+  width: 100%;
   height: 167px;
   border-radius: 10px 10px 0px 0px;
   background-color: #7401f8;
   filter: blur(1px);
   position: absolute;
-}
+} */
 
 .imgmyprof {
   width: 90px;

@@ -11,7 +11,8 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .shadowcont {
-  width: 386px;
+  display: flex;
+  flex-direction: column;
   padding-inline: 15px;
   padding-top: 20px;
   padding-bottom: 10px;

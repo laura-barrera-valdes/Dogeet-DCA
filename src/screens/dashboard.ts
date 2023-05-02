@@ -183,7 +183,7 @@ class Dashboard extends HTMLElement {
       loadCss(this, styles);
 
       const section = this.ownerDocument.createElement("section");
-      section.className = "myProfiles";
+      section.className = "profilee";
 
       const aside = this.ownerDocument.createElement("aside");
       aside.className = "asideCommunityChat";

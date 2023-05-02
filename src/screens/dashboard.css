@@ -25,5 +25,19 @@ color: #ADF90C; /* verde */
 
 main{
   display: flex;
-  padding-top: 70px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 70px 20px 0px;
+}
+
+aside{
+  width: 20%;
+}
+
+.profilee {
+  width: 40%;
+}
+
+.myprofile-card{
+  width: 25%;
 }
