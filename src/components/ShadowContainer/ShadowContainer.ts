@@ -36,8 +36,8 @@ class MyShadowCont extends HTMLElement {
         friend.communityname
       );
       communityContainer.setAttribute(
-        communityAttribute.communitybreed,
-        friend.commmunitybreed
+        communityAttribute.commmunitylookingfor,
+        friend.commmunitylookingfor
       );
       this.friends.push(communityContainer);
     });

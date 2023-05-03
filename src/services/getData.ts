@@ -50,26 +50,26 @@ export const dataProfile: DataShape[] = [
 interface community {
   communityimage: string;
   communityname: string;
-  commmunitybreed: string;
+  commmunitylookingfor: string;
 }
 
 export const dataCommunity: community[] = [
   {
     communityimage: "./assets/image/my_community/Bluey.png",
     communityname: "Bluey",
-    commmunitybreed: "German Shepherd",
+    commmunitylookingfor: "Play",
   },
 
   {
     communityimage: "./assets/image/my_community/Bruno.png",
     communityname: "Bruno",
-    commmunitybreed: "Husky",
+    commmunitylookingfor: "Play",
   },
 
   {
     communityimage: "./assets/image/my_community/Kathia.png",
     communityname: "Kathia",
-    commmunitybreed: "Chihuahua",
+    commmunitylookingfor: "Play",
   },
 ];
 

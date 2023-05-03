@@ -4,19 +4,19 @@ import styles from "./Community.css";
 export enum communityAttribute {
   "communityimage" = "communityimage",
   "communityname" = "communityname",
-  "communitybreed" = "communitybreed",
+  "commmunitylookingfor" = "commmunitylookingfor",
 }
 
 class CommunityCard extends HTMLElement {
   communityimage?: string;
   communityname?: string;
-  communitybreed?: string;
+  commmunitylookingfor?: string;
 
   static get observedAttributes() {
     const comattrs: Record<communityAttribute, null> = {
       communityimage: null,
       communityname: null,
-      communitybreed: null,
+      commmunitylookingfor: null,
     };
     return Object.keys(comattrs);
   }
@@ -51,7 +51,7 @@ class CommunityCard extends HTMLElement {
                     </article>
                     <article class="center">
                         <p class="communityname">${this.communityname}</p>
-                        <p class="communitybreed">${this.communitybreed}</p>
+                        <p class="communitybreed">${this.commmunitylookingfor}</p>
                     </article>
                 </section>
                 <article class="right">

@@ -21,8 +21,8 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .imgprofcommunity {
-  width: 53px;
-  height: 53px;
+  width: 45px;
+  height: 45px;
   border-radius: 100%;
   object-fit: cover; /* fill in the space with the image */
   box-shadow: 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
