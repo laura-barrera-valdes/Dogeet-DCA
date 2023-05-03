@@ -58,7 +58,7 @@ h3 {
   height: 163px;
   border-radius: 10px;
   background-color: white;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .left {
@@ -95,7 +95,6 @@ h3 {
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  height: 24px;
   position: relative;
 }
 
@@ -111,7 +110,7 @@ h3 {
   background-color: #ff2020; /* rojo */
   border-style: none;
   box-shadow: 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
-  transform: translate(50%, -50%);
+  transform: translate(30%, -30%);
   top: 80%;
 }
 
@@ -133,7 +132,7 @@ h3 {
   background-color: #adf90c; /* verde */
   border-style: none;
   box-shadow: 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
-  transform: translate(50%, -50%);
+  transform: translate(30%, -30%);
   top: 80%;
 }
 
