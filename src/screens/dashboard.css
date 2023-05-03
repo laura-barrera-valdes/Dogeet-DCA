@@ -39,5 +39,10 @@ aside{
 }
 
 .myprofile-card{
+  /* position: fixed; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make it fill the full width !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
   width: 25%;
 }
+
+/* .asideCommunityChat{
+  position: fixed; /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make it fill the full width !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+} */
