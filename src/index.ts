@@ -1,5 +1,5 @@
 import "./components/export";
-import "./screens/dashboard";
+import "./screens/Dashboard/dashboard";
 
 class AppContainer extends HTMLElement {
   constructor() {

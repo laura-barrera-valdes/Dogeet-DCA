@@ -1,14 +1,14 @@
 import styles from "./dashboard.css";
-import "../components/export";
-import { dataProfile, dataMyprofile, dataNavbar } from "../services/getData";
-import NavbarCard, { navbarAttribute } from "../components/Navbar/Navbar";
-import ProfileCard, { profileAttribute } from "../components/Profile/Profile";
+import "../../components/export";
+import { dataProfile, dataMyprofile, dataNavbar } from "../../services/getData";
+import NavbarCard, { navbarAttribute } from "../../components/Navbar/Navbar";
+import ProfileCard, { profileAttribute } from "../../components/Profile/Profile";
 import MyShadowCont, {
   shadowcontAttribute,
-} from "../components/ShadowContainer/ShadowContainer";
+} from "../../components/ShadowContainer/ShadowContainer";
 import MyShadowContChat, {
   shadowcontchatAttribute,
-} from "../components/ShadowContainerChat/ShadowContainerChat";
+} from "../../components/ShadowContainerChat/ShadowContainerChat";
 // import CommunityCard, {
 //   communityAttribute,
 // } from "../components/Community/Community";
@@ -17,8 +17,8 @@ import MyShadowContChat, {
 // } from "../components/Chatlist/Chatlist";
 import MyprofileCard, {
   myprofileAttribute,
-} from "../components/MyProfile/MyProfile";
-import { loadCss } from "../utils/styles";
+} from "../../components/MyProfile/MyProfile";
+import { loadCss } from "../../utils/styles";
 
 class Dashboard extends HTMLElement {
   navbars: NavbarCard[] = [];

@@ -2,5 +2,9 @@ import "./Profile/Profile";
 import "./Community/Community";
 import "./Chatlist/Chatlist";
 import "./MyProfile/MyProfile";
-import "./ShadowContainer/ShadowContainer"
-import "../services/getData"
+import "./ShadowContainer/ShadowContainer";
+import "./Accept button/Acceptbutton";
+import "./Button/Button";
+import "./Decline Button/Declinebutton";
+import "./Large Button/Largebutton";
+import "../services/getData";

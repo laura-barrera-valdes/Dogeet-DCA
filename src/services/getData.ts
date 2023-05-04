@@ -154,15 +154,14 @@ export const dataNavbar: Navbar[] = [
   },
 ];
 
-interface DataShadow {
-  thetitle: string;
+interface Buttons {
+  declinebutton: string;
+  acceptbutton: string;
 }
 
-export const dataShadowCont: DataShadow[] = [
+export const dataButtons: Buttons[] = [
   {
-    thetitle: "My Community",
-  },
-  {
-    thetitle: "Chats",
+    declinebutton: "./assets/bttns/delete.png",
+    acceptbutton: "./assets/bttns/accept.png",
   },
 ];
