@@ -142,6 +142,7 @@ class Dashboard extends HTMLElement {
       const myprofileContainer = this.ownerDocument.createElement(
         "myprofile-card"
       ) as MyprofileCard;
+      myprofileContainer.className = 'profileCard';
       myprofileContainer.setAttribute(
         myprofileAttribute.mybackground,
         me.mybackground
