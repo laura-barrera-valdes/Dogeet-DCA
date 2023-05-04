@@ -73,6 +73,9 @@ h3 {
 }
 
 .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 34px 24px 24px;
   width: 50%;
 }
