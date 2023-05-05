@@ -35,7 +35,7 @@ export enum buttonAttribute {
     render(){
       if(this.shadowRoot){
         this.shadowRoot.innerHTML = `
-        <button ="${this.button}"></button>
+        <button class="button-component">${this.button}</button>
         `
       }
     }

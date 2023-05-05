@@ -37,7 +37,8 @@ class Input extends HTMLElement {
   render() {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
-        <input placeholder="${this.placeholder}"></input>
+        <p>${this.placeholder}</p>
+        <input></input>
       `;
       loadCss(this, styles);
     }

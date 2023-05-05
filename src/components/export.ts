@@ -8,3 +8,6 @@ import "./Button/Button";
 import "./Decline Button/Declinebutton";
 import "./Large Button/Largebutton";
 import "../services/getData";
+import Headerpre from "./Header-pre/Header-pre";
+import Button from "./Button/Button";
+import Input from "./Input/Input";
