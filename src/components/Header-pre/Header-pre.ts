@@ -1,9 +1,8 @@
+
 export enum headerpreAttribute {
-  
 }
 
 class Headerpre extends HTMLElement {
- 
 
 
     constructor() {
@@ -18,6 +17,7 @@ class Headerpre extends HTMLElement {
   render(){
     if(this.shadowRoot) {
         this.shadowRoot.innerHTML = `
+  
         <section class="headerpre">
             <section class= "logo">
                 <a href="#!" class="brand-logo 2botonlogo">
@@ -28,7 +28,8 @@ class Headerpre extends HTMLElement {
                 <button class"loginbtn">Login</button>
             </section>
         </section>
-        `
+        `;
+    
     }
   }
 }

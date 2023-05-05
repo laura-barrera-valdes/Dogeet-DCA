@@ -1,6 +1,6 @@
 import "./components/export";
 import "./screens/Dashboard/dashboard";
-import "./screens/Login/login";
+import "./screens/Login/Login";
 import { appState } from "./store/Index";
 import { Screens } from "./types/Navigation";
 
@@ -26,7 +26,7 @@ class AppContainer extends HTMLElement {
         case Screens.Login:
           const login = this.ownerDocument.createElement("login-screen");
           this.shadowRoot?.appendChild(login);
-
+      
 
       default:
         break;

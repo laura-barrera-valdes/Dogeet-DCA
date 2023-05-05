@@ -3,16 +3,19 @@ import styles from "./Input.css";
 
 export enum inputAttribute {
   "placeholder" = "placeholder",
+  "icon" = "icon",
 }
 
 class Input extends HTMLElement {
   placeholder?: string;
+  icon?: string;
 
   static get observedAttributes() {
-    const registerattrs: Record<inputAttribute, null> = {
+    const inputattrs: Record<inputAttribute, null> = {
       placeholder: null,
+      icon: null,
     };
-    return Object.keys(registerattrs);
+    return Object.keys(inputattrs);
   }
 
   constructor() {
@@ -37,8 +40,10 @@ class Input extends HTMLElement {
   render() {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
-        <p>${this.placeholder}</p>
-        <input></input>
+        <section class="input1">
+          <p>${this.placeholder}</p>
+          <input></input>
+        </section>
       `;
       loadCss(this, styles);
     }
