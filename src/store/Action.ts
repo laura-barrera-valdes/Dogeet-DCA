@@ -1,8 +1,11 @@
-import { Screens } from "../types/Navigation";
+import { NavigatetAction, NavigationActions, Screens } from "../types/store"
 
-export const navigate = (screen: Screens) => {
-    return{
-        type:"navigate",
+
+export const navigatet = (screen: Screens): NavigatetAction => {
+    return {
+        action: NavigationActions.NAVIGATE,
         payload: screen,
-    };
-};
+    }
+}
+
+
