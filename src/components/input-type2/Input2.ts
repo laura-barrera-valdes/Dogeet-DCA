@@ -41,8 +41,10 @@ class secInput extends HTMLElement {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
       <section class="input2">
-            <img src="${this.icon}" class="icon">
-            <p>${this.placeholder}</p>
+        <article class="articlein">
+          <img src="${this.icon}" class="icon">
+          <p>${this.placeholder}</p>
+        </article>
         <input></input>
     </section>
       `;
