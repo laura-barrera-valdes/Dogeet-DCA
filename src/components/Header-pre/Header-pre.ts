@@ -23,8 +23,8 @@ class Headerpre extends HTMLElement {
                     <img class="logoDogeet" src="../../../dist/assets/logo/Dogeet.png">
                 </a>
             </article>
-            <article class="login">
-                <button class"loginbtn">Register</button>
+            <article class="register">
+                <button class"registerbtn">Register</button>
             </article>
         </section>
       </div>
