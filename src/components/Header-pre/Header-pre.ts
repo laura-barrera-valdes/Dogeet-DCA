@@ -4,6 +4,8 @@ export enum headerpreAttribute {
 
 class Headerpre extends HTMLElement {
  
+
+
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
@@ -23,7 +25,7 @@ class Headerpre extends HTMLElement {
                 </a>
             </section>
             <section class="login">
-                <button-component placeholder="Login"></button-component>
+                <button class"loginbtn">Login</button>
             </section>
         </section>
         `
