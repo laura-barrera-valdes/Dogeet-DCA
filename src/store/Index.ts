@@ -1,8 +1,7 @@
 import { Screens } from "../types/Navigation";
 
 const emptyState = {
-    screen: Screens.Register,
+  screen: Screens.Register,
 };
 
 export let appState = emptyState;
-

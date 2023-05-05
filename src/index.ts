@@ -1,4 +1,3 @@
-
 import "./components/export";
 import "./screens/Dashboard/dashboard";
 import "./screens/Login/Login";
@@ -18,38 +17,36 @@ class AppContainer extends HTMLElement {
   }
 
   render() {
-    if(this.shadowRoot) this.shadowRoot.innerHTML = "";
+    if (this.shadowRoot) this.shadowRoot.innerHTML = "";
     switch (appState.screen) {
       case Screens.Dashboard:
         const dashboard = this.ownerDocument.createElement("app-dashboard");
         this.shadowRoot?.appendChild(dashboard);
-      
+
         break;
-    
-        case Screens.Login:
-          const login = this.ownerDocument.createElement("login-screen");
-          this.shadowRoot?.appendChild(login);
 
-          break;
+      case Screens.Login:
+        const login = this.ownerDocument.createElement("login-screen");
+        this.shadowRoot?.appendChild(login);
 
-          case Screens.Register:
-          const register = this.ownerDocument.createElement("app-register");
-          this.shadowRoot?.appendChild(register);
-      
+        break;
 
-          break;
+      case Screens.Register:
+        const register = this.ownerDocument.createElement("app-register");
+        this.shadowRoot?.appendChild(register);
 
-          case Screens.RegisterLast:
-          const registerlast = this.ownerDocument.createElement("registerlast-screen");
-          this.shadowRoot?.appendChild(registerlast);
-      
+        break;
+
+      case Screens.RegisterLast:
+        const registerlast = this.ownerDocument.createElement(
+          "registerlast-screen"
+        );
+        this.shadowRoot?.appendChild(registerlast);
 
       default:
         break;
     }
-
   }
-  
 }
 
 customElements.define("app-container", AppContainer);

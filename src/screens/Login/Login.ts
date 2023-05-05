@@ -27,7 +27,7 @@ class Login extends HTMLElement {
     const section = this.ownerDocument.createElement("section");
     section.className = "centersection";
     div.appendChild(section);
-    
+
     const article = this.ownerDocument.createElement("article");
     section.className = "article";
     this.shadowRoot?.appendChild(article);
