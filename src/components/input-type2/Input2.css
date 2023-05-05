@@ -1,0 +1,9 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Montserrat", sans-serif; /*esta es la tipogrfia de css que corrio el navegador*/
+}
+
+p {
+  color: #7401f8; /* base */
+}

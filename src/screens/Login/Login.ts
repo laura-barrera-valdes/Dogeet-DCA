@@ -16,40 +16,56 @@ class Login extends HTMLElement {
 
   render() {
     if (this.shadowRoot) {
-      this.shadowRoot.innerHTML = `
-      <img src="../../../dist/assets/logo/isotipo.png">
-      `;
+      this.shadowRoot.innerHTML = ``;
       loadCss(this, styles);
     }
+
+    const div = this.ownerDocument.createElement("div");
+    div.className = "divcenter";
+    this.shadowRoot?.appendChild(div);
+
+    const section = this.ownerDocument.createElement("section");
+    section.className = "centersection";
+    div.appendChild(section);
+    
+    const article = this.ownerDocument.createElement("article");
+    section.className = "article";
+    this.shadowRoot?.appendChild(article);
+
     const header = this.ownerDocument.createElement("header-pre");
     header.className = "Loginheader";
     this.shadowRoot?.appendChild(header);
 
-    const title = this.ownerDocument.createElement("p");
+    const isotipo = this.ownerDocument.createElement("img");
+    isotipo.className = "isotipo";
+    isotipo.src = "../../../dist/assets/logo/isotipo.png";
+    section.appendChild(isotipo);
+
+    const title = this.ownerDocument.createElement("h3");
     title.className = "logintitle";
     title.innerHTML = "Please login";
-    this.shadowRoot?.appendChild(title);
+    section.appendChild(title);
 
     const email = this.ownerDocument.createElement("input-component");
     email.className = "inputemail";
     email.setAttribute(inputAttribute.placeholder, "E-mail");
-    this.shadowRoot?.appendChild(email);
+    section.appendChild(email);
 
     const password = this.ownerDocument.createElement("input-component");
     password.className = "inputpassword";
     password.setAttribute(inputAttribute.placeholder, "Password");
     password.className = "input-password";
-    this.shadowRoot?.appendChild(password);
+    section.appendChild(password);
 
     const loginoption = this.ownerDocument.createElement("p");
     loginoption.className = "logintext";
     loginoption.innerHTML = "If you don't have an account, please Register";
-    this.shadowRoot?.appendChild(loginoption);
+    section.appendChild(loginoption);
 
     const loginbtn = this.ownerDocument.createElement("button-component");
     loginbtn.className = "loginbtn";
     loginbtn.setAttribute(buttonAttribute.button, "Login");
-    this.shadowRoot?.appendChild(loginbtn);
+    section.appendChild(loginbtn);
   }
 }
 
