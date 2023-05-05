@@ -71,7 +71,7 @@ class RegisterLast extends HTMLElement {
     const imgback = this.ownerDocument.createElement("img");
     imgback.className = "imgbackground";
     imgback.src = "../../../dist/assets/image/backgrounds/dog.png";
-    article.appendChild(imgback);
+    this.shadowRoot?.appendChild(imgback);
   }
 }
 
