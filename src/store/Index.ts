@@ -1,7 +1,7 @@
 import { Screens } from "../types/Navigation";
 
 const emptyState = {
-    screen: Screens.Dashboard,
+    screen: Screens.Register,
 };
 
 export let appState = emptyState;

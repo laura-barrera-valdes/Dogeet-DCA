@@ -16,11 +16,17 @@ class Register extends HTMLElement{
     }
 
     render(){
-        if (this.shadowRoot) this.shadowRoot.innerHTML = "";
+
+        if(this.shadowRoot) {
+            this.shadowRoot.innerHTML= ""};
+
 
     const header = this.ownerDocument.createElement("header-pre");
     header.className = "headerregister";
     this.shadowRoot?.appendChild(header);
+
+    const section = this.ownerDocument.createElement("section");
+    section.className= "registersection";
 
     const titleregister = this.ownerDocument.createElement("p");
     titleregister.className = "registertitle";
@@ -75,6 +81,8 @@ class Register extends HTMLElement{
     registeroption.className = "registertext";
     registeroption.innerHTML = "If you already have an account, please Login";
     this.shadowRoot?.appendChild(registeroption);
+
+    this.shadowRoot?.appendChild(section);
 
     }
 }
