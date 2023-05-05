@@ -1,5 +1,8 @@
 import "./components/export";
 import "./screens/Dashboard/dashboard";
+import "./screens/Login/Login";
+import { appState } from "./store/Index";
+import { Screens } from "./types/Navigation";
 
 class AppContainer extends HTMLElement {
   constructor() {
@@ -12,9 +15,25 @@ class AppContainer extends HTMLElement {
   }
 
   render() {
-    const something = this.ownerDocument.createElement("app-dashboard");
-    this.shadowRoot?.appendChild(something);
+    if(this.shadowRoot) this.shadowRoot.innerHTML = "";
+    switch (appState.screen) {
+      case Screens.Dashboard:
+        const dashboard = this.ownerDocument.createElement("app-dashboard");
+        this.shadowRoot?.appendChild(dashboard);
+      
+        break;
+    
+        case Screens.Login:
+          const login = this.ownerDocument.createElement("login-screen");
+          this.shadowRoot?.appendChild(login);
+      
+
+      default:
+        break;
+    }
+
   }
+  
 }
 
 customElements.define("app-container", AppContainer);

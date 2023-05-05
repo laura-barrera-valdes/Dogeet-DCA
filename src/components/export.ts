@@ -8,3 +8,8 @@ import "./Button/Button";
 import "./Decline Button/Declinebutton";
 import "./Large Button/Largebutton";
 import "../services/getData";
+import "./Header-pre/Header-pre";
+import "./Add image/AddImage";
+import Button from "./Button/Button";
+import Input from "./Input-type1/Input";
+import secInput from "./input-type2/Input2";
