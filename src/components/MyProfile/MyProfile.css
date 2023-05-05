@@ -1,9 +1,3 @@
-/* display: flex;
-flex-direction: row;
-justify-content: space-between; 
-font-family: 'Montserrat', sans-serif;
-*/
-
 * {
   margin: 0px;
   padding: 0px;
@@ -15,7 +9,7 @@ font-family: 'Montserrat', sans-serif;
   flex-direction: column;
   align-items: center;
   box-shadow: 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
-  width: 100%;
+  /* width: 255px; */
   border-radius: 10px;
   top: 200px;
   background-color: white;
@@ -84,6 +78,8 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .myproffixed {
+  display: flex;
+  justify-content: end;
   /* position: fixed; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make it fill the full width !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
   /* z-index: 999; above all else */
   width: 100%;

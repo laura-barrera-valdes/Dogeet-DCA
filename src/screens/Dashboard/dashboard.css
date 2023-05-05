@@ -23,14 +23,14 @@ color: #ADF90C; /* verde */
   /*background-color: aqua;*/
 }
 
-main{
+main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 80px 20px 0px;
 }
 
-aside{
+aside {
   width: 30%;
 }
 
@@ -38,10 +38,35 @@ aside{
   width: 40%;
 }
 
-.profileCard{
+.profileCard {
   /* position: fixed; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make it fill the full width !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
   width: 25%;
 }
+
+.asideCommunityChat{
+  width: 306px;
+}
+
+@media screen and (max-width: 1079px) {
+  .asideCommunityChat {
+    display: none;
+  }
+
+  .profileCard {
+    display: none;
+  }
+
+  .profilee {
+    width: 410px;
+  }
+
+  main{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
 
 /* .asideCommunityChat{
   position: fixed; /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make it fill the full width !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
