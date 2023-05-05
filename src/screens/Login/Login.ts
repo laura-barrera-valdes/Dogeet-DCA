@@ -1,11 +1,10 @@
+import styles from "./Login.css";
 import "../../components/export";
-import {inputAttribute} from "../../components/Input-type1/Input";
-import  {buttonAttribute} from "../../components/Button/Button";
-
+import { inputAttribute } from "../../components/Input-type1/Input";
+import { buttonAttribute } from "../../components/Button/Button";
+import { loadCss } from "../../utils/styles";
 
 class Login extends HTMLElement {
-
-
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -16,10 +15,11 @@ class Login extends HTMLElement {
   }
 
   render() {
-    if(this.shadowRoot) {
-      this.shadowRoot.innerHTML= `
+    if (this.shadowRoot) {
+      this.shadowRoot.innerHTML = `
       <img src="../../../dist/assets/logo/isotipo.png">
-      `
+      `;
+      loadCss(this, styles);
     }
     const header = this.ownerDocument.createElement("header-pre");
     header.className = "Loginheader";
@@ -41,20 +41,16 @@ class Login extends HTMLElement {
     password.className = "input-password";
     this.shadowRoot?.appendChild(password);
 
-
     const loginoption = this.ownerDocument.createElement("p");
     loginoption.className = "logintext";
     loginoption.innerHTML = "If you don't have an account, please Register";
     this.shadowRoot?.appendChild(loginoption);
-    
-    
+
     const loginbtn = this.ownerDocument.createElement("button-component");
     loginbtn.className = "loginbtn";
     loginbtn.setAttribute(buttonAttribute.button, "Login");
     this.shadowRoot?.appendChild(loginbtn);
-
-    }
   }
-
+}
 
 customElements.define("login-screen", Login);
