@@ -1,3 +1,27 @@
-*{
-    background-color: blueviolet;
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+
+.navbarfixed {
+  position: fixed; /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make it fill the full width !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+  z-index: 9999; /* above all else */
+  width: 100%;
+  top: 0;
+}
+
+.headerpre {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #7401f8; /* base */
+  padding-inline: 26px;
+  height: 50px;
+}
+
+.logoDogeet {
+  padding-top: 10px;
+  height: 30px;
 }
