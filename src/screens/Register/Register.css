@@ -5,5 +5,16 @@
 }
 
 .registertext {
+  font-size: 14px;
+  color: #949494;
+}
+
+.inputadd {
+  margin-bottom: 5px;
   color: #7401f8;
+}
+
+.registerarticle{
+  margin-inline: 26px;
+  padding: 80px 20px 0px;
 }

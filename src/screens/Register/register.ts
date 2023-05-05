@@ -23,27 +23,28 @@ class Register extends HTMLElement {
     }
     loadCss(this, styles);
 
+    const article = this.ownerDocument.createElement("article");
+    article.className = "registerarticle";
+    this.shadowRoot?.appendChild(article);
+
     const header = this.ownerDocument.createElement("header-pre");
     header.className = "headerregister";
     this.shadowRoot?.appendChild(header);
 
-    const section = this.ownerDocument.createElement("section");
-    section.className = "registersection";
-
     const titleregister = this.ownerDocument.createElement("p");
     titleregister.className = "registertitle";
     titleregister.innerHTML = "Dog Ingormation";
-    this.shadowRoot?.appendChild(titleregister);
+    article.appendChild(titleregister);
 
     const dogname = this.ownerDocument.createElement("input-component");
     dogname.className = "inputdogname";
     dogname.setAttribute(inputAttribute.placeholder, "What's your dog's name?");
-    this.shadowRoot?.appendChild(dogname);
+    article.appendChild(dogname);
 
     const description = this.ownerDocument.createElement("input-component");
     description.className = "inputdescription";
     description.setAttribute(inputAttribute.placeholder, "Description");
-    this.shadowRoot?.appendChild(description);
+    article.appendChild(description);
 
     const gender = this.ownerDocument.createElement("secinput-component");
     gender.className = "inputgender";
@@ -52,7 +53,7 @@ class Register extends HTMLElement {
       "../../../dist/assets/icon/register-icons/gender.png"
     );
     gender.setAttribute(secondinputAttribute.placeholder, "Gender");
-    this.shadowRoot?.appendChild(gender);
+    article.appendChild(gender);
 
     const birthdate = this.ownerDocument.createElement("secinput-component");
     birthdate.className = "inputbirthdate";
@@ -61,7 +62,7 @@ class Register extends HTMLElement {
       "../../../dist/assets/icon/register-icons/birth-date.png"
     );
     birthdate.setAttribute(secondinputAttribute.placeholder, "Birthdate");
-    this.shadowRoot?.appendChild(birthdate);
+    article.appendChild(birthdate);
 
     const city = this.ownerDocument.createElement("secinput-component");
     city.className = "inputcity";
@@ -70,7 +71,7 @@ class Register extends HTMLElement {
       "../../../dist/assets/icon/register-icons/city.png"
     );
     city.setAttribute(secondinputAttribute.placeholder, "City");
-    this.shadowRoot?.appendChild(city);
+    article.appendChild(city);
 
     const look = this.ownerDocument.createElement("secinput-component");
     look.className = "inputlook";
@@ -79,7 +80,7 @@ class Register extends HTMLElement {
       "../../../dist/assets/icon/register-icons/looking-for.png"
     );
     look.setAttribute(secondinputAttribute.placeholder, "Look a date for...");
-    this.shadowRoot?.appendChild(look);
+    article.appendChild(look);
 
     const addphoto = this.ownerDocument.createElement("add-image");
     addphoto.className = "inputadd";
@@ -87,19 +88,17 @@ class Register extends HTMLElement {
       addimageAttribute.placeholder,
       "Please add some photos"
     );
-    this.shadowRoot?.appendChild(addphoto);
+    article.appendChild(addphoto);
 
     const registerbtn = this.ownerDocument.createElement("button-component");
     registerbtn.className = "registerbtn";
     registerbtn.setAttribute(buttonAttribute.button, "Continue");
-    this.shadowRoot?.appendChild(registerbtn);
+    article.appendChild(registerbtn);
 
     const registeroption = this.ownerDocument.createElement("p");
     registeroption.className = "registertext";
     registeroption.innerHTML = "If you already have an account, please Login";
-    this.shadowRoot?.appendChild(registeroption);
-
-    this.shadowRoot?.appendChild(section);
+    article.appendChild(registeroption);
   }
 }
 
