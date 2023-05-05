@@ -126,3 +126,8 @@
   box-shadow: 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
   font-family: "Montserrat", sans-serif;
 }
+
+.editprofile:hover {
+  background-color: #933ef5; /* base */
+  box-shadow: inset 5px 5px 10px 0px rgba(0, 0, 0, 0.15);
+}
