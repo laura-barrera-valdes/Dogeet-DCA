@@ -55,9 +55,10 @@ class Register extends HTMLElement{
     city.setAttribute(secondinputAttribute.placeholder, "City");
     this.shadowRoot?.appendChild(city);
 
-    const look = this.ownerDocument.createElement("input-component");
+    const look = this.ownerDocument.createElement("secinput-component");
     look.className = "inputlook";
-    look.setAttribute(inputAttribute.icon, "../../../dist/assets/icon/register-icons/looking-for.png");
+    look.setAttribute(secondinputAttribute.icon, "../../../dist/assets/icon/register-icons/looking-for.png");
+    look.setAttribute(secondinputAttribute.placeholder, "Look a date for...")
     this.shadowRoot?.appendChild(look);
 
     const addphoto = this.ownerDocument.createElement("add-image");

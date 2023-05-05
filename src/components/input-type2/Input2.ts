@@ -1,5 +1,5 @@
 import { loadCss } from "../../utils/styles";
-import styles from "./Input.css";
+import styles from "./Input2.css";
 
 export enum secondinputAttribute {
   "placeholder" = "placeholder",
