@@ -3,6 +3,9 @@ import "../../components/export";
 import { inputAttribute } from "../../components/Input-type1/Input";
 import { buttonAttribute } from "../../components/Button/Button";
 import { loadCss } from "../../utils/styles";
+import { dispatch } from "../../store/Index";
+import { navigatet } from "../../store/Action";
+import { Screens } from "../../types/store";
 
 class Login extends HTMLElement {
   constructor() {
@@ -65,6 +68,9 @@ class Login extends HTMLElement {
     const loginbtn = this.ownerDocument.createElement("button-component");
     loginbtn.className = "loginbtn";
     loginbtn.setAttribute(buttonAttribute.button, "Login");
+    loginbtn.addEventListener("click", () => {
+      dispatch(navigatet(Screens.DASHBOARD))
+    })
     section.appendChild(loginbtn);
   }
 }

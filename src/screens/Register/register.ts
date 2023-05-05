@@ -3,6 +3,9 @@ import {inputAttribute} from "../../components/Input-type1/Input";
 import  {buttonAttribute} from "../../components/Button/Button";
 import { addimageAttribute } from "../../components/Add image/AddImage";
 import { secondinputAttribute } from "../../components/input-type2/Input2";
+import { dispatch } from "../../store/Index";
+import { navigatet } from "../../store/Action";
+import { Screens } from "../../types/store";
 
 class Register extends HTMLElement{
 
@@ -72,9 +75,17 @@ class Register extends HTMLElement{
     addphoto.setAttribute(addimageAttribute.placeholder,"Please add some photos");
     this.shadowRoot?.appendChild(addphoto);
 
+    const imgback2 = this.ownerDocument.createElement("img");
+    imgback2.className = "imgbackground2";
+    imgback2.src= "../../../dist/assets/image/backgrounds/dog.png";
+    this.shadowRoot?.appendChild(imgback2);
+
     const registerbtn = this.ownerDocument.createElement("button-component");
     registerbtn.className = "registerbtn";
     registerbtn.setAttribute(buttonAttribute.button, "Continue");
+    registerbtn.addEventListener("click", () => {
+        dispatch(navigatet(Screens.REGISTERLAST))
+    })
     this.shadowRoot?.appendChild(registerbtn);
     
     const registeroption = this.ownerDocument.createElement("p");
