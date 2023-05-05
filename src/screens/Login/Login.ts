@@ -16,14 +16,15 @@ class Login extends HTMLElement {
   }
 
   render() {
+      
+    const  section = this.ownerDocument.createElement("section");
+    section.className = "logininfo";
+    
     if(this.shadowRoot) {
       this.shadowRoot.innerHTML= `
       <img src="../../../dist/assets/logo/isotipo.png">
       `
     }
-    const header = this.ownerDocument.createElement("header-pre");
-    header.className = "Loginheader";
-    this.shadowRoot?.appendChild(header);
 
     const title = this.ownerDocument.createElement("p");
     title.className = "logintitle";
@@ -53,6 +54,12 @@ class Login extends HTMLElement {
     loginbtn.setAttribute(buttonAttribute.button, "Login");
     this.shadowRoot?.appendChild(loginbtn);
 
+    this.shadowRoot?.appendChild(section);
+
+    const header = this.ownerDocument.createElement("header-pre");
+    header.className = "Loginheader";
+    this.shadowRoot?.appendChild(header);
+    
     }
   }
 
