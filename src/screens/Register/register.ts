@@ -16,7 +16,13 @@ class Register extends HTMLElement{
     }
 
     render(){
-        if (this.shadowRoot) this.shadowRoot.innerHTML = "";
+
+        if(this.shadowRoot) {
+            this.shadowRoot.innerHTML= `
+            <img src="../../../dist/assets/image/backgrounds/dog.png">
+            `
+          };
+
 
     const header = this.ownerDocument.createElement("header-pre");
     header.className = "headerregister";
