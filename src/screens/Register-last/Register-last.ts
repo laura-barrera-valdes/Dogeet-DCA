@@ -1,6 +1,9 @@
 import "../../components/export";
 import {inputAttribute} from "../../components/Input-type1/Input";
 import  {buttonAttribute} from "../../components/Button/Button";
+import { dispatch } from "../../store/Index";
+import { navigatet } from "../../store/Action";
+import { Screens } from "../../types/store";
 
 
 class RegisterLast extends HTMLElement {
@@ -46,6 +49,9 @@ class RegisterLast extends HTMLElement {
     const registerbtn = this.ownerDocument.createElement("button-component");
     registerbtn.className = "registerbtnlast";
     registerbtn.setAttribute(buttonAttribute.button, "Register");
+    registerbtn.addEventListener("click", () => {
+      dispatch(navigatet(Screens.LOGIN))
+    })
     this.shadowRoot?.appendChild(registerbtn);
 
     const imgback = this.ownerDocument.createElement("img");

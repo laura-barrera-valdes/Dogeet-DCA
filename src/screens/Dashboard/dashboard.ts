@@ -19,6 +19,10 @@ import MyprofileCard, {
   myprofileAttribute,
 } from "../../components/MyProfile/MyProfile";
 import { loadCss } from "../../utils/styles";
+import  {buttonAttribute} from "../../components/Button/Button";
+import { dispatch } from "../../store/Index";
+import { navigatet } from "../../store/Action";
+import { Screens } from "../../types/store";
 
 class Dashboard extends HTMLElement {
   navbars: NavbarCard[] = [];
@@ -221,6 +225,13 @@ class Dashboard extends HTMLElement {
       });
 
       this.shadowRoot.appendChild(main);
+
+      const dashboardbtn = this.ownerDocument.createElement("button-component");
+      dashboardbtn.setAttribute(buttonAttribute.button, "LogOut");
+      dashboardbtn.addEventListener("click", () => {
+        dispatch(navigatet(Screens.REGISTER))
+    })
+    this.shadowRoot?.appendChild(dashboardbtn);
     }
   }
 }
