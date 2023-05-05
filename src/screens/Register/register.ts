@@ -33,7 +33,7 @@ class Register extends HTMLElement {
 
     const titleregister = this.ownerDocument.createElement("p");
     titleregister.className = "registertitle";
-    titleregister.innerHTML = "Dog Ingormation";
+    titleregister.innerHTML = "Dog Information";
     article.appendChild(titleregister);
 
     const dogname = this.ownerDocument.createElement("input-component");
