@@ -29,18 +29,18 @@ class RegisterLast extends HTMLElement {
     this.shadowRoot?.appendChild(username);
     
     const email = this.ownerDocument.createElement("input-component");
-    username.className = "emailregister";
-    username.setAttribute(inputAttribute.placeholder, "E-mail");
+    email.className = "emailregister";
+    email.setAttribute(inputAttribute.placeholder, "E-mail");
     this.shadowRoot?.appendChild(email);
 
     const password = this.ownerDocument.createElement("input-component");
-    username.className = "passwordregister";
-    username.setAttribute(inputAttribute.placeholder, "Password");
+    password.className = "passwordregister";
+    password.setAttribute(inputAttribute.placeholder, "Password");
     this.shadowRoot?.appendChild(password);
 
     const confirmpassword = this.ownerDocument.createElement("input-component");
-    username.className = "confirmpassword";
-    username.setAttribute(inputAttribute.placeholder, "Confirm your password");
+    confirmpassword.className = "confirmpassword";
+    confirmpassword.setAttribute(inputAttribute.placeholder, "Confirm your password");
     this.shadowRoot?.appendChild(confirmpassword);
 
     const registerbtn = this.ownerDocument.createElement("button-component");
