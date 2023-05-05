@@ -37,3 +37,7 @@ button {
   box-shadow: 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
   font-family: "Montserrat", sans-serif;
 }
+
+button:hover {
+    box-shadow: inset 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
+  }
