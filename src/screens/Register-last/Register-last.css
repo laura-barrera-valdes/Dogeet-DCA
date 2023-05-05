@@ -1,0 +1,23 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Montserrat", sans-serif; /*esta es la tipogrfia de css que corrio el navegador*/
+}
+
+.imgbackground {
+  position: fixed; /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make it fill the full width !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+  z-index: 0; /* above all else */
+  width: 50%;
+  top: 40px;
+  margin-left: 50%;
+}
+
+.article {
+  padding: 80px 20px 0px;
+}
+
+.Registertitle2 {
+  color: #7401f8;
+  font-size: 27px;
+  margin-bottom: 27px;
+}

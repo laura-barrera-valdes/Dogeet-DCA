@@ -16,12 +16,20 @@
   color: #7401f8;
 }
 
-.registerarticle{
+.registerarticle {
   padding: 80px 20px 0px;
 }
 
-.registertitle{
+.registertitle {
   color: #7401f8;
   font-size: 27px;
   margin-bottom: 27px;
+}
+
+.imgbackground2 {
+  position: fixed; /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make it fill the full width !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+  z-index: 0; /* above all else */
+  width: 50%;
+  top: 40px;
+  margin-left: 50%;
 }
