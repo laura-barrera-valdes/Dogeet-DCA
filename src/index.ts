@@ -1,7 +1,7 @@
 import "./components/export";
 import "./screens/Dashboard/dashboard";
 import "./screens/Login/Login";
-import "./screens/Register/register";
+import "./screens/Register/Register";
 import "./screens/Register-last/Register-last";
 import { appState } from "./store/Index";
 import { Screens } from "./types/Navigation";

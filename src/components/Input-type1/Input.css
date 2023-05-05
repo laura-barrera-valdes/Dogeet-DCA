@@ -1,27 +1,3 @@
-/* display: flex;
-flex-direction: row;
-justify-content: space-between; 
-
-font-family: 'Montserrat', sans-serif;
-
-/*
-color: #7401F8; /* base */
-/*
-color: #949494; /* text gray */
-/*
-color: #FFC404; /* secundario */
-/*
-color: #FB6A01; /* terciario */
-/*
-color: #FF2020; /* rojo */
-/*
-color: #ADF90C; /* verde */
-/*
-object-fit: cover; /* fill in the space with the image */
-/*
-  box-shadow: 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
-*/
-
 * {
   margin: 0px;
   padding: 0px;
@@ -38,7 +14,7 @@ input {
   border: 1px solid #7401f8; /* base */
   border-radius: 30px;
   height: 23px;
-  color: #949494;
+  color: #7401f8;
   padding-left: 12px;
 }
 
@@ -47,6 +23,6 @@ input:focus-visible {
   border: 1px solid #949494; /* base */
   border-radius: 30px;
   height: 23px;
-  color: #949494;
+  color: #7401f8;
   outline: #949494;
 }
