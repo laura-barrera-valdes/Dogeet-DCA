@@ -30,9 +30,28 @@ section {
   top: 200px;
   background-color: white;
   margin: 80px 0px 0px;
+  padding: 20px 0px 20px;
 }
 
 .isotipo {
   display: flex;
   top: 100px;
 }
+
+p{
+    font-size: 14px;
+    color: #949494;
+    margin-bottom: 17px;
+}
+
+.loginbtn {
+    background-color: #ffc404; /* secundario */
+    color: white;
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    border-radius: 100px;
+    border-style: none;
+    box-shadow: 5px 5px 8px 0px rgba(48, 1, 106, 0.15);
+    font-family: "Montserrat", sans-serif;
+  }
