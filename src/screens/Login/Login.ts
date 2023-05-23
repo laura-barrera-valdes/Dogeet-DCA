@@ -5,7 +5,7 @@ import { buttonAttribute } from "../../components/Button/Button";
 import { loadCss } from "../../utils/styles";
 import { dispatch } from "../../store/Index";
 import { navigatet } from "../../store/Action";
-import { Screens } from "../../types/store";
+import { Screens } from "../../types/Store";
 
 class Login extends HTMLElement {
   constructor() {
