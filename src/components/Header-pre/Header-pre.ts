@@ -21,6 +21,8 @@ class Headerpre extends HTMLElement {
             <article class= "logo">
                 <a href="#!" class="brand-logo 2botonlogo">
                     <img class="logoDogeet" src="../dist/assets/logo/Dogeet.png">
+                    <img class="logoDogeet" src="../dist/assets/logo/Dogeet.png">
+                    <img class="logoDogeet" src="../dist/assets/logo/Dogeet.png">
                 </a>
             </article>
             <article class="register">
