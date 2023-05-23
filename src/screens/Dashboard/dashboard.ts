@@ -229,6 +229,7 @@ class Dashboard extends HTMLElement {
       this.shadowRoot.appendChild(main);
 
       const dashboardbtn = this.ownerDocument.createElement("button-component");
+      dashboardbtn.className = "dashbutton";
       dashboardbtn.setAttribute(buttonAttribute.button, "LogOut");
       dashboardbtn.addEventListener("click", () => {
         dispatch(navigatet(Screens.REGISTER));
