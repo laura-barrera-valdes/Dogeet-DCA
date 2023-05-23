@@ -53,7 +53,7 @@ class Register extends HTMLElement {
     gender.className = "inputgender";
     gender.setAttribute(
       secondinputAttribute.icon,
-      "../../../dist/assets/icon/register-icons/gender.png"
+      "../dist/assets/icon/register-icons/gender.png"
     );
     gender.setAttribute(secondinputAttribute.placeholder, "Gender");
     article.appendChild(gender);
@@ -62,7 +62,7 @@ class Register extends HTMLElement {
     birthdate.className = "inputbirthdate";
     birthdate.setAttribute(
       secondinputAttribute.icon,
-      "../../../dist/assets/icon/register-icons/birth-date.png"
+      "../dist/assets/icon/register-icons/birth-date.png"
     );
     birthdate.setAttribute(secondinputAttribute.placeholder, "Birthdate");
     article.appendChild(birthdate);
@@ -71,7 +71,7 @@ class Register extends HTMLElement {
     city.className = "inputcity";
     city.setAttribute(
       secondinputAttribute.icon,
-      "../../../dist/assets/icon/register-icons/city.png"
+      "../dist/assets/icon/register-icons/city.png"
     );
     city.setAttribute(secondinputAttribute.placeholder, "City");
     article.appendChild(city);
@@ -80,7 +80,7 @@ class Register extends HTMLElement {
     look.className = "inputlook";
     look.setAttribute(
       secondinputAttribute.icon,
-      "../../../dist/assets/icon/register-icons/looking-for.png"
+      "../dist/assets/icon/register-icons/looking-for.png"
     );
     look.setAttribute(secondinputAttribute.placeholder, "Look a date for...");
     article.appendChild(look);
@@ -95,7 +95,7 @@ class Register extends HTMLElement {
 
     const imgback2 = this.ownerDocument.createElement("img");
     imgback2.className = "imgbackground2";
-    imgback2.src= "../../../dist/assets/image/backgrounds/dog.png";
+    imgback2.src= "../dist/assets/image/backgrounds/dog.png";
     this.shadowRoot?.appendChild(imgback2);
 
     const registerbtn = this.ownerDocument.createElement("button-component");
