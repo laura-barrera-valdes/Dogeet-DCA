@@ -25,13 +25,12 @@ color: #ADF90C; /* verde */
 }
 
 @media screen and (max-width: 499px) {
-  .menu{
-    width: 40px;
+  .menu {
+    padding-inline: 20px;
   }
 }
 
 @media screen and (max-width: 1079px) {
- 
 }
 .navbar {
   display: flex;
