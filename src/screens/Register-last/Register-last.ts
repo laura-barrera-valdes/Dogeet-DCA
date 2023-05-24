@@ -37,10 +37,10 @@ class RegisterLast extends HTMLElement {
     title.innerHTML = "Register";
     article.appendChild(title);
 
-    const username = this.ownerDocument.createElement("input-component");
-    username.className = "inputusername";
-    username.setAttribute(inputAttribute.placeholder, "Enter your username");
-    article.appendChild(username);
+    // const username = this.ownerDocument.createElement("input-component");
+    // username.className = "inputusername";
+    // username.setAttribute(inputAttribute.placeholder, "Enter your username");
+    // article.appendChild(username);
 
     const email = this.ownerDocument.createElement("input-component");
     email.className = "emailregister";
