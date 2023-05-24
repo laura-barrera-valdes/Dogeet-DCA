@@ -69,7 +69,7 @@ class Login extends HTMLElement {
     loginbtn.className = "loginbtn";
     loginbtn.setAttribute(buttonAttribute.button, "Login");
     loginbtn.addEventListener("click", () => {
-      dispatch(navigatet(Screens.DASHBOARD))
+      dispatch(navigatet(Screens.DASHBOARD)) /*DASHBOARD*/
     })
     section.appendChild(loginbtn);
   }

@@ -102,7 +102,7 @@ class Register extends HTMLElement {
     registerbtn.className = "registerbtn";
     registerbtn.setAttribute(buttonAttribute.button, "Continue");
     registerbtn.addEventListener("click", () => {
-        dispatch(navigatet(Screens.REGISTERLAST))
+        dispatch(navigatet(Screens.LOGIN))/*REGISTERLAST*/
     })
     article.appendChild(registerbtn);
     const registeroption = this.ownerDocument.createElement("p");
