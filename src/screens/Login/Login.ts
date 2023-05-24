@@ -41,7 +41,7 @@ class Login extends HTMLElement {
 
     const isotipo = this.ownerDocument.createElement("img");
     isotipo.className = "isotipo";
-    isotipo.src = "../../../dist/assets/logo/isotipo.png";
+    isotipo.src = "../dist/assets/logo/isotipo.png";
     section.appendChild(isotipo);
 
     const title = this.ownerDocument.createElement("h3");

@@ -40,10 +40,10 @@ class AddImage extends HTMLElement {
         <section class="addinput">
             <p>${this.placeholder}</p>
             <placeholder class="placeholderimg">
-                <img src="../../../dist/assets/icon/register-icons/image.png">
+                <img src="../dist/assets/icon/register-icons/image.png">
             </placeholder>
             <button class="addbtn">
-                <img src="../../../dist/assets/icon/register-icons/add.png">
+                <img src="../dist/assets/icon/register-icons/add.png">
             </button>
         </section>
       `;

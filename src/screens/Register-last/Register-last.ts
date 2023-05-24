@@ -70,7 +70,7 @@ class RegisterLast extends HTMLElement {
 
     const imgback = this.ownerDocument.createElement("img");
     imgback.className = "imgbackground";
-    imgback.src = "../../../dist/assets/image/backgrounds/dog.png";
+    imgback.src = "../dist/assets/image/backgrounds/dog.png";
     this.shadowRoot?.appendChild(imgback);
   }
 }
