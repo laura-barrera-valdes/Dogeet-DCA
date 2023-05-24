@@ -4,6 +4,12 @@
   font-family: "Montserrat", sans-serif; /*esta es la tipogrfia de css que corrio el navegador*/
 }
 
+@media screen and (max-width: 699px) {
+  .imgbackground {
+    display: none;
+  }
+}
+
 .imgbackground {
   position: fixed; /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make it fill the full width !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
   z-index: 0; /* above all else */

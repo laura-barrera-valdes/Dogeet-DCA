@@ -26,6 +26,12 @@
   margin-bottom: 27px;
 }
 
+@media screen and (max-width: 699px) {
+  .imgbackground2 {
+    display: none;
+  }
+}
+
 .imgbackground2 {
   position: fixed; /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make it fill the full width !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
   z-index: 0; /* above all else */
