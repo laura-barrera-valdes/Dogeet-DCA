@@ -100,7 +100,7 @@ class Register extends HTMLElement {
 
     const registerbtn = this.ownerDocument.createElement("button-component");
     registerbtn.className = "registerbtn";
-    registerbtn.setAttribute(buttonAttribute.button, "Continue");
+    registerbtn.setAttribute(buttonAttribute.button, "Register");
     registerbtn.addEventListener("click", () => {
         dispatch(navigatet(Screens.LOGIN))/*REGISTERLAST*/
     })

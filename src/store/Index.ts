@@ -4,7 +4,7 @@ import { reducer } from "./Reducer";
 import { Screens } from "../types/Store";
 
 const emptyState: AppState = {
-  screen: Screens.REGISTER,
+  screen: Screens.REGISTERLAST, /* REGISTER */
 };
 
 export let appState = Storage.get<AppState>({
