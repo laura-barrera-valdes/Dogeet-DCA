@@ -14,6 +14,7 @@
   position: fixed; /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make it fill the full width !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
   z-index: 0; /* above all else */
   width: 50%;
+  height: 100%;
   top: 40px;
   left: 0px;
   margin-left: 50%;
