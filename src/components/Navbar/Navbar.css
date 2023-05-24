@@ -24,6 +24,12 @@ color: #ADF90C; /* verde */
   width: 100%;
 }
 
+@media screen and (max-width: 499px) {
+  .menu{
+    width: 50px;
+  }
+}
+
 @media screen and (max-width: 1079px) {
  
 }
@@ -45,7 +51,7 @@ color: #ADF90C; /* verde */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 60px;
+  width: 200px;
   height: 30px;
   background-color: #ffc404; /* secundario */
   padding-inline: 45px;
