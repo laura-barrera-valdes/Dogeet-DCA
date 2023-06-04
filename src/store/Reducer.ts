@@ -1,4 +1,4 @@
-import { Actions, AppState, NavigationActions } from "../types/store";
+import { Actions, AppState, NavigationActions, petCardActions } from "../types/Store"
 
 export const reducer = (currentAction: Actions, currentState: AppState): AppState => {
     const { action, payload } = currentAction; 
@@ -9,6 +9,21 @@ export const reducer = (currentAction: Actions, currentState: AppState): AppStat
                 ...currentState,
                 screen: payload,
             }
+
+        case petCardActions.CHECK:
+        return{
+            ...currentState,
+            pets: payload,
+        }    
+
+        case petCardActions.DELETE:
+        return{
+            ...currentState,
+            pets: {
+                payload,
+                ...currentState.pets
+            }
+        }
 
  
         default:

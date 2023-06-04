@@ -23,8 +23,11 @@ import MyprofileCard, {
 import { loadCss } from "../../utils/styles";
 import { buttonAttribute } from "../../components/Button/Button";
 import { dispatch } from "../../store/Index";
-import { navigatet } from "../../store/Action";
-import { Screens } from "../../types/Store";
+import { navigatet } from "../../store/Actions";
+import { Screens } from "../../types/Navigation";
+import { appState } from "../../store/Index"
+
+
 
 class Dashboard extends HTMLElement {
   navbars: NavbarCard[] = [];
@@ -65,6 +68,9 @@ class Dashboard extends HTMLElement {
       this.navbars.push(navbarContainer);
     });
 
+
+    //appState.community.forEach((e)=>{})
+
     dataProfile.forEach((user) => {
       const profileContainer = this.ownerDocument.createElement(
         "profile-card"
@@ -73,7 +79,7 @@ class Dashboard extends HTMLElement {
         profileAttribute.profileimage,
         user.profileimage
       );
-      profileContainer.setAttribute(profileAttribute.name, user.name);
+      profileContainer.setAttribute(profileAttribute.name, user.name); //el primeratributo es de la card y el segundo se trae como esta en firebase//
       profileContainer.setAttribute(profileAttribute.gender, user.gender);
       profileContainer.setAttribute(profileAttribute.birthdate, user.birthdate);
       profileContainer.setAttribute(

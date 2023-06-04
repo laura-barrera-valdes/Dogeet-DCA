@@ -1,10 +1,10 @@
 import "./components/export";
 import "./screens/Dashboard/dashboard";
 import "./screens/Login/Login";
-import "./screens/Register/Register";
+import "./screens/Register/register";
 import "./screens/Register-last/Register-last";
 import { addObserver, appState } from "./store/Index";
-import { Screens } from "./types/store";
+import { Screens } from "./types/Navigation";
 
 class AppContainer extends HTMLElement {
   constructor() {
