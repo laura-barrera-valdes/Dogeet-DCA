@@ -1,4 +1,5 @@
 
+import { communityProduct } from "./CommunityProduct";
 import { Screens } from "./Navigation";
 import { petProduct } from "./PetProduct";
 
@@ -8,6 +9,7 @@ export type Observer = ({ render: () => void } & HTMLElement);
 export type AppState = {
    screen: Screens;
    pets: petProduct[];
+   community: communityProduct[],
 };
 
 export enum NavigationActions {
@@ -27,7 +29,7 @@ export enum petCardActions{
 
 export interface CheckPetAction{
     action: petCardActions.CHECK,
-    payload: petProduct[],
+    payload: communityProduct[],
 }
 
 export interface DeletePetAction{

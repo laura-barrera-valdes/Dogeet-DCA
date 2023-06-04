@@ -1,24 +1,35 @@
 import firebaseConfig from "./firebaseConfig";
 import {initializeApp} from "firebase/app";
-import {getFirestore, collection, addDoc, getDocs, doc, deleteDoc} from "firebase/firestore";
+import {getFirestore, collection, addDoc, getDocs, doc, deleteDoc, onSnapshot} from "firebase/firestore";
 import { petProduct } from "../types/PetProduct";
+import { communityProduct } from "../types/CommunityProduct";
 
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const checkNewPet = async(col: string) =>{
-    const firebasData = await getDocs(collection(db, col));
-    const petsArray: Array<petProduct> = [];
 
-    firebasData.forEach((doc) =>{
-        const data: Omit<petProduct, "id"> = doc.data() as any;
-        petsArray.push({...data});
+const checkNewPet = async(pets: Omit<petProduct, '("birth", "gender", "city")'>) =>{
+    try {
+        const petdata = collection(db, "users");
+        await addDoc(petdata, pets)
+        console.log("añadido a comunidad")
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+
+const getPetCommunity = async (pets:string) => {
+    const querySnapShot = await getDocs(collection(db, "users"));
+    const transformed: Array<communityProduct> = [];
+
+    querySnapShot.forEach((doc)=>{
+        const data: Omit<petProduct,'("birth", "gender", "city")'> = doc.data() as any;
+        transformed.push({id: doc.id ...data});
     })
 
-    return petsArray;
 }
-
 
 const deletePet = async(petProduct:any) =>{
     try {
