@@ -1,6 +1,6 @@
 import styles from "./dashboard.css";
 import "../../components/export";
-import { dataProfile, dataMyprofile, dataNavbar } from "../../services/getData";
+import { ledataProfi, dataMyprofile, dataNavbar } from "../../services/getData";
 import NavbarCard, { navbarAttribute } from "../../components/Navbar/Navbar";
 import ProfileCard, {
   profileAttribute,
@@ -22,12 +22,18 @@ import MyprofileCard, {
 } from "../../components/MyProfile/MyProfile";
 import { loadCss } from "../../utils/styles";
 import { buttonAttribute } from "../../components/Button/Button";
-import { dispatch } from "../../store/Index";
-import { navigatet } from "../../store/Actions";
+import { addObserver, dispatch } from "../../store/Index";
+import { checkNewPet, getNewPetCommunity, navigatet } from "../../store/Actions";
 import { Screens } from "../../types/Navigation";
 import { appState } from "../../store/Index"
+import { petProduct } from "../../types/PetProduct";
+import { communityProduct } from "../../types/CommunityProduct";
+import firebase from "../../utils/firebase";
 
-
+// const checkData: Omit<petProduct, '("birth", "gender", "city")' >={
+//   name: '',
+//   interest: '',
+// }
 
 class Dashboard extends HTMLElement {
   navbars: NavbarCard[] = [];
@@ -41,6 +47,7 @@ class Dashboard extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+    addObserver(this);
 
     dataNavbar.forEach((nav) => {
       const navbarContainer = this.ownerDocument.createElement(
@@ -71,7 +78,7 @@ class Dashboard extends HTMLElement {
 
     //appState.community.forEach((e)=>{})
 
-    dataProfile.forEach((user) => {
+    ledataProfi.forEach((user: any) => {
       const profileContainer = this.ownerDocument.createElement(
         "profile-card"
       ) as ProfileCard;
@@ -82,10 +89,7 @@ class Dashboard extends HTMLElement {
       profileContainer.setAttribute(profileAttribute.name, user.name); //el primeratributo es de la card y el segundo se trae como esta en firebase//
       profileContainer.setAttribute(profileAttribute.gender, user.gender);
       profileContainer.setAttribute(profileAttribute.birthdate, user.birthdate);
-      profileContainer.setAttribute(
-        profileAttribute.lookingfor,
-        user.lookingfor
-      );
+      profileContainer.setAttribute(profileAttribute.lookingfor,user.lookingfor);
       profileContainer.setAttribute(profileAttribute.city, user.city);
       this.profiles.push(profileContainer);
     });
@@ -182,9 +186,27 @@ class Dashboard extends HTMLElement {
     });
   }
 
-  connectedCallback() {
-    this.render();
+
+
+// async checkPet(){
+//   await firebase.checkNewPet(this.checkData)
+// }
+
+  async connectedCallback() {
+    if(appState.community.length === 0){
+      const action = await getNewPetCommunity();
+      dispatch(action);
+      console.log(action)
+    } else{
+      this.render();
+    }
+    
   }
+
+  // connectedCallback(){
+  //   this.render();
+  //   console.log(appState.community, appState.pets, appState.screen)
+  // }
 
   render() {
     if (this.shadowRoot) {

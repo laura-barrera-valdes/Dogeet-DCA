@@ -5,20 +5,21 @@ import { Screens } from "../types/Navigation";
 import { petProduct } from "../types/PetProduct";
 
 const emptyState: AppState = {
-  screen: Screens.REGISTER,
+  screen: Screens.DASHBOARD,
   pets: [],
   community: [],
 };
 
-export let appState = Storage.get<AppState>({
-  key: PersistanceKeys.STORE,
-  defaultValue: emptyState,
-});
+// export let appState = Storage.get<AppState>({
+//   key: PersistanceKeys.STORE,
+//   defaultValue: emptyState,
+// });
+export let appState = emptyState
 
 let observers: Observer[] = [];
 
-const persistStore = (state: AppState) =>
-  Storage.set({ key: PersistanceKeys.STORE, value: state });
+// const persistStore = (state: AppState) =>
+//   Storage.set({ key: PersistanceKeys.STORE, value: state });
 
 const notifyObservers = () => observers.forEach((o) => o.render());
 
@@ -27,7 +28,7 @@ export const dispatch = (action: Actions) => {
   const newState = reducer(action, clone);
   appState = newState;
 
-  persistStore(newState);
+  // persistStore(newState);
   notifyObservers();
 };
 

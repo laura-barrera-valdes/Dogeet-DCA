@@ -9,9 +9,9 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 
-const checkNewPet = async(pets: Omit<petProduct, '("birth", "gender", "city")'>) =>{
+const checkNewPet = async(pets: communityProduct) =>{
     try {
-        const petdata = collection(db, "users");
+        const petdata = collection(db, 'users', 'cM5TppGyMJszotPFMhzL', 'community');
         await addDoc(petdata, pets)
         console.log("añadido a comunidad")
     } catch (error) {
@@ -20,16 +20,21 @@ const checkNewPet = async(pets: Omit<petProduct, '("birth", "gender", "city")'>)
 };
 
 
-const getPetCommunity = async (pets:string) => {
-    const querySnapShot = await getDocs(collection(db, "users"));
-    const transformed: Array<communityProduct> = [];
 
-    querySnapShot.forEach((doc)=>{
-        const data: Omit<petProduct,'("birth", "gender", "city")'> = doc.data() as any;
-        transformed.push({id: doc.id ...data});
-    })
+    const getPetCommunity = async () => {
+        const querySnapShot = await getDocs(collection(db,'users', 'cM5TppGyMJszotPFMhzL', 'community' ));
+        const communityArray: Array<communityProduct> = [];
 
-}
+        querySnapShot.forEach((doc)=>{
+            const data: communityProduct = doc.data() as any;
+            communityArray.push({...data});
+        })
+
+        return communityArray;
+    };
+
+
+
 
 const deletePet = async(petProduct:any) =>{
     try {
@@ -38,9 +43,12 @@ const deletePet = async(petProduct:any) =>{
     } catch (error) {
         console.error(error);
     }
-}
+};
+
+
 
 export default{
     checkNewPet,
     deletePet,
+    getPetCommunity
 }

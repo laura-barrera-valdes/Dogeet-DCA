@@ -1,7 +1,8 @@
 import firebase from "../utils/firebase";
-import { NavigatetAction, NavigationActions, DeletePetAction, CheckPetAction, petCardActions } from "../types/Store";
+import { NavigatetAction, NavigationActions, DeletePetAction, CheckPetAction, GetPetAction, petCardActions } from "../types/Store";
 import { Screens } from "../types/Navigation";
 import { petProduct } from "../types/PetProduct";
+import { communityProduct } from "../types/CommunityProduct";
 
 
 export const navigatet = (screen: Screens): NavigatetAction => {
@@ -11,13 +12,22 @@ export const navigatet = (screen: Screens): NavigatetAction => {
     }
 }
 
-export const checkNewPet = async(): Promise<CheckPetAction> =>{
-    const communitypets = await firebase.checkNewPet("Community");
+export const checkNewPet = ({payload}: Pick<CheckPetAction, "payload"> ): CheckPetAction=>{
     return{
         action: petCardActions.CHECK,
-        payload: communitypets,
+        payload
     }
 }
+
+export const getNewPetCommunity = async (): Promise<GetPetAction> => {
+    const petcommunity = await firebase.getPetCommunity();
+    return{
+        action: petCardActions.GET,
+        payload: petcommunity
+    }
+}
+
+
 
 export const deleteNewPet = ({payload}: Pick<DeletePetAction, "payload">): DeletePetAction =>{
     return{

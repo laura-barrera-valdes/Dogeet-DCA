@@ -4,6 +4,7 @@ export const reducer = (currentAction: Actions, currentState: AppState): AppStat
     const { action, payload } = currentAction; 
 
     switch (action) {
+
         case NavigationActions.NAVIGATE:
             return {
                 ...currentState,
@@ -13,17 +14,28 @@ export const reducer = (currentAction: Actions, currentState: AppState): AppStat
         case petCardActions.CHECK:
         return{
             ...currentState,
-            pets: payload,
+            community: [
+                payload,
+                ...currentState.community,
+            ]
         }    
 
-        case petCardActions.DELETE:
-        return{
-            ...currentState,
-            pets: {
-                payload,
-                ...currentState.pets
+        case petCardActions.GET:
+            return{
+                ...currentState,
+                community: payload
             }
-        }
+
+        
+
+        // case petCardActions.DELETE:
+        // return{
+        //     ...currentState,
+        //     pets: {
+        //         payload,
+        //         ...currentState.pets
+        //     }
+        // }
 
  
         default:

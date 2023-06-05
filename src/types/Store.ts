@@ -24,19 +24,25 @@ export interface NavigatetAction {
 
 export enum petCardActions{
     "CHECK" = "CHECK",
+    "GET" = "GET",
     "DELETE" = "DELETE",
 }
 
 export interface CheckPetAction{
     action: petCardActions.CHECK,
+    payload: communityProduct,
+}
+
+export interface GetPetAction{
+    action: petCardActions.GET,
     payload: communityProduct[],
 }
 
 export interface DeletePetAction{
     action: petCardActions.DELETE,
-    payload: petProduct
+    payload: communityProduct[]
 }
 
 
 
-export type Actions = NavigatetAction | CheckPetAction | DeletePetAction; 
+export type Actions = NavigatetAction | CheckPetAction | DeletePetAction | GetPetAction; 

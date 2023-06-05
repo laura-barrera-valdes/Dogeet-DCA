@@ -1,4 +1,4 @@
 export interface communityProduct{
-    name: string;
-    interest: string;
+    name: string |undefined;
+    interest: string | undefined;
 }
