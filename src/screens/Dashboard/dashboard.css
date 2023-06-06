@@ -1,0 +1,72 @@
+/*
+color: #7401F8; /* base */
+/*
+color: #949494; /* text gray */
+/*
+color: #FFC404; /* secundario */
+/*
+color: #FB6A01; /* terciario */
+/*
+color: #FF2020; /* rojo */
+/*
+color: #ADF90C; /* verde */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Montserrat", sans-serif; /*esta es la tipogrfia de css que corrio el navegador*/
+}
+
+.myProfiles {
+  display: flex;
+  flex-direction: column;
+  /*background-color: aqua;*/
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 80px 20px 0px;
+}
+
+aside {
+  width: 30%;
+}
+
+.profilee {
+  width: 40%;
+}
+
+.profileCard {
+  /* position: fixed; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make it fill the full width !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+  width: 25%;
+}
+
+.asideCommunityChat{
+  width: 306px;
+}
+
+@media screen and (max-width: 1079px) {
+  .asideCommunityChat {
+    display: none;
+  }
+
+  .profileCard {
+    display: none;
+  }
+
+  .profilee {
+    width: 410px;
+  }
+
+  main{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+/* .asideCommunityChat{
+  position: fixed; /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make it fill the full width !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+} */

@@ -1,0 +1,28 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Montserrat", sans-serif; /*esta es la tipogrfia de css que corrio el navegador*/
+}
+
+p {
+  margin-bottom: 5px;
+  color: #7401f8; /* base */
+}
+
+input {
+  margin-bottom: 17px;
+  border: 1px solid #7401f8; /* base */
+  border-radius: 30px;
+  height: 23px;
+  color: #7401f8;
+  padding-left: 12px;
+}
+
+input:focus-visible {
+  margin-bottom: 17px;
+  border: 1px solid #949494; /* base */
+  border-radius: 30px;
+  height: 23px;
+  color: #7401f8;
+  outline: #949494;
+}
