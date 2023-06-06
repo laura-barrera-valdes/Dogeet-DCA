@@ -1,5 +1,9 @@
 import { loadCss } from "../../utils/styles";
 import styles from "./Header-pre.css";
+import { buttonAttribute } from "../Button/Button";
+import { dispatch } from "../../store/Index";
+import { Screens } from "../../types/Navigation";
+import { navigatet } from "../../store/Actions";
 
 export enum headerpreAttribute {}
 
@@ -24,13 +28,20 @@ class Headerpre extends HTMLElement {
                 </a>
             </article>
             <article class="register">
-                <button class"registerbtn">Register</button>
+                <button class"registerbtn">LogIn</button>
             </article>
         </section>
       </div>
       `;
+     } 
       loadCss(this, styles);
-    }
+    
+      const loginbtn = this.ownerDocument.createElement("button-component");
+      loginbtn.className = "loginbtn";
+      loginbtn.setAttribute(buttonAttribute.button, "LogIn");
+      loginbtn.addEventListener("click", () => {
+          dispatch(navigatet(Screens.LOGIN))
+      })
   }
 }
 

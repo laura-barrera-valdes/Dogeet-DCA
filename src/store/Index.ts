@@ -6,7 +6,7 @@ import { petProduct } from "../types/PetProduct";
 import { Firestore } from "firebase/firestore";
 
 const emptyState: AppState = {
-  screen: Screens.DASHBOARD,
+  screen: Screens.REGISTERLAST,
   pets: [],
   community: [],
   myprofiledata: {

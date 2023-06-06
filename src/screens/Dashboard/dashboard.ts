@@ -171,6 +171,15 @@ class Dashboard extends HTMLElement {
       );
       myprofileContainer.setAttribute(myprofileAttribute.mycity, appState.myprofiledata.city);
       this.myprofiles.push(myprofileContainer);
+
+      
+
+      const dashboardbtn = this.ownerDocument.createElement("button-component") as MyprofileCard;
+      dashboardbtn.className = "dashbutton";
+      dashboardbtn.setAttribute(buttonAttribute.button, "LogOut");
+      dashboardbtn.addEventListener("click", () => {
+        dispatch(navigatet(Screens.REGISTER));
+      });
     };
   
 

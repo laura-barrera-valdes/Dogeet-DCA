@@ -1,5 +1,11 @@
 import { loadCss } from "../../utils/styles";
 import styles from "./MyProfile.css";
+import { buttonAttribute } from "../Button/Button";
+import { Observer } from "../../types/Store";
+import { addObserver, dispatch } from "../../store/Index";
+import { Screens } from "../../types/Navigation";
+import { navigatet } from "../../store/Actions";
+
 
 export enum myprofileAttribute {
   "mybackground" = "mybackground",
@@ -39,6 +45,7 @@ class MyprofileCard extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+    addObserver(this);
   }
 
   connectedCallback() {
@@ -98,10 +105,15 @@ class MyprofileCard extends HTMLElement {
           </section>
 
           <button class="editprofile">Edit Profile</button>
+
+          <button class="LogOut">Log Out</button>
+          
         </section>
       </section>
       `;
       loadCss(this, styles);
+
+      
     }
   }
 }
