@@ -117,6 +117,7 @@ class ProfileCard extends HTMLElement {
       const checkBtn = this.shadowRoot.querySelector('.acceptbutton')
       checkBtn?.addEventListener('click', async ()=>{
         const petUser: communityProduct = {
+          image: this.profileimage,
           name: this.name,
           interest: this.lookingfor
         }

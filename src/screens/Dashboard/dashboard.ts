@@ -64,11 +64,11 @@ class Dashboard extends HTMLElement {
       );
       navbarContainer.setAttribute(
         navbarAttribute.navbarnameprofile,
-        nav.navbarnameprofile
+        appState.myprofiledata.name
       );
       navbarContainer.setAttribute(
         navbarAttribute.navbarprofile,
-        nav.navbarprofile
+        appState.myprofiledata.image
       );
       this.navbars.push(navbarContainer);
     });
