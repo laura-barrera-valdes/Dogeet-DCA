@@ -178,7 +178,7 @@ class Dashboard extends HTMLElement {
       dashboardbtn.className = "dashbutton";
       dashboardbtn.setAttribute(buttonAttribute.button, "LogOut");
       dashboardbtn.addEventListener("click", () => {
-        dispatch(navigatet(Screens.REGISTER));
+        dispatch(navigatet(Screens.LOGIN)); //REGISTER
       });
     };
   
@@ -269,7 +269,7 @@ class Dashboard extends HTMLElement {
       dashboardbtn.className = "dashbutton";
       dashboardbtn.setAttribute(buttonAttribute.button, "LogOut");
       dashboardbtn.addEventListener("click", () => {
-        dispatch(navigatet(Screens.REGISTER));
+        dispatch(navigatet(Screens.LOGIN)); //REGISTER
       });
       this.shadowRoot?.appendChild(dashboardbtn);
     }
