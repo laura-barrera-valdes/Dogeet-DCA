@@ -4,11 +4,44 @@
   font-family: "Montserrat", sans-serif; /*esta es la tipogrfia de css que corrio el navegador*/
 }
 
+.article{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+input {
+  margin-bottom: 17px;
+  border: 1px solid #7401f8; /* base */
+  border-radius: 30px;
+  height: 23px;
+  color: #7401f8;
+  padding-left: 12px;
+  width: 227px;
+}
+
+input:focus-visible {
+  margin-bottom: 17px;
+  border: 1px solid #949494; /* base */
+  border-radius: 30px;
+  height: 23px;
+  color: #7401f8;
+  outline: #949494;
+}
+
+.articlein{
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 @media screen and (max-width: 699px) {
   .imgbackground {
     display: none;
   }
 }
+
 
 .imgbackground {
   position: fixed; /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make it fill the full width !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/

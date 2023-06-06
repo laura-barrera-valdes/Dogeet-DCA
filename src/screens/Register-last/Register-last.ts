@@ -52,6 +52,7 @@ class RegisterLast extends HTMLElement {
     // article.appendChild(username);
 
     const email = this.ownerDocument.createElement("input");
+    email.className = "emailregister";
     email.placeholder = "E-mail";
     email.addEventListener(
       "change",
@@ -60,6 +61,7 @@ class RegisterLast extends HTMLElement {
     article.appendChild(email);
 
     const password = this.ownerDocument.createElement("input");
+    password.className = "passwordregister";
     password.placeholder = "Password";
     password.addEventListener(
       "change",
@@ -85,13 +87,13 @@ class RegisterLast extends HTMLElement {
     // );
     // article.appendChild(password);
 
-    const confirmpassword = this.ownerDocument.createElement("input-component");
-    confirmpassword.className = "confirmpassword";
-    confirmpassword.setAttribute(
-      inputAttribute.placeholder,
-      "Confirm your password"
-    );
-    article.appendChild(confirmpassword);
+    // const confirmpassword = this.ownerDocument.createElement("input-component");
+    // confirmpassword.className = "confirmpassword";
+    // confirmpassword.setAttribute(
+    //   inputAttribute.placeholder,
+    //   "Confirm your password"
+    // );
+    // article.appendChild(confirmpassword);
 
     const registerbtn = this.ownerDocument.createElement("button-component");
     registerbtn.className = "registerbtnlast";
