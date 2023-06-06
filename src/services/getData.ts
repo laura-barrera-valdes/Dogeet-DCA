@@ -8,7 +8,7 @@ interface DataShape {
   city: string;
 }
 
-export const dataProfile: DataShape[] = [
+export const ledataProfi: DataShape[] = [
   {
     id: 1,
     profileimage: "./assets/image/profile/Pepito.png",

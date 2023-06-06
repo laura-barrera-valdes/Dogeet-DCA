@@ -5,8 +5,8 @@ import "../../components/export";
 import { inputAttribute } from "../../components/Input-type1/Input";
 import { buttonAttribute } from "../../components/Button/Button";
 import { dispatch } from "../../store/Index";
-import { navigatet } from "../../store/Action";
-import { Screens } from "../../types/Store";
+import { navigatet } from "../../store/Actions";
+import { Screens } from "../../types/Navigation";
 
 class RegisterLast extends HTMLElement {
   constructor() {

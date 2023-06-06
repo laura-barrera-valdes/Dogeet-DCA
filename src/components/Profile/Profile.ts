@@ -1,3 +1,7 @@
+import { checkNewPet } from "../../store/Actions";
+import { dispatch } from "../../store/Index";
+import { communityProduct } from "../../types/CommunityProduct";
+import firebase from "../../utils/firebase";
 import { loadCss } from "../../utils/styles";
 import styles from "./Profile.css";
 
@@ -60,6 +64,7 @@ class ProfileCard extends HTMLElement {
     this.render();
   }
 
+ 
   render() {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
@@ -106,6 +111,18 @@ class ProfileCard extends HTMLElement {
         </section>
         `;
       loadCss(this, styles);
+     
+    
+
+      const checkBtn = this.shadowRoot.querySelector('.acceptbutton')
+      checkBtn?.addEventListener('click', async ()=>{
+        const petUser: communityProduct = {
+          name: this.name,
+          interest: this.lookingfor
+        }
+        await firebase.checkNewPet(petUser)
+        dispatch(checkNewPet({payload: petUser}))
+      })
     }
   }
 }

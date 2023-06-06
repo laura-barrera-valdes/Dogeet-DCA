@@ -1,21 +1,33 @@
 import Storage, { PersistanceKeys } from "../utils/storage";
-import { Actions, AppState, Observer } from "../types/Store";
+import { Actions, AppState, Observer, petCardActions, getDataActions } from "../types/Store";
 import { reducer } from "./Reducer";
-import { Screens } from "../types/Store";
+import { Screens } from "../types/Navigation";
+import { petProduct } from "../types/PetProduct";
+import { Firestore } from "firebase/firestore";
 
 const emptyState: AppState = {
+<<<<<<< HEAD
   screen: Screens.REGISTERLAST, /* REGISTER */
+=======
+  screen: Screens.DASHBOARD,
+  pets: [],
+  community: [],
+  myprofiledata: [],
+
+>>>>>>> origin/branchVal
 };
 
-export let appState = Storage.get<AppState>({
-  key: PersistanceKeys.STORE,
-  defaultValue: emptyState,
-});
+// export let appState = Storage.get<AppState>({
+//   key: PersistanceKeys.STORE,
+//   defaultValue: emptyState,
+// });
+export let appState = emptyState
+
 
 let observers: Observer[] = [];
 
-const persistStore = (state: AppState) =>
-  Storage.set({ key: PersistanceKeys.STORE, value: state });
+// const persistStore = (state: AppState) =>
+//   Storage.set({ key: PersistanceKeys.STORE, value: state });
 
 const notifyObservers = () => observers.forEach((o) => o.render());
 
@@ -24,10 +36,12 @@ export const dispatch = (action: Actions) => {
   const newState = reducer(action, clone);
   appState = newState;
 
-  persistStore(newState);
+  // persistStore(newState);Z
   notifyObservers();
 };
 
 export const addObserver = (ref: Observer) => {
   observers = [...observers, ref];
 };
+
+console.log(appState);
