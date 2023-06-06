@@ -5,10 +5,64 @@ import { petProduct } from "../types/PetProduct";
 import { communityProduct } from "../types/CommunityProduct";
 import { MyProfiledata } from "../types/MyProfiledata";
 import { PetsData } from "../types/Petsdata";
+import { ChatlistData } from "../types/ChatlistData";
+import {
+    createUserWithEmailAndPassword,
+    getAuth,
+    signInWithEmailAndPassword,
+  } from "firebase/auth";
+
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
 
+const registerUser = async ({
+    email,
+    password,
+  }: {
+    email: string;
+    password: string;
+  }): Promise<boolean> => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      console.log(userCredential.user);
+      return true;
+    } catch (error: any) {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+      return false;
+    }
+  };
+
+    const loginUser = async ({
+    email,
+    password,
+  }: {
+    email: string;
+    password: string;
+  }): Promise<boolean> => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      console.log(userCredential.user);
+      alert("welcome " + userCredential.user.email);
+      return true;
+    } catch (error: any) {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+      return false;
+    }
+  };
 
 const checkNewPet = async(pets: communityProduct) =>{
     try {
@@ -41,6 +95,18 @@ const saveData = async(myprofiledata: MyProfiledata) =>{
         })
 
         return communityArray;
+    };
+
+    const getChatsData = async () => {
+        const querySnapShot = await getDocs(collection(db,'Chatlist'));
+        const chatsArray: Array<ChatlistData> = [];
+
+        querySnapShot.forEach((doc)=>{
+            const data: ChatlistData = doc.data() as any;
+            chatsArray.push({...data});
+        })
+
+        return chatsArray;
     };
 
     const getMyProfile = async () => {
@@ -88,5 +154,8 @@ export default{
     getPetCommunity,
     getMyProfile,
     getPets,
-    saveData
+    saveData,
+    getChatsData,
+    registerUser,
+    loginUser
 }

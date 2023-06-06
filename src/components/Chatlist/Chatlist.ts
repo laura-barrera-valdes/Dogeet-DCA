@@ -1,6 +1,8 @@
 import { loadCss } from "../../utils/styles";
 import styles from "./Chatlist.css";
 
+
+
 export enum chatlistAttribute {
   "chatlistimage" = "chatlistimage",
   "chatlistname" = "chatlistname",
@@ -64,6 +66,7 @@ class ChatlistCard extends HTMLElement {
         </section>
         `;
       loadCss(this, styles);
+
     }
   }
 }

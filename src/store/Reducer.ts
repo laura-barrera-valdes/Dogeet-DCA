@@ -1,4 +1,4 @@
-import { Actions, AppState, NavigationActions, petCardActions, getDataActions } from "../types/Store"
+import { Actions, AppState, NavigationActions, petCardActions, getDataActions, getChatsDataAction } from "../types/Store"
 
 export const reducer = (currentAction: Actions, currentState: AppState): AppState => {
     const { action, payload } = currentAction; 
@@ -37,6 +37,13 @@ export const reducer = (currentAction: Actions, currentState: AppState): AppStat
                     ...currentState,
                     petsdata: payload
                 }
+            
+                case getDataActions.CHATS:
+                    return{
+                        ...currentState,
+                        chatsdata: payload
+                    }
+                    
 
         // case petCardActions.DELETE:
         // return{

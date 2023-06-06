@@ -1,4 +1,5 @@
 
+import { ChatlistData } from "./ChatlistData";
 import { communityProduct } from "./CommunityProduct";
 import { MyProfiledata } from "./MyProfiledata";
 import { Screens } from "./Navigation";
@@ -14,6 +15,7 @@ export type AppState = {
    community: communityProduct[],
    myprofiledata: MyProfiledata,
    petsdata: PetsData[],
+   chatsdata: ChatlistData[],
 };
 
 export enum NavigationActions {
@@ -43,6 +45,11 @@ export interface getPetsDataAction{
     payload: PetsData[],
 }
 
+export interface getChatsDataAction{
+    action: getDataActions.CHATS,
+    payload: ChatlistData[],
+}
+
 export enum petCardActions{
     "CHECK" = "CHECK",
     "GET" = "GET",
@@ -66,4 +73,4 @@ export interface DeletePetAction{
 
 
 
-export type Actions = NavigatetAction | CheckPetAction | DeletePetAction | GetPetAction | getMyprofileDataAction | getPetsDataAction; 
+export type Actions = NavigatetAction | CheckPetAction | DeletePetAction | GetPetAction | getMyprofileDataAction | getPetsDataAction | getChatsDataAction; 

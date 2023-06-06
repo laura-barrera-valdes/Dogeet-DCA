@@ -2,6 +2,8 @@ import { loadCss } from "../../utils/styles";
 import styles from "./ShadowContainerChat.css";
 import { dataChatlist } from "../../services/getData";
 import ChatlistCard, { chatlistAttribute } from "../Chatlist/Chatlist";
+import firebase from "../../utils/firebase";
+import { appState } from "../../store/Index";
 
 export enum shadowcontchatAttribute {
   "thetitle" = "thetitle",

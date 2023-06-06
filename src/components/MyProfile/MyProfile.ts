@@ -105,8 +105,6 @@ class MyprofileCard extends HTMLElement {
           </section>
 
           <button class="editprofile">Edit Profile</button>
-
-          <button class="LogOut">Log Out</button>
           
         </section>
       </section>

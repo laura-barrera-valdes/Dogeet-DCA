@@ -1,5 +1,5 @@
 import Storage, { PersistanceKeys } from "../utils/storage";
-import { Actions, AppState, Observer, petCardActions, getDataActions } from "../types/Store";
+import { Actions, AppState, Observer, petCardActions, getDataActions, getChatsDataAction } from "../types/Store";
 import { reducer } from "./Reducer";
 import { Screens } from "../types/Navigation";
 import { petProduct } from "../types/PetProduct";
@@ -20,6 +20,7 @@ const emptyState: AppState = {
     city: '',
   },
   petsdata: [],
+  chatsdata: [],
 
 };
 
