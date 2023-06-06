@@ -52,7 +52,7 @@ const registerUser = async ({
         password
       );
       console.log(userCredential.user);
-      alert("welcome " + userCredential.user.email);
+      alert("Welcome " + userCredential.user.email);
       return true;
     } catch (error: any) {
       const errorCode = error.code;
