@@ -32,7 +32,11 @@ export const reducer = (currentAction: Actions, currentState: AppState): AppStat
                 myprofiledata: payload
             }
 
-        
+            case getDataActions.PETS:
+                return{
+                    ...currentState,
+                    petsdata: payload
+                }
 
         // case petCardActions.DELETE:
         // return{

@@ -1,5 +1,5 @@
 import firebase from "../utils/firebase";
-import { NavigatetAction, NavigationActions, DeletePetAction, CheckPetAction, GetPetAction, petCardActions, getMyprofileDataAction, getDataActions } from "../types/Store";
+import { NavigatetAction, NavigationActions, DeletePetAction, CheckPetAction, GetPetAction, petCardActions, getMyprofileDataAction, getDataActions, getPetsDataAction } from "../types/Store";
 import { Screens } from "../types/Navigation";
 import { petProduct } from "../types/PetProduct";
 import { communityProduct } from "../types/CommunityProduct";
@@ -32,6 +32,14 @@ export const getMyProfileData =async (): Promise<getMyprofileDataAction> => {
     return{
         action: getDataActions.MYPROFILE,
         payload: myprofiledata
+    }
+}
+
+export const getPetsData = async (): Promise<getPetsDataAction> => {
+    const petsdatastate = await firebase.getPets();
+    return{
+        action: getDataActions.PETS,
+        payload: petsdatastate
     }
 }
 

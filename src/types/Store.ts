@@ -3,6 +3,7 @@ import { communityProduct } from "./CommunityProduct";
 import { MyProfiledata } from "./MyProfiledata";
 import { Screens } from "./Navigation";
 import { petProduct } from "./PetProduct";
+import { PetsData } from "./Petsdata";
 
 
 export type Observer = ({ render: () => void } & HTMLElement);
@@ -11,7 +12,8 @@ export type AppState = {
    screen: Screens;
    pets: petProduct[];
    community: communityProduct[],
-   myprofiledata: MyProfiledata[],
+   myprofiledata: MyProfiledata,
+   petsdata: PetsData[],
 };
 
 export enum NavigationActions {
@@ -26,14 +28,19 @@ export interface NavigatetAction {
 
 export enum getDataActions{
     "MYPROFILE" = "MYPROFILE",
-    "COMMUNITY" = "COMMUNITY",
+    "PETS" = "PETS",
     "CHATS" = "CHATS",
     
 }
 
 export interface getMyprofileDataAction{
     action: getDataActions.MYPROFILE,
-    payload: MyProfiledata[],
+    payload: MyProfiledata
+}
+
+export interface getPetsDataAction{
+    action: getDataActions.PETS,
+    payload: PetsData[],
 }
 
 export enum petCardActions{
@@ -59,4 +66,4 @@ export interface DeletePetAction{
 
 
 
-export type Actions = NavigatetAction | CheckPetAction | DeletePetAction | GetPetAction | getMyprofileDataAction; 
+export type Actions = NavigatetAction | CheckPetAction | DeletePetAction | GetPetAction | getMyprofileDataAction | getPetsDataAction; 

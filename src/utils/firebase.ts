@@ -1,10 +1,10 @@
 import firebaseConfig from "./firebaseConfig";
 import {initializeApp} from "firebase/app";
-import {getFirestore, collection, addDoc, getDocs, doc, deleteDoc, onSnapshot} from "firebase/firestore";
+import {getFirestore, collection, addDoc, getDocs, doc, deleteDoc, onSnapshot, getDoc} from "firebase/firestore";
 import { petProduct } from "../types/PetProduct";
 import { communityProduct } from "../types/CommunityProduct";
 import { MyProfiledata } from "../types/MyProfiledata";
-
+import { PetsData } from "../types/Petsdata";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -20,7 +20,16 @@ const checkNewPet = async(pets: communityProduct) =>{
     }
 };
 
-
+//método para enviar la data al firestore
+const saveData = async(myprofiledata: MyProfiledata) =>{
+    try {
+        const mydata = collection(db, 'users');
+        await addDoc(mydata, myprofiledata)
+        console.log("suario registrado")
+    } catch (error) {
+        console.error(error);
+    }
+};
 
     const getPetCommunity = async () => {
         const querySnapShot = await getDocs(collection(db,'users', 'cM5TppGyMJszotPFMhzL', 'community' ));
@@ -34,17 +43,30 @@ const checkNewPet = async(pets: communityProduct) =>{
         return communityArray;
     };
 
-    const getMyProfile =async () => {
-        const querySnapShot = await getDocs(collection(db, 'users', 'cM5TppGyMJszotPFMhzL'));
-        const myprofileArray: Array<MyProfiledata> = [];
+    const getMyProfile = async () => {
+        const docRef = doc(db, "users", "cM5TppGyMJszotPFMhzL" );
+        const docProfile = await getDoc(docRef)
+
+            if (docProfile.exists()) {
+                return docProfile.data()
+            } else {
+                console.log("No document")
+            }
+        
+    };
+
+    const getPets = async () => {
+        const querySnapShot = await getDocs(collection(db,'Pets'));
+        const PetsArray: Array<PetsData> = [];
 
         querySnapShot.forEach((doc)=>{
-            const data: MyProfiledata = doc.data() as any;
-            myprofileArray.push({...data})
+            const data: PetsData = doc.data() as any;
+            PetsArray.push({...data});
         })
 
-        return myprofileArray;
-    }
+        return PetsArray;
+    };
+    
 
 
 
@@ -64,5 +86,7 @@ export default{
     checkNewPet,
     deletePet,
     getPetCommunity,
-    getMyProfile
+    getMyProfile,
+    getPets,
+    saveData
 }

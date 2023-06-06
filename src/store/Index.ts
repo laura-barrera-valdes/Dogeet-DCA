@@ -9,7 +9,17 @@ const emptyState: AppState = {
   screen: Screens.DASHBOARD,
   pets: [],
   community: [],
-  myprofiledata: [],
+  myprofiledata: {
+    image: '',
+    background: '',
+    name: '',
+    description: '',
+    birth: '',
+    gender: '',
+    interest: '',
+    city: '',
+  },
+  petsdata: [],
 
 };
 
@@ -40,4 +50,3 @@ export const addObserver = (ref: Observer) => {
   observers = [...observers, ref];
 };
 
-console.log(appState);

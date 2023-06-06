@@ -23,7 +23,7 @@ import MyprofileCard, {
 import { loadCss } from "../../utils/styles";
 import { buttonAttribute } from "../../components/Button/Button";
 import { addObserver, dispatch } from "../../store/Index";
-import { checkNewPet, getMyProfileData, getNewPetCommunity, navigatet } from "../../store/Actions";
+import { checkNewPet, getMyProfileData, getNewPetCommunity, getPetsData, navigatet } from "../../store/Actions";
 import { Screens } from "../../types/Navigation";
 import { AppState } from "../../types/Store";
 import { appState } from "../../store/Index"
@@ -76,15 +76,15 @@ class Dashboard extends HTMLElement {
 
     //appState.community.forEach((e)=>{})
 
-    appState.community.forEach((user: any) => {
-      const profileContainer = this.ownerDocument.createElement("profile-card") as ProfileCard;
-      profileContainer.setAttribute(profileAttribute.profileimage, user.profileimage);
-      profileContainer.setAttribute(profileAttribute.name, user.name); //el primeratributo es de la card y el segundo se trae como esta en firebase//
-      profileContainer.setAttribute(profileAttribute.gender, user.gender);
-      profileContainer.setAttribute(profileAttribute.birthdate, user.birth);
-      profileContainer.setAttribute(profileAttribute.lookingfor,user.interest);
-      profileContainer.setAttribute(profileAttribute.city, user.city);
-      this.profiles.push(profileContainer);
+    appState.petsdata.forEach((pet: any) => {
+    const profileContainer = this.ownerDocument.createElement("profile-card") as ProfileCard;
+     profileContainer.setAttribute(profileAttribute.profileimage, pet.image);
+    profileContainer.setAttribute(profileAttribute.name, pet.name); //el primeratributo es de la card y el segundo se trae como esta en firebase//
+    profileContainer.setAttribute(profileAttribute.gender, pet.gender);
+    profileContainer.setAttribute(profileAttribute.birthdate, pet.birth);
+    profileContainer.setAttribute(profileAttribute.lookingfor, pet.interest);
+    profileContainer.setAttribute(profileAttribute.city, pet.city);
+     this.profiles.push(profileContainer);
     });
 
     const shadowcontContainer = this.ownerDocument.createElement("shadow-container") as MyShadowCont;
@@ -142,36 +142,37 @@ class Dashboard extends HTMLElement {
     //   this.chats.push(chatlistContainer);
     // });
 
-    appState.myprofiledata.forEach((me) => {
-      const myprofileContainer = this.ownerDocument.createElement(
-        "myprofile-card") as MyprofileCard;
+   
+      const myprofileContainer = this.ownerDocument.createElement("myprofile-card") as MyprofileCard;
       myprofileContainer.className = "profileCard";
       myprofileContainer.setAttribute(
         myprofileAttribute.mybackground,
-        me.mybackground
+        appState.myprofiledata.background
       );
       myprofileContainer.setAttribute(
         myprofileAttribute.myprofileimage,
-        me.myprofileimage
+        appState.myprofiledata.image
       );
-      myprofileContainer.setAttribute(myprofileAttribute.myname, me.name);
-      myprofileContainer.setAttribute(myprofileAttribute.mygender, me.gender);
+      myprofileContainer.setAttribute(myprofileAttribute.myname,
+        appState.myprofiledata.name);
+      myprofileContainer.setAttribute(myprofileAttribute.mygender,
+        appState.myprofiledata.gender);
       myprofileContainer.setAttribute(
         myprofileAttribute.mybirthdate,
-        me.birth
+        appState.myprofiledata.birth
       );
       myprofileContainer.setAttribute(
         myprofileAttribute.mydescription,
-        me.description
+        appState.myprofiledata.description
       );
       myprofileContainer.setAttribute(
         myprofileAttribute.mylookingfor,
-        me.interest
+        appState.myprofiledata.interest
       );
-      myprofileContainer.setAttribute(myprofileAttribute.mycity, me.city);
+      myprofileContainer.setAttribute(myprofileAttribute.mycity, appState.myprofiledata.city);
       this.myprofiles.push(myprofileContainer);
-    });
-  }
+    };
+  
 
 
 
@@ -180,23 +181,32 @@ class Dashboard extends HTMLElement {
 // }
 
   async connectedCallback() {
-    if(appState.community.length === 0){
-      const action = await getNewPetCommunity();
-      dispatch(action);
-      console.log(action)
-    } else{
-      this.render();
-    }
 
-    if(appState.myprofiledata.length === 0){
+     if(appState.myprofiledata.name === ''){
       const action = await getMyProfileData();
       dispatch(action);
-      console.log(action)
+      console.log(appState)
     } else{
       this.render();
     }
     
+    if(appState.petsdata.length === 0){
+      const action = await getPetsData();
+      dispatch(action);
+    } else{
+      this.render();
+    } 
   }
+    // if(appState.community.length === 0){
+    //   const action = await getNewPetCommunity();
+    //   dispatch(action);
+    //   console.log(action)
+    // } else{
+    //   this.render();
+    // }
+
+   
+  
 
 
 
@@ -233,13 +243,6 @@ class Dashboard extends HTMLElement {
         aside.appendChild(shadowcontchat);
       });
 
-      // this.friends.forEach((friend) => {
-      //   this.shadowRoot?.appendChild(friend);
-      // });
-
-      // this.chats.forEach((chat) => {
-      //   this.shadowRoot?.appendChild(chat);
-      // });
 
       this.profiles.forEach((profile) => {
         section.appendChild(profile);

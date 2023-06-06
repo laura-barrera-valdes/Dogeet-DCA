@@ -1,4 +1,6 @@
 export interface MyProfiledata{
+    image: string;
+    background: string;
     name: string;
     description: string;
     birth: string;
