@@ -13,3 +13,4 @@ import "./Add image/AddImage";
 import Button from "./Button/Button";
 import Input from "./Input-type1/Input";
 import secInput from "./input-type2/Input2";
+import InputEdit from "./Input-edit/InputEdit";

@@ -2,6 +2,8 @@ import { loadCss } from "../../utils/styles";
 import styles from "./ShadowContainer.css";
 import { dataCommunity } from "../../services/getData";
 import CommunityCard, { communityAttribute } from "../Community/Community";
+import { appState } from "../../store/Index";
+import { addObserver } from "../../store/Index";
 
 export enum shadowcontAttribute {
   "thetitle" = "thetitle",
@@ -22,22 +24,23 @@ class MyShadowCont extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+    addObserver(this)
 
-    dataCommunity.forEach((friend) => {
+    appState.community.forEach((pet: any) => {
       const communityContainer = this.ownerDocument.createElement(
         "my-community"
       ) as CommunityCard;
       communityContainer.setAttribute(
         communityAttribute.communityimage,
-        friend.communityimage
+        pet.image
       );
       communityContainer.setAttribute(
         communityAttribute.communityname,
-        friend.communityname
+        pet.name
       );
       communityContainer.setAttribute(
         communityAttribute.commmunitylookingfor,
-        friend.commmunitylookingfor
+        pet.interest
       );
       this.friends.push(communityContainer);
     });

@@ -46,6 +46,12 @@ class AppContainer extends HTMLElement {
         );
         this.shadowRoot?.appendChild(registerlast);
 
+        case Screens.EDITPROFILE:
+        const EditProfile = this.ownerDocument.createElement(
+          "edit-profile"
+        );
+        this.shadowRoot?.appendChild(EditProfile);
+
       default:
         break;
     }
