@@ -1,6 +1,0 @@
-export enum Screens {
-  LOGIN = "LOGIN",
-  REGISTER = "REGISTER",
-  REGISTERLAST = "REGISTERLAST",
-  DASHBOARD = "DASHBOARD",
-}
