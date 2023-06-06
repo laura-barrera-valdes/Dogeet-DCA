@@ -9,8 +9,46 @@ import { secondinputAttribute } from "../../components/input-type2/Input2";
 import { dispatch } from "../../store/Index";
 import { Screens } from "../../types/Navigation";
 import { navigatet } from "../../store/Actions";
+import { saveDataProfile } from "../../store/Actions";
+import { MyProfiledata } from "../../types/MyProfiledata";
+import firebase from "../../utils/firebase";
+
+export enum registerAttribute {
+  "image" = "image",
+  "background" = "background",
+  "name" = "name",
+  "description" = "description",
+  "gender" = "gender",
+  "birth" = "birth",
+  "interest" = "interest",
+  "city" = "city",
+}
 
 class Register extends HTMLElement {
+  image?: string;
+  background?: string;
+  name?: string;
+  description?: string;
+  gender?: string;
+  birth?: string;
+  interest?: string;
+  city?: string;
+
+  static get observedAttributes(){
+    const profileattrs: Record<registerAttribute, null> = {
+      image: null,
+      background: null,
+      name: null,
+      description: null,
+      gender: null,
+      birth: null,
+      interest: null,
+      city: null
+    };
+    return Object.keys(profileattrs);
+  }
+
+
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -22,10 +60,28 @@ class Register extends HTMLElement {
 
   render() {
     if (this.shadowRoot) {
-      this.shadowRoot.innerHTML = "";
-    }
-    loadCss(this, styles);
+      this.shadowRoot.innerHTML = ``;
 
+      loadCss(this, styles);
+
+      const saveBtn = this.shadowRoot.querySelector('.acceptbutton')
+    saveBtn?.addEventListener('click', async ()=>{
+      const dataUser: MyProfiledata = {
+        image: this.image,
+        background: this.background,
+        name: this.name,
+        description: this.description,
+        gender: this.gender,
+        birth: this.birth,
+        interest: this.interest,
+        city: this.city,
+      }
+      await firebase.saveData(dataUser)
+      dispatch(saveDataProfile({payload: dataUser}))
+    })
+
+    }
+    
     const article = this.ownerDocument.createElement("article");
     article.className = "registerarticle";
     this.shadowRoot?.appendChild(article);
@@ -104,6 +160,9 @@ class Register extends HTMLElement {
     registerbtn.addEventListener("click", () => {
       dispatch(navigatet(Screens.DASHBOARD)); /*REGISTERLAST*/
     });
+
+    
+
     article.appendChild(registerbtn);
     const registeroption = this.ownerDocument.createElement("p");
     registeroption.className = "registertext";

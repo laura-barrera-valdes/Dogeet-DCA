@@ -15,7 +15,18 @@ const emptyState: AppState = {
   screen: Screens.REGISTERLAST,
   pets: [],
   community: [],
-  myprofiledata: [],
+  myprofiledata: {
+    name: '',
+    description: '',
+    birth: '',
+    gender: '',
+    interest: '',
+    city: '',
+    background: '',
+    image: ''
+  }
+
+  ,
 };
 
 // export let appState = Storage.get<AppState>({

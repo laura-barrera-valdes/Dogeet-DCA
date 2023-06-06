@@ -4,6 +4,7 @@ import {
   NavigationActions,
   petCardActions,
   getDataActions,
+  saveDataActions,
 } from "../types/Store";
 
 export const reducer = (
@@ -35,6 +36,15 @@ export const reducer = (
       return {
         ...currentState,
         myprofiledata: payload,
+      };
+
+      case saveDataActions.SAVE:
+      return {
+        ...currentState,
+        myprofiledata: [
+            payload,
+            ...currentState.myprofiledata
+        ]
       };
 
     // case petCardActions.DELETE:

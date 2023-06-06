@@ -9,7 +9,7 @@ export type AppState = {
   screen: Screens;
   pets: petProduct[];
   community: communityProduct[];
-  myprofiledata: MyProfiledata[];
+  myprofiledata: MyProfiledata;
 };
 
 export enum NavigationActions {
@@ -19,6 +19,15 @@ export enum NavigationActions {
 export interface NavigatetAction {
   action: NavigationActions.NAVIGATE;
   payload: Screens;
+}
+
+export enum saveDataActions{
+    "SAVE" = "SAVE",
+}
+
+export interface saveMyDataAction{
+    action: saveDataActions.SAVE,
+    payload: MyProfiledata;
 }
 
 export enum getDataActions {
@@ -58,4 +67,5 @@ export type Actions =
   | CheckPetAction
   | DeletePetAction
   | GetPetAction
-  | getMyprofileDataAction;
+  | getMyprofileDataAction
+  | saveMyDataAction;

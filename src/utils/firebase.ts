@@ -45,6 +45,21 @@ const registerUser = async ({
   }
 };
 
+
+const saveData = async (myprofiledata: MyProfiledata) => {
+    try {
+      const mydata = collection(
+        db,
+        "users",
+      );
+      await addDoc(mydata, myprofiledata);
+      console.log("Usuario guardado");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
 const loginUser = async ({
   email,
   password,
@@ -128,4 +143,5 @@ export default {
   getMyProfile,
   loginUser,
   registerUser,
+  saveData
 };
