@@ -63,21 +63,20 @@ class Login extends HTMLElement {
     section.appendChild(title);
 
     const email = this.ownerDocument.createElement("input");
-      email.placeholder = "E-mail";
-      email.addEventListener(
-        "change",
-        (e: any) => (credentials.email = e.target.value)
-                
-        );
-        section.appendChild(email);
+    email.placeholder = "E-mail";
+    email.addEventListener(
+      "change",
+      (e: any) => (credentials.email = e.target.value)
+    );
+    section.appendChild(email);
 
     const password = this.ownerDocument.createElement("input");
     password.placeholder = "Password";
     password.addEventListener(
       "change",
       (e: any) => (credentials.password = e.target.value)
-      );
-      section.appendChild(password);
+    );
+    section.appendChild(password);
 
     // const email = this.ownerDocument.createElement("input-component");
     // email.className = "inputemail";

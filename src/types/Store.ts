@@ -1,62 +1,61 @@
-
 import { communityProduct } from "./CommunityProduct";
 import { MyProfiledata } from "./MyProfiledata";
 import { Screens } from "./Navigation";
 import { petProduct } from "./PetProduct";
 
-
-export type Observer = ({ render: () => void } & HTMLElement);
+export type Observer = { render: () => void } & HTMLElement;
 
 export type AppState = {
-   screen: Screens;
-   pets: petProduct[];
-   community: communityProduct[],
-   myprofiledata: MyProfiledata[],
+  screen: Screens;
+  pets: petProduct[];
+  community: communityProduct[];
+  myprofiledata: MyProfiledata[];
 };
 
 export enum NavigationActions {
-   "NAVIGATE" = "NAVIGATE",
+  "NAVIGATE" = "NAVIGATE",
 }
-
 
 export interface NavigatetAction {
-    action: NavigationActions.NAVIGATE,
-    payload: Screens;
+  action: NavigationActions.NAVIGATE;
+  payload: Screens;
 }
 
-export enum getDataActions{
-    "MYPROFILE" = "MYPROFILE",
-    "COMMUNITY" = "COMMUNITY",
-    "CHATS" = "CHATS",
-    
+export enum getDataActions {
+  "MYPROFILE" = "MYPROFILE",
+  "COMMUNITY" = "COMMUNITY",
+  "CHATS" = "CHATS",
 }
 
-export interface getMyprofileDataAction{
-    action: getDataActions.MYPROFILE,
-    payload: MyProfiledata[],
+export interface getMyprofileDataAction {
+  action: getDataActions.MYPROFILE;
+  payload: MyProfiledata[];
 }
 
-export enum petCardActions{
-    "CHECK" = "CHECK",
-    "GET" = "GET",
-    "DELETE" = "DELETE",
+export enum petCardActions {
+  "CHECK" = "CHECK",
+  "GET" = "GET",
+  "DELETE" = "DELETE",
 }
 
-export interface CheckPetAction{
-    action: petCardActions.CHECK,
-    payload: communityProduct,
+export interface CheckPetAction {
+  action: petCardActions.CHECK;
+  payload: communityProduct;
 }
 
-export interface GetPetAction{
-    action: petCardActions.GET,
-    payload: communityProduct[],
+export interface GetPetAction {
+  action: petCardActions.GET;
+  payload: communityProduct[];
 }
 
-export interface DeletePetAction{
-    action: petCardActions.DELETE,
-    payload: communityProduct[]
+export interface DeletePetAction {
+  action: petCardActions.DELETE;
+  payload: communityProduct[];
 }
 
-
-
-export type Actions = NavigatetAction | CheckPetAction | DeletePetAction | GetPetAction | getMyprofileDataAction; 
+export type Actions =
+  | NavigatetAction
+  | CheckPetAction
+  | DeletePetAction
+  | GetPetAction
+  | getMyprofileDataAction;

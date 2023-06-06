@@ -22,7 +22,7 @@ input:focus-visible {
   outline: #949494;
 }
 
-.articlein{
+.articlein {
   margin-bottom: 5px;
   display: flex;
   flex-direction: row;

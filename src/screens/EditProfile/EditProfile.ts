@@ -10,71 +10,66 @@ import { Screens } from "../../types/Navigation";
 import firebase from "../../utils/firebase";
 import { inputeditAttribute } from "../../components/Input-edit/InputEdit";
 
-
 class EditProfile extends HTMLElement {
-    constructor() {
-      super();
-      this.attachShadow({ mode: "open" });
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
+
+  connectedCallback() {
+    this.render();
+  }
+
+  render() {
+    if (this.shadowRoot) {
+      this.shadowRoot.innerHTML = ``;
+      loadCss(this, styles);
     }
-  
-    connectedCallback() {
-      this.render();
-    }
-  
-    render() {
-      if (this.shadowRoot) {
-        this.shadowRoot.innerHTML = ``;
-        loadCss(this, styles);
-      }
-  
-      const div = this.ownerDocument.createElement("div");
-      div.className = "divcenter";
-      this.shadowRoot?.appendChild(div);
-  
-      const section = this.ownerDocument.createElement("section");
-      section.className = "centersection";
-      div.appendChild(section);
-  
-      const article = this.ownerDocument.createElement("article");
-      section.className = "articleedit";
-      this.shadowRoot?.appendChild(article);
-  
-      const navbar = this.ownerDocument.createElement("nav-bar");
-      navbar.className = "Loginheader";
-      this.shadowRoot?.appendChild(navbar);
-  
-      const profileimage = this.ownerDocument.createElement("img");
-      profileimage.className = "profile-img";
-      profileimage.src = "gs://dogeet-dca.appspot.com/Assets/image/my_profile/Kathia.png";
-      section.appendChild(profileimage);
-  
-      const edittitle = this.ownerDocument.createElement("h3");
-      edittitle.className = "EditTitle";
-      edittitle.innerHTML = "Edit Profile";
-      article.appendChild(edittitle);
-  
 
-      
-      const editname = this.ownerDocument.createElement("input-edit");
-      editname.className = "inputeditname";
-      editname.setAttribute(inputeditAttribute.placeholder, "Name");
-      editname.setAttribute(inputeditAttribute.info, "Kathia");
-      article.appendChild(editname);
+    const div = this.ownerDocument.createElement("div");
+    div.className = "divcenter";
+    this.shadowRoot?.appendChild(div);
 
-      const editname = this.ownerDocument.createElement("input-edit");
-      editname.className = "inputeditname";
-      editname.setAttribute(inputeditAttribute.placeholder, "Name");
-      editname.setAttribute(inputeditAttribute.info, );
-      article.appendChild(editname);
-  
-      const password = this.ownerDocument.createElement("input-edit");
-      password.className = "inputpassword";
-      password.setAttribute(inputeditAttribute.placeholder, "Password");
-      password.className = "input-password";
-      section.appendChild(password);
+    const section = this.ownerDocument.createElement("section");
+    section.className = "centersection";
+    div.appendChild(section);
 
+    const article = this.ownerDocument.createElement("article");
+    section.className = "articleedit";
+    this.shadowRoot?.appendChild(article);
 
-   
+    const navbar = this.ownerDocument.createElement("nav-bar");
+    navbar.className = "Loginheader";
+    this.shadowRoot?.appendChild(navbar);
+
+    const profileimage = this.ownerDocument.createElement("img");
+    profileimage.className = "profile-img";
+    profileimage.src =
+      "gs://dogeet-dca.appspot.com/Assets/image/my_profile/Kathia.png";
+    section.appendChild(profileimage);
+
+    const edittitle = this.ownerDocument.createElement("h3");
+    edittitle.className = "EditTitle";
+    edittitle.innerHTML = "Edit Profile";
+    article.appendChild(edittitle);
+
+    const editname = this.ownerDocument.createElement("input-edit");
+    editname.className = "inputeditname";
+    editname.setAttribute(inputeditAttribute.placeholder, "Name");
+    editname.setAttribute(inputeditAttribute.info, "Kathia");
+    article.appendChild(editname);
+
+    const editname = this.ownerDocument.createElement("input-edit");
+    editname.className = "inputeditname";
+    editname.setAttribute(inputeditAttribute.placeholder, "Name");
+    editname.setAttribute(inputeditAttribute.info);
+    article.appendChild(editname);
+
+    const password = this.ownerDocument.createElement("input-edit");
+    password.className = "inputpassword";
+    password.setAttribute(inputeditAttribute.placeholder, "Password");
+    password.className = "input-password";
+    section.appendChild(password);
 
     //   ledataProfi.forEach((user: any) => {
     //     const profileContainer = this.ownerDocument.createElement("profile-card") as ProfileCard;
@@ -86,21 +81,20 @@ class EditProfile extends HTMLElement {
     //     profileContainer.setAttribute(profileAttribute.city, user.city);
     //     this.profiles.push(profileContainer);
     //   });
-  
-      const loginoption = this.ownerDocument.createElement("p");
-      loginoption.className = "logintext";
-      loginoption.innerHTML = "If you don't have an account, please Register";
-      section.appendChild(loginoption);
-  
-      const loginbtn = this.ownerDocument.createElement("button-component");
-      loginbtn.className = "loginbtn";
-      loginbtn.setAttribute(buttonAttribute.button, "Login");
-      loginbtn.addEventListener("click", () => {
-        dispatch(navigatet(Screens.DASHBOARD))
-      })
-      section.appendChild(loginbtn);
-    }
+
+    const loginoption = this.ownerDocument.createElement("p");
+    loginoption.className = "logintext";
+    loginoption.innerHTML = "If you don't have an account, please Register";
+    section.appendChild(loginoption);
+
+    const loginbtn = this.ownerDocument.createElement("button-component");
+    loginbtn.className = "loginbtn";
+    loginbtn.setAttribute(buttonAttribute.button, "Login");
+    loginbtn.addEventListener("click", () => {
+      dispatch(navigatet(Screens.DASHBOARD));
+    });
+    section.appendChild(loginbtn);
   }
-  
-  customElements.define("login-screen", Login);
-  
+}
+
+customElements.define("login-screen", Login);

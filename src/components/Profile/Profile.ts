@@ -64,7 +64,6 @@ class ProfileCard extends HTMLElement {
     this.render();
   }
 
- 
   render() {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
@@ -111,18 +110,16 @@ class ProfileCard extends HTMLElement {
         </section>
         `;
       loadCss(this, styles);
-     
-    
 
-      const checkBtn = this.shadowRoot.querySelector('.acceptbutton')
-      checkBtn?.addEventListener('click', async ()=>{
+      const checkBtn = this.shadowRoot.querySelector(".acceptbutton");
+      checkBtn?.addEventListener("click", async () => {
         const petUser: communityProduct = {
           name: this.name,
-          interest: this.lookingfor
-        }
-        await firebase.checkNewPet(petUser)
-        dispatch(checkNewPet({payload: petUser}))
-      })
+          interest: this.lookingfor,
+        };
+        await firebase.checkNewPet(petUser);
+        dispatch(checkNewPet({ payload: petUser }));
+      });
     }
   }
 }

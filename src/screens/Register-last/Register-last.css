@@ -4,7 +4,7 @@
   font-family: "Montserrat", sans-serif; /*esta es la tipogrfia de css que corrio el navegador*/
 }
 
-.article{
+.article {
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -29,7 +29,7 @@ input:focus-visible {
   outline: #949494;
 }
 
-.articlein{
+.articlein {
   margin-bottom: 5px;
   display: flex;
   flex-direction: row;
@@ -41,7 +41,6 @@ input:focus-visible {
     display: none;
   }
 }
-
 
 .imgbackground {
   position: fixed; /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make it fill the full width !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/

@@ -24,7 +24,7 @@ class RegisterLast extends HTMLElement {
   async handleSigninButton() {
     await Firebase.registerUser(newUser);
     dispatch(navigatet(Screens.REGISTER));
-    alert("You have registered your email successfully")
+    alert("You have registered your email successfully");
   }
 
   render() {

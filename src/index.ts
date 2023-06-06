@@ -19,8 +19,7 @@ class AppContainer extends HTMLElement {
 
   render() {
     if (this.shadowRoot) this.shadowRoot.innerHTML = "";
-    
-  
+
     switch (appState.screen) {
       case Screens.DASHBOARD:
         const dashboard = this.ownerDocument.createElement("app-dashboard");

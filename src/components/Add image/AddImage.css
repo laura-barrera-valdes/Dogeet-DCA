@@ -1,13 +1,13 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    font-family: "Montserrat", sans-serif; /*esta es la tipogrfia de css que corrio el navegador*/
-  }
+  margin: 0px;
+  padding: 0px;
+  font-family: "Montserrat", sans-serif; /*esta es la tipogrfia de css que corrio el navegador*/
+}
 
-  p{
-    margin-bottom: 5px;
-  }
+p {
+  margin-bottom: 5px;
+}
 
-  .addinput{
-    margin-bottom: 27px;
-  }
+.addinput {
+  margin-bottom: 27px;
+}

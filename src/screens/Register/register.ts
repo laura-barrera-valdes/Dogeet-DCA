@@ -95,15 +95,15 @@ class Register extends HTMLElement {
 
     const imgback2 = this.ownerDocument.createElement("img");
     imgback2.className = "imgbackground2";
-    imgback2.src= "../dist/assets/image/backgrounds/dog.png";
+    imgback2.src = "../dist/assets/image/backgrounds/dog.png";
     this.shadowRoot?.appendChild(imgback2);
 
     const registerbtn = this.ownerDocument.createElement("button-component");
     registerbtn.className = "registerbtn";
     registerbtn.setAttribute(buttonAttribute.button, "Continue");
     registerbtn.addEventListener("click", () => {
-        dispatch(navigatet(Screens.DASHBOARD))/*REGISTERLAST*/
-    })
+      dispatch(navigatet(Screens.DASHBOARD)); /*REGISTERLAST*/
+    });
     article.appendChild(registerbtn);
     const registeroption = this.ownerDocument.createElement("p");
     registeroption.className = "registertext";
