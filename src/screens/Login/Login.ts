@@ -6,6 +6,9 @@ import { loadCss } from "../../utils/styles";
 import { dispatch } from "../../store/Index";
 import { navigatet } from "../../store/Actions";
 import { Screens } from "../../types/Navigation";
+import Firebase from "../../utils/firebase";
+
+const credentials = { email: "", password: "" };
 
 class Login extends HTMLElement {
   constructor() {
@@ -15,6 +18,16 @@ class Login extends HTMLElement {
 
   connectedCallback() {
     this.render();
+  }
+
+  async handleLoginButton() {
+    const resp = await Firebase.loginUser(credentials);
+    if (resp) {
+      dispatch(navigatet(Screens.DASHBOARD));
+    } else {
+      alert("You were wrong");
+    }
+    console.log(resp);
   }
 
   render() {
@@ -49,16 +62,41 @@ class Login extends HTMLElement {
     title.innerHTML = "Please login";
     section.appendChild(title);
 
-    const email = this.ownerDocument.createElement("input-component");
-    email.className = "inputemail";
-    email.setAttribute(inputAttribute.placeholder, "E-mail");
-    section.appendChild(email);
+    const email = this.ownerDocument.createElement("input");
+      email.placeholder = "E-mail";
+      email.addEventListener(
+        "change",
+        (e: any) => (credentials.email = e.target.value)
+                
+        );
+        section.appendChild(email);
 
-    const password = this.ownerDocument.createElement("input-component");
-    password.className = "inputpassword";
-    password.setAttribute(inputAttribute.placeholder, "Password");
-    password.className = "input-password";
-    section.appendChild(password);
+    const password = this.ownerDocument.createElement("input");
+    password.placeholder = "Password";
+    password.addEventListener(
+      "change",
+      (e: any) => (credentials.password = e.target.value)
+      );
+      section.appendChild(password);
+
+    // const email = this.ownerDocument.createElement("input-component");
+    // email.className = "inputemail";
+    // email.setAttribute(inputAttribute.placeholder, "E-mail");
+    // email.addEventListener(
+    //   "change",
+    //   (e: any) => (credentials.email = e.target.value)
+    // );
+    // section.appendChild(email);
+
+    // const password = this.ownerDocument.createElement("input-component");
+    // password.className = "inputpassword";
+    // password.setAttribute(inputAttribute.placeholder, "Password");
+    // password.addEventListener(
+    //   "change",
+    //   (e: any) => (credentials.password = e.target.value)
+    // );
+    // password.className = "input-password";
+    // section.appendChild(password);
 
     const loginoption = this.ownerDocument.createElement("p");
     loginoption.className = "logintext";
@@ -68,9 +106,7 @@ class Login extends HTMLElement {
     const loginbtn = this.ownerDocument.createElement("button-component");
     loginbtn.className = "loginbtn";
     loginbtn.setAttribute(buttonAttribute.button, "Login");
-    loginbtn.addEventListener("click", () => {
-      dispatch(navigatet(Screens.DASHBOARD)) /*DASHBOARD*/
-    })
+    loginbtn.addEventListener("click", this.handleLoginButton);
     section.appendChild(loginbtn);
   }
 }

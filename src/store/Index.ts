@@ -6,15 +6,10 @@ import { petProduct } from "../types/PetProduct";
 import { Firestore } from "firebase/firestore";
 
 const emptyState: AppState = {
-<<<<<<< HEAD
-  screen: Screens.REGISTERLAST, /* REGISTER */
-=======
-  screen: Screens.DASHBOARD,
+  screen: Screens.REGISTERLAST,
   pets: [],
   community: [],
   myprofiledata: [],
-
->>>>>>> origin/branchVal
 };
 
 // export let appState = Storage.get<AppState>({

@@ -7,6 +7,9 @@ import { buttonAttribute } from "../../components/Button/Button";
 import { dispatch } from "../../store/Index";
 import { navigatet } from "../../store/Actions";
 import { Screens } from "../../types/Navigation";
+import Firebase from "../../utils/firebase";
+
+const newUser = { email: "", password: "" };
 
 class RegisterLast extends HTMLElement {
   constructor() {
@@ -16,6 +19,12 @@ class RegisterLast extends HTMLElement {
 
   connectedCallback() {
     this.render();
+  }
+
+  async handleSigninButton() {
+    await Firebase.registerUser(newUser);
+    dispatch(navigatet(Screens.REGISTER));
+    alert("You have registered your email successfully")
   }
 
   render() {
@@ -42,15 +51,39 @@ class RegisterLast extends HTMLElement {
     // username.setAttribute(inputAttribute.placeholder, "Enter your username");
     // article.appendChild(username);
 
-    const email = this.ownerDocument.createElement("input-component");
-    email.className = "emailregister";
-    email.setAttribute(inputAttribute.placeholder, "E-mail");
+    const email = this.ownerDocument.createElement("input");
+    email.placeholder = "E-mail";
+    email.addEventListener(
+      "change",
+      (e: any) => (newUser.email = e.target.value)
+    );
     article.appendChild(email);
 
-    const password = this.ownerDocument.createElement("input-component");
-    password.className = "passwordregister";
-    password.setAttribute(inputAttribute.placeholder, "Password");
+    const password = this.ownerDocument.createElement("input");
+    password.placeholder = "Password";
+    password.addEventListener(
+      "change",
+      (e: any) => (newUser.password = e.target.value)
+    );
     article.appendChild(password);
+
+    // const email = this.ownerDocument.createElement("input-component");
+    // email.className = "emailregister";
+    // email.setAttribute(inputAttribute.placeholder, "E-mail");
+    // email.addEventListener(
+    //   "change",
+    //   (e: any) => (newUser.email = e.target.value)
+    // );
+    // article.appendChild(email);
+
+    // const password = this.ownerDocument.createElement("input-component");
+    // password.className = "passwordregister";
+    // password.setAttribute(inputAttribute.placeholder, "Password");
+    // password.addEventListener(
+    //   "change",
+    //   (e: any) => (newUser.email = e.target.value)
+    // );
+    // article.appendChild(password);
 
     const confirmpassword = this.ownerDocument.createElement("input-component");
     confirmpassword.className = "confirmpassword";
@@ -63,9 +96,7 @@ class RegisterLast extends HTMLElement {
     const registerbtn = this.ownerDocument.createElement("button-component");
     registerbtn.className = "registerbtnlast";
     registerbtn.setAttribute(buttonAttribute.button, "Continue");
-    registerbtn.addEventListener("click", () => {
-      dispatch(navigatet(Screens.REGISTER)); /* LOGIN */
-    });
+    registerbtn.addEventListener("click", this.handleSigninButton);
     article.appendChild(registerbtn);
 
     const imgback = this.ownerDocument.createElement("img");
