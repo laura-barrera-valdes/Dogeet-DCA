@@ -1,4 +1,4 @@
-import { Actions, AppState, NavigationActions, petCardActions } from "../types/Store"
+import { Actions, AppState, NavigationActions, petCardActions, getDataActions } from "../types/Store"
 
 export const reducer = (currentAction: Actions, currentState: AppState): AppState => {
     const { action, payload } = currentAction; 
@@ -24,6 +24,12 @@ export const reducer = (currentAction: Actions, currentState: AppState): AppStat
             return{
                 ...currentState,
                 community: payload
+            }
+
+        case getDataActions.MYPROFILE:
+            return{
+                ...currentState,
+                myprofiledata: payload
             }
 
         

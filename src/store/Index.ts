@@ -1,13 +1,16 @@
 import Storage, { PersistanceKeys } from "../utils/storage";
-import { Actions, AppState, Observer, petCardActions } from "../types/Store";
+import { Actions, AppState, Observer, petCardActions, getDataActions } from "../types/Store";
 import { reducer } from "./Reducer";
 import { Screens } from "../types/Navigation";
 import { petProduct } from "../types/PetProduct";
+import { Firestore } from "firebase/firestore";
 
 const emptyState: AppState = {
   screen: Screens.DASHBOARD,
   pets: [],
   community: [],
+  myprofiledata: [],
+
 };
 
 // export let appState = Storage.get<AppState>({
@@ -15,6 +18,7 @@ const emptyState: AppState = {
 //   defaultValue: emptyState,
 // });
 export let appState = emptyState
+
 
 let observers: Observer[] = [];
 
@@ -28,10 +32,12 @@ export const dispatch = (action: Actions) => {
   const newState = reducer(action, clone);
   appState = newState;
 
-  // persistStore(newState);
+  // persistStore(newState);Z
   notifyObservers();
 };
 
 export const addObserver = (ref: Observer) => {
   observers = [...observers, ref];
 };
+
+console.log(appState);

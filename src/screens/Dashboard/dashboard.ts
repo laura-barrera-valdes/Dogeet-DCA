@@ -23,17 +23,15 @@ import MyprofileCard, {
 import { loadCss } from "../../utils/styles";
 import { buttonAttribute } from "../../components/Button/Button";
 import { addObserver, dispatch } from "../../store/Index";
-import { checkNewPet, getNewPetCommunity, navigatet } from "../../store/Actions";
+import { checkNewPet, getMyProfileData, getNewPetCommunity, navigatet } from "../../store/Actions";
 import { Screens } from "../../types/Navigation";
+import { AppState } from "../../types/Store";
 import { appState } from "../../store/Index"
 import { petProduct } from "../../types/PetProduct";
 import { communityProduct } from "../../types/CommunityProduct";
 import firebase from "../../utils/firebase";
 
-// const checkData: Omit<petProduct, '("birth", "gender", "city")' >={
-//   name: '',
-//   interest: '',
-// }
+
 
 class Dashboard extends HTMLElement {
   navbars: NavbarCard[] = [];
@@ -78,29 +76,19 @@ class Dashboard extends HTMLElement {
 
     //appState.community.forEach((e)=>{})
 
-    ledataProfi.forEach((user: any) => {
-      const profileContainer = this.ownerDocument.createElement(
-        "profile-card"
-      ) as ProfileCard;
-      profileContainer.setAttribute(
-        profileAttribute.profileimage,
-        user.profileimage
-      );
+    appState.community.forEach((user: any) => {
+      const profileContainer = this.ownerDocument.createElement("profile-card") as ProfileCard;
+      profileContainer.setAttribute(profileAttribute.profileimage, user.profileimage);
       profileContainer.setAttribute(profileAttribute.name, user.name); //el primeratributo es de la card y el segundo se trae como esta en firebase//
       profileContainer.setAttribute(profileAttribute.gender, user.gender);
-      profileContainer.setAttribute(profileAttribute.birthdate, user.birthdate);
-      profileContainer.setAttribute(profileAttribute.lookingfor,user.lookingfor);
+      profileContainer.setAttribute(profileAttribute.birthdate, user.birth);
+      profileContainer.setAttribute(profileAttribute.lookingfor,user.interest);
       profileContainer.setAttribute(profileAttribute.city, user.city);
       this.profiles.push(profileContainer);
     });
 
-    const shadowcontContainer = this.ownerDocument.createElement(
-      "shadow-container"
-    ) as MyShadowCont;
-    shadowcontContainer.setAttribute(
-      shadowcontAttribute.thetitle,
-      "My Community"
-    );
+    const shadowcontContainer = this.ownerDocument.createElement("shadow-container") as MyShadowCont;
+    shadowcontContainer.setAttribute(shadowcontAttribute.thetitle,"My Community");
     this.shadowconts.push(shadowcontContainer);
 
     const shadowcontchatContainer = this.ownerDocument.createElement(
@@ -154,10 +142,9 @@ class Dashboard extends HTMLElement {
     //   this.chats.push(chatlistContainer);
     // });
 
-    dataMyprofile.forEach((me) => {
+    appState.myprofiledata.forEach((me) => {
       const myprofileContainer = this.ownerDocument.createElement(
-        "myprofile-card"
-      ) as MyprofileCard;
+        "myprofile-card") as MyprofileCard;
       myprofileContainer.className = "profileCard";
       myprofileContainer.setAttribute(
         myprofileAttribute.mybackground,
@@ -167,21 +154,21 @@ class Dashboard extends HTMLElement {
         myprofileAttribute.myprofileimage,
         me.myprofileimage
       );
-      myprofileContainer.setAttribute(myprofileAttribute.myname, me.myname);
-      myprofileContainer.setAttribute(myprofileAttribute.mygender, me.mygender);
+      myprofileContainer.setAttribute(myprofileAttribute.myname, me.name);
+      myprofileContainer.setAttribute(myprofileAttribute.mygender, me.gender);
       myprofileContainer.setAttribute(
         myprofileAttribute.mybirthdate,
-        me.mybirthdate
+        me.birth
       );
       myprofileContainer.setAttribute(
         myprofileAttribute.mydescription,
-        me.mydescription
+        me.description
       );
       myprofileContainer.setAttribute(
         myprofileAttribute.mylookingfor,
-        me.mylookingfor
+        me.interest
       );
-      myprofileContainer.setAttribute(myprofileAttribute.mycity, me.mylocation);
+      myprofileContainer.setAttribute(myprofileAttribute.mycity, me.city);
       this.myprofiles.push(myprofileContainer);
     });
   }
@@ -200,8 +187,18 @@ class Dashboard extends HTMLElement {
     } else{
       this.render();
     }
+
+    if(appState.myprofiledata.length === 0){
+      const action = await getMyProfileData();
+      dispatch(action);
+      console.log(action)
+    } else{
+      this.render();
+    }
     
   }
+
+
 
   // connectedCallback(){
   //   this.render();

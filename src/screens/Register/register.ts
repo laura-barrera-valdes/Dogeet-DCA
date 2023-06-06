@@ -7,7 +7,7 @@ import { buttonAttribute } from "../../components/Button/Button";
 import { addimageAttribute } from "../../components/Add image/AddImage";
 import { secondinputAttribute } from "../../components/input-type2/Input2";
 import { dispatch } from "../../store/Index";
-import { Screens } from "../../types/Store";
+import { Screens } from "../../types/Navigation";
 import { navigatet } from "../../store/Actions";
 
 class Register extends HTMLElement {
