@@ -67,7 +67,7 @@ const checkNewPet = async(pets: communityProduct) =>{
     try {
         const petdata = collection(db, 'users', 'cM5TppGyMJszotPFMhzL', 'community');
         await addDoc(petdata, pets)
-        console.log("añadido a comunidad")
+        console.log("Added to community")
     } catch (error) {
         console.error(error);
     }
